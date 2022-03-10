@@ -25,7 +25,7 @@
         <div class="sidebar-user">
             <div class="sidebar-user-info">
                 <div class="sidebar-user-name">
-                    <h4>Hi @UserManager.GetUserAsync(User).Result.FullName</h4>
+                    <h4>Hi Thuong</h4>
                 </div>
             </div>
             <a href="" class="btn btn-outline">
@@ -79,14 +79,7 @@
                                     </div>
                                     <div class="counter-info">
                                         <div class="counter-count">
-                                            @{
-                                                int i = 0;
-                                                foreach (var vene in Model)
-                                                {
-                                                    i++;
-                                                }
-                                            }
-                                            @i
+                                            3
                                         </div>
                                         <i class="fas fa-shopping-cart"></i>
                                     </div>
@@ -103,14 +96,7 @@
                                     </div>
                                     <div class="counter-info">
                                         <div class="counter-count price">
-                                            @{ 
-                                                int count = 0;
-                                                foreach(var count_ in Model)
-                                                {
-                                                    count += count_.TotalPrice;
-                                                }
-                                            }
-                                            @count
+                                            3
                                         </div>
                                         <i class="fas fa-donate"></i>
                                     </div>
@@ -138,18 +124,15 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach (var revenue in Model)
-                                            {
-                                                <tr>
-                                                    <td>@revenue.BillId</td>
-                                                    <td>
-                                                        @revenue.FullName
-                                                    </td>
-                                                    <td>@revenue.PaymentMethod</td>
-                                                    <td>@revenue.PhoneNumber</td>
-                                                    <td class="price">@revenue.TotalPrice</td>
-                                                </tr>
-                                            }
+                                            <tr>
+                                                <td>@revenue.BillId</td>
+                                                <td>
+                                                    @revenue.FullName
+                                                </td>
+                                                <td>@revenue.PaymentMethod</td>
+                                                <td>@revenue.PhoneNumber</td>
+                                                <td class="price">@revenue.TotalPrice</td>
+                                            </tr>
 
 
                                         </tbody>

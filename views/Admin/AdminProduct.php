@@ -25,7 +25,7 @@
         <div class="sidebar-user">
             <div class="sidebar-user-info">
                 <div class="sidebar-user-name">
-                    <h4>Hi @UserManager.GetUserAsync(User).Result.FullName</h4>
+                    <h4>Hi Thuong</h4>
                 </div>
             </div>
             <a href="" class="btn btn-outline">
@@ -67,29 +67,37 @@
             <div class="col-4">
                 <div class="card">
                     <div class="card__header1">
-                        <h3>Tạo tài khoản Admin</h3>
+                        <h3>Quản lí sản phẩm</h3>
                     </div>
                     <div class="card__body">
-                        <form asp-action="InsertAccountAdmin" asp-controller="Admin">
+                        <form asp-controller="Admin" asp-action="InsertProductToDb" method="post">
                             <div class="form-group">
-                                <lable>Tên tài khoản</lable>
-                                <input type="text" class="form-control" name="account.UserName"/>
+                                <lable>Mã sản phẩm</lable>
+                                <input type="text" class="form-control"/>
                             </div>
                             <div class="form-group">
-                                <lable>Mật khẩu</lable>
-                                <input type="password" class="form-control" name="account.Password"/>
+                                <lable>Tên sản phẩm</lable>
+                                <input type="text" class="form-control" name="product.Name"/>
                             </div>
                             <div class="form-group">
-                                <lable>Nhập lại mật khẩu</lable>
-                                <input type="password" class="form-control" name="account.RePassword"/>
+                                <lable>Loại sản phẩm</lable>
+                                <input type="text" class="form-control" name="product.Status"/>
                             </div>
                             <div class="form-group">
-                                <lable>Họ và tên</lable>
-                                <input type="text" class="form-control" name="account.FullName"/>
+                                <lable>Hãng sản xuất</lable>
+                                <input type="text" class="form-control" name="product.Producer"/>
                             </div>
                             <div class="form-group">
-                                <lable>Email</lable>
-                                <input type="email" class="form-control" name="account.Email"/>
+                                <lable>Giá</lable>
+                                <input type="number" class="form-control" name="product.Price"/>
+                            </div>
+                            <div class="form-group">
+                                <lable>Đặc biệt</lable>
+                                <input type="text" class="form-control" name="product.Special"/>
+                            </div>
+                            <div class="form-group">
+                                <lable>ImgUrl</lable>
+                                <input type="text" class="form-control" name="product.ImgUrl"/>
                             </div>
                             <div class="row">
                                 <div class="col-12">
@@ -103,45 +111,47 @@
             <div class="col-8">
                 <div class="card">
                     <div class="card__header1">
-                        <h3>Danh sách tài khoản</h3>
+                        <h3>Danh sách sản phẩm</h3>
                     </div>
                     <div class="card__body">
                         <div class="col-12">
                             <!-- ORDERS TABLE -->
                             <div class="box">
                                 <div class="box-header">
-                                    Danh sách tài khoản
+                                    Danh sách sản phẩm hiện có
                                 </div>
                                 <div class="box-body overflow-scroll">
-                                    <table>
+                                    <table class="adminproduct">
                                         <thead>
                                             <tr>
-                                                <th>Tên</th>
-                                                <th>Giới tính</th>
-                                                <th>Ngày sinh</th>
-                                                <th>Điểm tích lũy</th>
+                                                <th>ID</th>
+                                                <th>Tên sản phẩm</th>
+                                                <th>Loại sản phẩm</th>
+                                                <th>Hãng sản xuất</th>
+                                                <th>Giá sản phẩm</th>
+                                                <th>Đánh giá</th>
+                                                <th></th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach (var account in Model)
-                                            {
                                             <tr>
-                                                <td>@account.FullName</td>
-                                                @if (account.Gender == true)
-                                                {
-                                                    <td>Nam</td>
-                                                }
-                                                else
-                                                {
-                                                    <td>Nữ</td>
-                                                }
-                                                <td>@account.BirthDay</td>
-                                                <td>@account.Point</td>
+                                                <td>@product.ProductId</td>
+                                                <td>@product.Name </td>
+                                                <td>@product.Status</td>
+                                                <td>@product.Producer</td>
+                                                <td class="price">@product.Price</td>
+                                                <td>@product.Rating</td>
+                                                <form asp-controller="Admin" asp-action="DeleteProduct">
+                                                    <td class="text-center">
+                                                        <input name="product" type="hidden" value="@product.ProductId" />
+                                                        <button type="submit" class="primary-btn">
+                                                            <i class="fas fa-trash"></i>
+                                                        </button>
+                                                    </td>
+                                                </form>
                                             </tr>
-                                            }
-
-                                        </tbody>
-                                    </table>
+                                            </tbody>
+                                        </table>
                                 </div>
                             </div>
                             <!-- END ORDERS TABLE -->
@@ -151,6 +161,7 @@
             </div>
         </div>
     </div>
+
      <!-- conttent -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script type="text/javascript">
