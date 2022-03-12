@@ -1,4 +1,7 @@
 <body>
+    <?php
+        print_r($data["homeModel"]);
+    ?>
 <div class="section">
     <!-- container -->
     <div class="container">

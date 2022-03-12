@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 12, 2022 at 09:26 AM
+-- Generation Time: Mar 12, 2022 at 10:06 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -125,6 +125,13 @@ CREATE TABLE `product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Dumping data for table `product`
+--
+
+INSERT INTO `product` (`ProductId`, `Name`, `Producer`, `Price`, `Status`, `ImgUrl`, `Rating`, `Special`, `SellOff`, `TimeSellOff`, `OldPrice`) VALUES
+(1, 'Iphone 13', 'Apple', 1000, 'Còn hàng', 'https://cdn.tgdd.vn/Products/Images/42/230521/iphone-13-pro-sierra-blue-600x600.jpg', 5, 'Special', 0, '2022-03-12 09:50:15', 0);
+
+--
 -- Indexes for dumped tables
 --
 
@@ -201,7 +208,7 @@ ALTER TABLE `evaluation`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `ProductId` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ProductId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables
