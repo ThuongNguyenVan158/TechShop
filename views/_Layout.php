@@ -28,7 +28,31 @@
                     <li><a href="#"><i class="far fa-envelope"></i>EcommerceStore@hcmut.edu.vn</a></li>
                     <li><a href="#"><i class="fa fa-map-marker"></i>Ho Chi Minh</a></li>
                 </ul>
-                <partial name="_LoginPartial" />
+                <ul class="header-links pull-right">
+
+        <!-- @if (SignInManager.IsSignedIn(User))
+        {
+            var username = UserManager.GetUserAsync(User).Result.UserName;
+            var adminId = (from u in context.Customer
+                           where u.UserName == username
+                           select u.Admin).FirstOrDefault();
+            @if (adminId == true)
+            { -->
+                <li><a href="@Url.Action("Revenue","Admin")">Quản lí</a></li>
+                <li style="color:white;">Xin Chào　|</li>
+                <li><a href="@Url.Action("Logout", "Home")"><i class="fas fa-sign-out-alt"></i>Đăng xuất</a></li>
+            <!-- }
+            else
+            {
+                <li style="color:white;">Xin Chào @UserManager.GetUserAsync(User).Result.FullName　|</li>
+                <li><a href="@Url.Action("Logout", "Home")"><i class="fas fa-sign-out-alt"></i>Đăng xuất</a></li>
+            }
+        }
+        else
+        {
+            <li><a href="@Url.Action("Login", "Home")"><i class="fa fa-user"></i>Đăng nhập</a></li>
+        } -->
+    </ul>
             </div>
         </div>
         <!-- /TOP HEADER -->

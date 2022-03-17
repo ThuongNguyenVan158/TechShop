@@ -21,23 +21,23 @@ class DB{
 
     public function select($query)
 	{
-		$result = $this->con->query($query) or die($this->con->error.__LINE__);
+		$result = $this->con->query($query);
 		if($result->num_rows > 0){
 			return $result;
 		}
 		return false;
 	}
 
-    function insert($qerry){
-        $insert_row = $this->con->query($query) or die($this->con->error.__LINE__);
+    public function insert($query){
+        $insert_row = $this->con->query($query);
 		if($insert_row){
 			return $insert_row;
 		}
 		return false;
     }
 
-    function multi_insert($qerry){
-        $insert_row = $this->con->multi_query($query) or die($this->con->error.__LINE__);
+    public function multi_insert($query){
+        $insert_row = $this->con->multi_query($query);
 		if($insert_row){
 			return $insert_row;
 		}
@@ -46,7 +46,7 @@ class DB{
 
     public function update($query)
 	{
-		$update_row = $this->con->query($query) or die($this->con->error.__LINE__);
+		$update_row = $this->con->query($query);
 		if($update_row){
 			return $update_row;
 		}
@@ -55,7 +55,7 @@ class DB{
 
 	public function delete($query)
 	{
-		$delete_row = $this->con->query($query) or die($this->con->error.__LINE__);
+		$delete_row = $this->con->query($query);
 		if($delete_row){
 			return $delete_row;
 		}
@@ -64,7 +64,7 @@ class DB{
 
     public function procedure($query)
 	{
-		$stmt = $this->con->query($query) or die($this->con->error.__LINE__);
+		$stmt = $this->con->query($query);
 		if($stmt){
 			return $stmt;
 		}

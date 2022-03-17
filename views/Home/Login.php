@@ -53,7 +53,7 @@
                                    class="form-control"
                                    placeholder="Tên tài khoản"
                                    asp-for="UserName"
-                                   value="UserName" />
+                                   name="UserName" />
                         </div>
                         <span asp-validation-for="Password" class="text-danger"></span>
                         <div class="input-group form-group">
@@ -66,7 +66,7 @@
                                    required="required"
                                    class="form-control"
                                    placeholder="Mật khẩu"
-                                   asp-for="Password" />
+                                   name="Password" />
                         </div>
                         <!-- @if(Model!=null){
                             @if(Model.ErrorMessage!=null){

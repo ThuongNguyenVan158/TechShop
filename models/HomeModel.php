@@ -9,8 +9,5 @@ class HomeModel extends DB{
         }
         return json_encode($mang);
     }
-    function register($name, $pass, $fullname, $phonenumber, $email, $birthday, $gender){
-
-    }
 }
 ?>

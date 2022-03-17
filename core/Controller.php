@@ -1,6 +1,6 @@
 <?php
 class Controller{
-
+    use tool;
     public function model($model){
         require_once "./models/".$model.".php";
         return new $model;
