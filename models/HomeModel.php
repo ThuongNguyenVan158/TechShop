@@ -7,7 +7,10 @@ class HomeModel extends DB{
         while($row = mysqli_fetch_array($rows)){
             $mang[] = $row;
         }
-        return $mang;
+        return json_encode($mang);
+    }
+    function register($name, $pass, $fullname, $phonenumber, $email, $birthday, $gender){
+
     }
 }
 ?>

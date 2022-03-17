@@ -7,10 +7,10 @@
     <title>EcommerceStore</title>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link type="text/css" rel="stylesheet" href="./assets/css/slick.css" />
-    <link type="text/css" rel="stylesheet" href="./assets/css/slick-theme.css"/>
-    <link type="text/css" rel="stylesheet" href="./assets/css/nouislider.min.css"/>
-    <link type="text/css" rel="stylesheet" href="./assets/css/site.css" />
+    <link type="text/css" rel="stylesheet" href="../assets/css/slick.css" />
+    <link type="text/css" rel="stylesheet" href="../assets/css/slick-theme.css"/>
+    <link type="text/css" rel="stylesheet" href="../assets/css/nouislider.min.css"/>
+    <link type="text/css" rel="stylesheet" href="../assets/css/site.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         .currSign:after {
@@ -62,7 +62,7 @@
 							<div class="header-ctn">
 								<!-- Cart -->
 								<div class="dropdown">
-									<a href="@Url.Action("PayMent","PayMent")">
+									<a href="../PayMent/PayMent">
 										<i class="fas fa-shopping-cart" style="font-size:20px;"></i>
 										<span  style="font-size:16px;">Giỏ hàng</span>
 									</a>
@@ -94,11 +94,11 @@
                 <div id="responsive-nav">
                     <!-- NAV -->
                     <ul class="main-nav nav navbar-nav">
-                        <li><a href="@Url.Action("Index","Home")">Trang chủ</a></li>
-                        <li><a href="@Url.Action("Laptop","Product")">Laptop</a></li>
-                        <li><a href="@Url.Action("Smart","Product")">Di động</a></li>
-                        <li><a href="@Url.Action("Accessory","Product")">Phụ kiện</a></li>
-                        <li><a href="@Url.Action("PaymentHistory","Payment")">Lịch sử thanh toán</a></li>
+                        <li><a href="../Admin/Account">Trang chủ</a></li>
+                        <li><a href="../Product/Laptop">Laptop</a></li>
+                        <li><a href="../Product/Smart">Di động</a></li>
+                        <li><a href="../Product/Accessory">Phụ kiện</a></li>
+                        <li><a href="../Payment/PaymentHistory">Lịch sử thanh toán</a></li>
                     </ul>
                     <!-- /NAV -->
                 </div>

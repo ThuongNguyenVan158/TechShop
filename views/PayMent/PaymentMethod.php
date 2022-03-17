@@ -8,7 +8,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" crossorigin="anonymous" />
 
-    <link rel="stylesheet" type="text/css" href="../../assets/css/payment.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/payment.css" />
     <style>
         .currSign:after {
             content: ' VND';

@@ -1,8 +1,9 @@
+
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
       rel="stylesheet"
       id="bootstrap-css" />
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 <!DOCTYPE html>
 <html>
@@ -22,7 +23,7 @@
           crossorigin="anonymous" />
 
     <!--Custom styles-->
-    <link rel="stylesheet" type="text/css" href="../../assets/css/site.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/site.css" />
 </head>
 <body class="login-page">
     <div class="container">
@@ -52,7 +53,7 @@
                                    class="form-control"
                                    placeholder="Tên tài khoản"
                                    asp-for="UserName"
-                                   value="@Model.UserName" />
+                                   value="UserName" />
                         </div>
                         <span asp-validation-for="Password" class="text-danger"></span>
                         <div class="input-group form-group">

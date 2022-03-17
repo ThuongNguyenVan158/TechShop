@@ -1,3 +1,44 @@
+<?php 
+    $err = [];
+    $name= $pass= $repass = $fullname = $phonenumber = $email = $birthday = $gender = '';
+    if(isset($_POST['UserName'])){
+        $name = $_POST['UserName'];
+        $pass = $_POST['Password'];
+        $repass = $_POST['RePassword'];
+        $fullname = $_POST['FullName'];
+        $phonenumber = $_POST['PhoneNumber'];
+        $email = $_POST['Email'];
+        $birthday = $_POST['Birthday'];
+        $gender = $_POST['Gender'];
+
+        if(empty($name)){
+            $err['name'] = "Bạn chưa điền tên đăng nhập";
+        }
+        if(empty($pass)){
+            $err['pass'] = "Bạn chưa nhập mật khẩu";
+        }
+        if($repass != $pass){
+            $err['repass'] = "Mật khẩu không khớp";
+        }
+        if(empty($fullname)){
+            $err['fullname'] = "Bạn chưa nhập họ tên";
+        }
+        if(empty($phonenumber)){
+            $err['phonenumber'] = "Bạn chưa nhập số điện thoại";
+        }
+        if(empty($email)){
+            $err['email'] = "Bạn chưa nhập email";
+        }
+        if(empty($birthday)){
+            $err['birthday'] = "Bạn chưa nhập ngày sinh";
+        }
+        if(empty($gender)){
+            $err['gender'] = "Bạn chưa chọn giới tính";
+        }
+
+    }
+
+?>
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
       rel="stylesheet"
       id="bootstrap-css" />
@@ -23,7 +64,7 @@
           crossorigin="anonymous" />
 
     <!--Custom styles-->
-    <link rel="stylesheet" type="text/css" href="../../assets/css/site.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/site.css" />
 </head>
 <body class="login-page">
     <div class="container">
@@ -33,8 +74,8 @@
                     <h3>Đăng ký</h3>
                 </div>
                 <div class="card-body">
-                    <form asp-controller="Home" asp-action="Register" method="post">
-                        <span asp-validation-for="UserName" class="text-danger"></span>
+                    <form method="post" action="" >
+                        <span class="text-danger"><?php echo (isset($err['name']))? $err['name']:'' ?></span>
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">
@@ -42,12 +83,14 @@
                                 </span>
                             </div>
                             <input type="text"
-                                   required="required"
-                                   class="form-control"
-                                   placeholder="Tên tài khoản"
-                                   asp-for="UserName" />
+                                required="required"
+                                class="form-control"
+                                placeholder="Tên tài khoản"
+                                name="UserName" 
+                                   value="<?php echo $name; ?>"
+                                   />
                         </div>
-                        <span asp-validation-for="Password" class="text-danger"></span>
+                        <span class="text-danger"><?php echo (isset($err['pass']))? $err['pass']:'' ?></span>
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">
@@ -57,10 +100,12 @@
                             <input type="password"
                                    required="required"
                                    class="form-control"
-                                   placeholder="Mật khẩu (đủ 4 loại)"
-                                   asp-for="Password" />
+                                   placeholder="Mật khẩu"
+                                   name="Password" 
+                                   value="<?php echo $pass; ?>"
+                                   />
                         </div>
-                        <span asp-validation-for="RePassword" class="text-danger"></span>
+                        <span class="text-danger"><?php echo (isset($err['repass']))? $err['repass']:'' ?></span>
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">
@@ -71,9 +116,10 @@
                                    class="form-control"
                                    required="required"
                                    placeholder="Xác nhận mật khẩu"
-                                   asp-for="RePassword" />
+                                   name="RePassword"
+                                    />
                         </div>
-                        <span asp-validation-for="FullName" class="text-danger"></span>
+                        <span class="text-danger"><?php echo (isset($err['fullname']))? $err['fullname']:'' ?></span>
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">
@@ -84,9 +130,11 @@
                                    class="form-control"
                                    required="required"
                                    placeholder="Họ và tên"
-                                   asp-for="FullName" />
+                                   name="FullName" 
+                                   value="<?php echo $fullname; ?>"
+                                   />
                         </div>
-                        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                        <span class="text-danger"><?php echo (isset($err['phonenumber']))? $err['phonenumber']:'' ?></span>
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">
@@ -97,9 +145,11 @@
                                    required="required"
                                    class="form-control"
                                    placeholder="Số điện thoại"
-                                   asp-for="PhoneNumber" />
+                                   name="PhoneNumber"
+                                   value="<?php echo $phonenumber; ?>"
+                                    />
                         </div>
-                        <span asp-validation-for="Email" class="text-danger"></span>
+                        <span class="text-danger"><?php echo (isset($err['email']))? $err['email']:'' ?></span>
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">
@@ -110,25 +160,30 @@
                                    required="required"
                                    class="form-control"
                                    placeholder="Email"
-                                   asp-for="Email" />
+                                   name="Email"
+                                   value="<?php echo $email; ?>"
+                                    />
                         </div>
-                        <span asp-validation-for="Birthday" class="text-danger"></span>
+                        <span class="text-danger"><?php echo (isset($err['birthday']))? $err['birthday']:'' ?></span>
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">
                                     <i class="fas fa-birthday-cake"></i>
                                 </span>
                             </div>
-                            <input type="date" id="birthdaytime" asp-for="Birthday" class="form-control">
+                            <input type="date" id="birthdaytime" 
+                                name="Birthday" class="form-control" 
+                                value="<?php echo $birthday; ?>"
+                            >
                         </div>
-                        <span asp-validation-for="Gender" class="text-danger"></span>
+                        <span class="text-danger"><?php echo (isset($err['gender']))? $err['gender']:'' ?></span>
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">
                                     <i class="fas fa-venus-mars"></i>
                                 </span>
                             </div>
-                            <select class="form-control" asp-for="Gender">
+                            <select class="form-control" name="Gender">
                                 <option value="true">Nam</option>
                                 <option value="false">Nữ</option>
                             </select>

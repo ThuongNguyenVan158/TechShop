@@ -38,7 +38,7 @@
                                                     </div>
                                                     <div class="product-body">
                                                         <p class="product-category">@khuyenMai.Producer</p>
-                                                        <h3 class="product-name"><a href="@Url.Action("Product","Product",new { id=khuyenMai.ProductId })">@khuyenMai.Name</a></h3>
+                                                        <h3 class="product-name"><a href="">@khuyenMai.Name</a></h3>
                                                         <h4 class="product-price price">@khuyenMai.Price</h4><del class="product-old-price price">@khuyenMai.OldPrice</del>
                                                         <div class="product-rating">
                                                             @{
@@ -108,7 +108,7 @@
                     </ul>
                     <h2 class="text-uppercase">Khuyến mãi hot nhất</h2>
 					<p>New Collection Up to @Model.Max(p=>p.SellOff)% OFF</p>
-                    <a class="primary-btn cta-btn" href="@Url.Action("Product","Product",new { id =  @Model.Find(p=>p.SellOff == @Model.Max(p=>p.SellOff)).ProductId})">Xem chi tiết</a>
+                    <a class="primary-btn cta-btn" href="">Xem chi tiết</a>
                 </div>
             </div>
         </div>
@@ -150,7 +150,7 @@
                                                     </div>
                                                     <div class="product-body">
                                                         <p class="product-category">@moi.Producer</p>
-                                                        <h3 class="product-name"><a href="@Url.Action("Product","Product",new { id=moi.ProductId })">@moi.Name</a></h3>
+                                                        <h3 class="product-name"><a href="">@moi.Name</a></h3>
                                                         <h4 class="product-price price">@moi.Price</h4>
                                                         <div class="product-rating">
                                                             @{
@@ -221,7 +221,7 @@
                                                     </div>
                                                     <div class="product-body">
                                                         <p class="product-category">@banChay.Producer</p>
-                                                        <h3 class="product-name"><a href="@Url.Action("Product","Product",new { id=banChay.ProductId })">@banChay.Name</a></h3>
+                                                        <h3 class="product-name"><a href="">@banChay.Name</a></h3>
                                                         <h4 class="product-price price">@banChay.Price</h4>
                                                         <div class="product-rating">
                                                             @{
