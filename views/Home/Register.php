@@ -1,3 +1,44 @@
+<?php 
+    $err = [];
+    $name= $pass= $repass = $fullname = $phonenumber = $email = $birthday = $gender = '';
+    if(isset($_POST['UserName'])){
+        $name = $_POST['UserName'];
+        $pass = $_POST['Password'];
+        $repass = $_POST['RePassword'];
+        $fullname = $_POST['FullName'];
+        $phonenumber = $_POST['PhoneNumber'];
+        $email = $_POST['Email'];
+        $birthday = $_POST['Birthday'];
+        $gender = $_POST['Gender'];
+
+        if(empty($name)){
+            $err['name'] = "Bạn chưa điền tên đăng nhập";
+        }
+        if(empty($pass)){
+            $err['pass'] = "Bạn chưa nhập mật khẩu";
+        }
+        if($repass != $pass){
+            $err['repass'] = "Mật khẩu không khớp";
+        }
+        if(empty($fullname)){
+            $err['fullname'] = "Bạn chưa nhập họ tên";
+        }
+        if(empty($phonenumber)){
+            $err['phonenumber'] = "Bạn chưa nhập số điện thoại";
+        }
+        if(empty($email)){
+            $err['email'] = "Bạn chưa nhập email";
+        }
+        if(empty($birthday)){
+            $err['birthday'] = "Bạn chưa nhập ngày sinh";
+        }
+        if(empty($gender)){
+            $err['gender'] = "Bạn chưa chọn giới tính";
+        }
+
+    }
+
+?>
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
       rel="stylesheet"
       id="bootstrap-css" />

@@ -18,7 +18,6 @@ class DB{
         mysqli_select_db($this->con, $this->dbname);
         mysqli_query($this->con, "SET NAMES 'utf8'");
     }
-
     // insert, delete, update
     public function excute($sql) {
         $result = false;
@@ -45,7 +44,6 @@ class DB{
         }
         return $data;
     }
-
 }
 
 ?>

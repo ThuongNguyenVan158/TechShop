@@ -28,7 +28,6 @@
                     <li><a href="#"><i class="far fa-envelope"></i>EcommerceStore@hcmut.edu.vn</a></li>
                     <li><a href="#"><i class="fa fa-map-marker"></i>Ho Chi Minh</a></li>
                 </ul>
-        
                 <ul class="header-links pull-right">
                     <?php  
                         if(!$this->isLoggedIn()){
