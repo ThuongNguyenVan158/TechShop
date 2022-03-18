@@ -19,57 +19,32 @@ class DB{
         mysqli_query($this->con, "SET NAMES 'utf8'");
     }
 
-    public function select($query)
-	{
-		$result = $this->con->query($query);
-		if($result->num_rows > 0){
-			return $result;
-		}
-		return false;
-	}
-
-    public function insert($query){
-        $insert_row = $this->con->query($query);
-		if($insert_row){
-			return $insert_row;
-		}
-		return false;
+    // insert, delete, update
+    public function excute($sql) {
+        $result = false;
+        if(mysqli_query($this->con, $sql)) {
+            $result = true;
+        }
+        return json_encode($result);
     }
-
-    public function multi_insert($query){
-        $insert_row = $this->con->multi_query($query);
-		if($insert_row){
-			return $insert_row;
-		}
-		return false;
+    
+    // SELECT lay du lieu
+    public function excuteResult($sql, $isSingle = false, $isJson = true) {
+        $result = mysqli_query($this->con, $sql);
+        if($isSingle) {
+            $data = mysqli_fetch_array($result, 1);
+        }
+        else {
+            $data = [];
+            while ( ($row = mysqli_fetch_array($result, 1)) != null ) {
+                $data[] = $row;
+            }
+        }
+        if($isJson) {
+            return json_encode($data);
+        }
+        return $data;
     }
-
-    public function update($query)
-	{
-		$update_row = $this->con->query($query);
-		if($update_row){
-			return $update_row;
-		}
-		return false;
-	}
-
-	public function delete($query)
-	{
-		$delete_row = $this->con->query($query);
-		if($delete_row){
-			return $delete_row;
-		}
-		return false;
-	}
-
-    public function procedure($query)
-	{
-		$stmt = $this->con->query($query);
-		if($stmt){
-			return $stmt;
-		}
-		return false;
-	}
 
 }
 

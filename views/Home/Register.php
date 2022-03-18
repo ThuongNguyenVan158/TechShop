@@ -46,7 +46,7 @@
                                 class="form-control"
                                 placeholder="Tên tài khoản"
                                 name="UserName" 
-                                   value="<?php echo $data["acc"][0]; ?>"
+                                   value="<?php if(isset($data["acc"][0])) echo $data["acc"][0]; ?>"
                                    />
                         </div>
                         <!-- <span class="text-danger"></span> -->
@@ -61,7 +61,7 @@
                                    class="form-control"
                                    placeholder="Mật khẩu"
                                    name="Password" 
-                                   value="<?php echo $data["acc"][1]; ?>"
+                                   value="<?php if(isset($data["acc"][1])) echo $data["acc"][1]; ?>"
                                    />
                         </div>
                         <span class="text-danger"><?php echo $data["err"] ?></span>
@@ -90,7 +90,7 @@
                                    required="required"
                                    placeholder="Họ và tên"
                                    name="FullName" 
-                                   value="<?php echo $data["acc"][2]; ?>"
+                                   value="<?php if(isset($data["acc"][2])) echo $data["acc"][2]; ?>"
                                    />
                         </div>
                         <!-- <span class="text-danger"></span> -->
@@ -105,7 +105,7 @@
                                    class="form-control"
                                    placeholder="Số điện thoại"
                                    name="PhoneNumber"
-                                   value="<?php echo $data["acc"][3]; ?>"
+                                   value="<?php if(isset($data["acc"][3])) echo $data["acc"][3]; ?>"
                                     />
                         </div>
                         <!-- <span class="text-danger"></span> -->
@@ -120,7 +120,7 @@
                                    class="form-control"
                                    placeholder="Email"
                                    name="Email"
-                                   value="<?php echo $data["acc"][4]; ?>"
+                                   value="<?php if(isset($data["acc"][4])) echo $data["acc"][4]; ?>"
                                     />
                         </div>
                         <!-- <span class="text-danger"></span> -->
@@ -132,7 +132,7 @@
                             </div>
                             <input type="date" id="birthdaytime" 
                                 name="Birthday" class="form-control" 
-                                value="<?php echo $data["acc"][5]; ?>"
+                                value="<?php if(isset($data["acc"][5])) echo $data["acc"][5]; ?>"
                             >
                         </div>
                         <!-- <span class="text-danger"></span> -->

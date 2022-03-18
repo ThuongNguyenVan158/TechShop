@@ -40,8 +40,8 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <form asp-controller="Home" asp-action="Login" method="post">
-                        <span asp-validation-for="UserName" class="text-danger"></span>
+                    <form action="<?=Domain?>/Home/Login" method="post">
+                        <!-- <span asp-validation-for="UserName" class="text-danger"></span> -->
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">
@@ -52,10 +52,10 @@
                                    required="required"
                                    class="form-control"
                                    placeholder="Tên tài khoản"
-                                   asp-for="UserName"
-                                   name="UserName" />
+                                   name="UserName" 
+                                   />
                         </div>
-                        <span asp-validation-for="Password" class="text-danger"></span>
+                        <!-- <span asp-validation-for="Password" class="text-danger"></span> -->
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">
@@ -80,7 +80,7 @@
                         </div>
                     </form>
                     <div class="form-group">
-                        <a href=""
+                        <a href="./"
                            class="btn float-left login_btn">
                             Trở lại
                         </a>
@@ -88,7 +88,7 @@
                 </div>
                 <div class="card-footer">
                     <div class="d-flex justify-content-center links">
-                        Bạn chưa có tài khoản?<a href="">Đăng ký</a>
+                        Bạn chưa có tài khoản?<a href="./Register">Đăng ký</a>
                     </div>
                     <div class="d-flex justify-content-center">
                         <a href="/ResetPassword">Quên mật khẩu?</a>

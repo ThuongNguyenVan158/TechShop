@@ -65,5 +65,11 @@ trait tool {
         
         return DOMAIN.$rootPath.$newPath;
     }
+
+    public function isLoggedIn() {
+        if(isset($_SESSION["login"]))
+            return $_SESSION["login"];
+        return false;
+    }
 }
 ?>

@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Mar 12, 2022 at 10:06 AM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 8.1.2
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th3 18, 2022 lúc 07:49 AM
+-- Phiên bản máy phục vụ: 10.4.22-MariaDB
+-- Phiên bản PHP: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `techshop`
+-- Cơ sở dữ liệu: `techshop`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `bill`
+-- Cấu trúc bảng cho bảng `bill`
 --
 
 CREATE TABLE `bill` (
@@ -44,7 +44,7 @@ CREATE TABLE `bill` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `billproduct`
+-- Cấu trúc bảng cho bảng `billproduct`
 --
 
 CREATE TABLE `billproduct` (
@@ -59,13 +59,13 @@ CREATE TABLE `billproduct` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `customer`
+-- Cấu trúc bảng cho bảng `customer`
 --
 
 CREATE TABLE `customer` (
   `Id` int(11) NOT NULL,
   `UserName` varchar(50) NOT NULL,
-  `Password` varchar(50) NOT NULL,
+  `Password` varchar(500) NOT NULL,
   `Email` varchar(50) NOT NULL,
   `PhoneNumber` varchar(30) NOT NULL,
   `FullName` varchar(50) NOT NULL,
@@ -75,10 +75,17 @@ CREATE TABLE `customer` (
   `BirthDay` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Đang đổ dữ liệu cho bảng `customer`
+--
+
+INSERT INTO `customer` (`Id`, `UserName`, `Password`, `Email`, `PhoneNumber`, `FullName`, `Gender`, `Point`, `Admin`, `BirthDay`) VALUES
+(22, 'a', '$2y$10$gfuC4uadKpvn2DnpNdYO..EClll1nGFwJFc/RXTJ0bWZ4doajK/9i', 'a@gmail.com', '424', 'aa', 0, 1, 0, '2022-03-25 00:00:00');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `description`
+-- Cấu trúc bảng cho bảng `description`
 --
 
 CREATE TABLE `description` (
@@ -92,7 +99,7 @@ CREATE TABLE `description` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `evaluation`
+-- Cấu trúc bảng cho bảng `evaluation`
 --
 
 CREATE TABLE `evaluation` (
@@ -107,7 +114,7 @@ CREATE TABLE `evaluation` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `product`
+-- Cấu trúc bảng cho bảng `product`
 --
 
 CREATE TABLE `product` (
@@ -125,45 +132,45 @@ CREATE TABLE `product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `product`
+-- Đang đổ dữ liệu cho bảng `product`
 --
 
 INSERT INTO `product` (`ProductId`, `Name`, `Producer`, `Price`, `Status`, `ImgUrl`, `Rating`, `Special`, `SellOff`, `TimeSellOff`, `OldPrice`) VALUES
 (1, 'Iphone 13', 'Apple', 1000, 'Còn hàng', 'https://cdn.tgdd.vn/Products/Images/42/230521/iphone-13-pro-sierra-blue-600x600.jpg', 5, 'Special', 0, '2022-03-12 09:50:15', 0);
 
 --
--- Indexes for dumped tables
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `bill`
+-- Chỉ mục cho bảng `bill`
 --
 ALTER TABLE `bill`
   ADD PRIMARY KEY (`BillId`),
   ADD KEY `customerid` (`CustomerId`);
 
 --
--- Indexes for table `billproduct`
+-- Chỉ mục cho bảng `billproduct`
 --
 ALTER TABLE `billproduct`
   ADD PRIMARY KEY (`BillId`,`ProductId`),
   ADD KEY `productid` (`ProductId`);
 
 --
--- Indexes for table `customer`
+-- Chỉ mục cho bảng `customer`
 --
 ALTER TABLE `customer`
   ADD PRIMARY KEY (`Id`);
 
 --
--- Indexes for table `description`
+-- Chỉ mục cho bảng `description`
 --
 ALTER TABLE `description`
   ADD PRIMARY KEY (`DescId`),
   ADD KEY `desproid` (`ProductId`);
 
 --
--- Indexes for table `evaluation`
+-- Chỉ mục cho bảng `evaluation`
 --
 ALTER TABLE `evaluation`
   ADD PRIMARY KEY (`EvalId`),
@@ -171,70 +178,70 @@ ALTER TABLE `evaluation`
   ADD KEY `evalcusid` (`CustomerId`);
 
 --
--- Indexes for table `product`
+-- Chỉ mục cho bảng `product`
 --
 ALTER TABLE `product`
   ADD PRIMARY KEY (`ProductId`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT for table `bill`
+-- AUTO_INCREMENT cho bảng `bill`
 --
 ALTER TABLE `bill`
   MODIFY `BillId` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `customer`
+-- AUTO_INCREMENT cho bảng `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
--- AUTO_INCREMENT for table `description`
+-- AUTO_INCREMENT cho bảng `description`
 --
 ALTER TABLE `description`
   MODIFY `DescId` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `evaluation`
+-- AUTO_INCREMENT cho bảng `evaluation`
 --
 ALTER TABLE `evaluation`
   MODIFY `EvalId` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `product`
+-- AUTO_INCREMENT cho bảng `product`
 --
 ALTER TABLE `product`
   MODIFY `ProductId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- Constraints for dumped tables
+-- Các ràng buộc cho các bảng đã đổ
 --
 
 --
--- Constraints for table `bill`
+-- Các ràng buộc cho bảng `bill`
 --
 ALTER TABLE `bill`
   ADD CONSTRAINT `customerid` FOREIGN KEY (`CustomerId`) REFERENCES `customer` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `billproduct`
+-- Các ràng buộc cho bảng `billproduct`
 --
 ALTER TABLE `billproduct`
   ADD CONSTRAINT `billid` FOREIGN KEY (`BillId`) REFERENCES `bill` (`BillId`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `productid` FOREIGN KEY (`ProductId`) REFERENCES `product` (`ProductId`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `description`
+-- Các ràng buộc cho bảng `description`
 --
 ALTER TABLE `description`
   ADD CONSTRAINT `desproid` FOREIGN KEY (`ProductId`) REFERENCES `product` (`ProductId`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `evaluation`
+-- Các ràng buộc cho bảng `evaluation`
 --
 ALTER TABLE `evaluation`
   ADD CONSTRAINT `evalcusid` FOREIGN KEY (`CustomerId`) REFERENCES `customer` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE,

@@ -5,7 +5,7 @@ class Payment extends Controller{
         {
             $this->homeModel = $this->model("HomeModel");
         }
-        function mainFunc(){
+        function index(){
             $this->view("_Layout",[
                 "Page"=>"PayMent/Payment",
                 "homeModel" => $this->homeModel->getProduct()

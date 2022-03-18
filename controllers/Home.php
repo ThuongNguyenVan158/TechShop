@@ -8,7 +8,17 @@
             $this->accountModel = $this->model("AccountModel");
             $this->homeModel = $this->model("HomeModel");
         }
-        function mainFunc(){
+        function index(){
+            // if($this->isLoggedIn()) {
+            //     $this->view("_Layout",[
+            //         "Page"=>"Home/index",
+            //         "homeModel" => $this->homeModel->getProduct()
+            //     ]);
+            // } else {
+            //     $this->view("Home/Login",[
+                    
+            //     ]);
+            // }
             $this->view("_Layout",[
                 "Page"=>"Home/index",
                 "homeModel" => $this->homeModel->getProduct()
@@ -16,12 +26,16 @@
         }
         function Login(){
             if(isset($_POST)) {
-                
-
+                $name = $this->get_POST('UserName');
+                $pass = $this->get_POST('Password');
+                $result = $this->accountModel->login($name, $pass);
+                if($result){
+                    header("Location: ./index");
+                }
                 $this->view("Home/Login",[
+
                 ]);
             }
-            
         }
         
         function Register(){
@@ -36,24 +50,32 @@
                 $gender = $this->get_POST('Gender');
 
                 $account = [$name, $pass, $fullname, $phonenumber, $email, $birthday, $gender];
-                
                 $err = "";
+
                 if($pass != $repass)
                 {
                     $err = "Mật khẩu không khớp";
                 }
-                $issuccess = true;
-                $issuccess = $this->accountModel->register($name, $pass, $email, $phonenumber, $fullname, $gender, $birthday, 1, 0);
+                $issuccess = false;
+                if($name && $pass && $fullname && $phonenumber && $email && $birthday && $gender) {
+                    $issuccess = $this->accountModel->register($name, $pass, $email, $phonenumber, $fullname, $gender, $birthday, 1, 0);
+                }
                 if($issuccess){
                     header('Location: Login');
+                    die();
                 }
                 else{
-                $this->view("Home/Register",[
-                    "err" => $err,
-                    "acc" =>$account
-                ]);
+                    $this->view("Home/Register",[
+                        "err" => $err,
+                        "acc" =>$account
+                    ]);
+                    die();
                 }
             }
+        }
+        function Logout(){
+            $this->accountModel->logout();
+            header("Location: Login");
         }
     }
 ?>
