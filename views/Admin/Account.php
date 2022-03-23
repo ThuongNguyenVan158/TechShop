@@ -6,26 +6,31 @@
                         <h3>Tạo tài khoản Admin</h3>
                     </div>
                     <div class="card__body">
-                        <form asp-action="InsertAccountAdmin" asp-controller="Admin">
+                        <form action="<?=Domain?>/Admin/Account" method="post">
                             <div class="form-group">
                                 <lable>Tên tài khoản</lable>
-                                <input type="text" class="form-control" name="account.UserName"/>
+                                <input type="text" class="form-control" name="UserName" 
+                                />
                             </div>
                             <div class="form-group">
                                 <lable>Mật khẩu</lable>
-                                <input type="password" class="form-control" name="account.Password"/>
+                                <input type="password" class="form-control" name="Password"
+                                />
                             </div>
+                            <span class="text-danger"><?php if(isset($data["err"])) echo $data["err"]; ?></span>
                             <div class="form-group">
                                 <lable>Nhập lại mật khẩu</lable>
-                                <input type="password" class="form-control" name="account.RePassword"/>
+                                <input type="password" class="form-control" name="RePassword"/>
                             </div>
                             <div class="form-group">
                                 <lable>Họ và tên</lable>
-                                <input type="text" class="form-control" name="account.FullName"/>
+                                <input type="text" class="form-control" name="FullName"
+                                />
                             </div>
                             <div class="form-group">
                                 <lable>Email</lable>
-                                <input type="email" class="form-control" name="account.Email"/>
+                                <input type="email" class="form-control" name="Email"
+                                />
                             </div>
                             <div class="row">
                                 <div class="col-12">
@@ -59,23 +64,27 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach (var account in Model)
+                                            <?php 
+                                            $listaccount = json_decode($data['accountlist'], true);
+                                            $output='';
+                                            foreach ($listaccount as $item)
                                             {
-                                            <tr>
-                                                <td>@account.FullName</td>
-                                                @if (account.Gender == true)
+                                                $output.='<tr>
+                                                <td>'.$item['FullName'].'</td>';
+                                                if ($item['Gender'] == true)
                                                 {
-                                                    <td>Nam</td>
+                                                   $output.=' <td>Nam</td>';
                                                 }
                                                 else
                                                 {
-                                                    <td>Nữ</td>
+                                                    $output.=' <td>Nữ</td>';
                                                 }
-                                                <td>@account.BirthDay</td>
-                                                <td>@account.Point</td>
-                                            </tr>
+                                                $output.='<td>'.$item['BirthDay'].'</td>
+                                                <td>'.$item['Point'].'</td>
+                                                </tr>';
                                             }
-
+                                            echo $output;
+                                            ?>
                                         </tbody>
                                     </table>
                                 </div>

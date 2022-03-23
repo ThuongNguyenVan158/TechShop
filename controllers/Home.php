@@ -1,12 +1,12 @@
 <?php
     class Home extends Controller{
-        private $homeModel;
+        private $productModel;
         private $accountModel;
 
         function __construct()
         {
             $this->accountModel = $this->model("AccountModel");
-            $this->homeModel = $this->model("HomeModel");
+            $this->productModel = $this->model("ProductModel");
         }
         function index(){
             // if($this->isLoggedIn()) {
@@ -19,9 +19,12 @@
                     
             //     ]);
             // }
+            // $data = $this->productModel->getProduct();
+            // var_dump($data);
+            // die();
             $this->view("_Layout",[
                 "Page"=>"Home/index",
-                "homeModel" => $this->homeModel->getProduct()
+                "productModel" => $this->productModel->getProduct()
             ]);
         }
         function Login(){

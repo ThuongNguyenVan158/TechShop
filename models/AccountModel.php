@@ -42,5 +42,11 @@
         public function logout(){
             session_destroy();
         }
+
+        public function getAllAccount(){
+            $query = "SELECT * FROM customer";
+            $accountlist = $this->excuteResult($query);
+            return $accountlist;
+        }
     }
 ?>

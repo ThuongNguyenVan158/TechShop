@@ -53,7 +53,7 @@
                 </a>
             </li>
             <li>
-                <a href="../Home/mainFunc">
+                <a href="../Home/index">
                     <i class="fab fa-intercom"></i>
                     <h4>Trạng thái khách hàng</h4>
                 </a>
