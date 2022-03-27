@@ -3,7 +3,7 @@ class Payment extends Controller{
     private $homeModel;
         function __construct()
         {
-            $this->homeModel = $this->model("HomeModel");
+            $this->homeModel = $this->model("AccountModel");
         }
         function index(){
             $this->view("_Layout",[
@@ -20,7 +20,7 @@ class Payment extends Controller{
         function PaymentHistory(){
             $this->view("_Layout",[
                 "Page"=>"PayMent/PaymentHistory",
-                "homeModel" => $this->homeModel->getProduct()
+               
             ]);
         }
         function PaymentMethod(){

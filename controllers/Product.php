@@ -3,7 +3,7 @@ class Product extends Controller{
     private $homeModel;
         function __construct()
         {
-            $this->homeModel = $this->model("HomeModel");
+            $this->homeModel = $this->model("ProductModel");
         }
         function Accessory(){
             $this->view("_Layout",[
