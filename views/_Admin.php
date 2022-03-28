@@ -35,25 +35,25 @@
         <!-- SIDEBAR MENU -->
         <ul class="sidebar-menu">
             <li>
-                <a href="Revenue">
+                <a href="<?=Domain?>/Admin/Revenue">
                     <i class="fas fa-donate"></i>
                     <h4>Quản lí doanh thu</h4>
                 </a>
             </li>
             <li>
-                <a href="Account">
+                <a href="<?=Domain?>/Admin/Account">
                     <i class="fas fa-user"></i>
                     <h4>Quản lí tài khoản</h4>
                 </a>
             </li>
             <li>
-                <a href="AdminProduct">
+                <a href="<?=Domain?>/Admin/AdminProduct">
                     <i class="fas fa-tablet-alt"></i>
                     <h4>Quản lí sản phẩm</h4>
                 </a>
             </li>
             <li>
-                <a href="../Home/index">
+                <a href="<?=Domain?>/Home/index">
                     <i class="fab fa-intercom"></i>
                     <h4>Trạng thái khách hàng</h4>
                 </a>
