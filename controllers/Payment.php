@@ -8,13 +8,12 @@ class Payment extends Controller{
         function index(){
             $this->view("_Layout",[
                 "Page"=>"PayMent/Payment",
-                "homeModel" => $this->homeModel->getProduct()
+                
             ]);
         }
         function PaymentDetailHistory(){
             $this->view("_Layout",[
                 "Page"=>"PayMent/PaymentDetailHistory",
-                "homeModel" => $this->homeModel->getProduct()
             ]);
         }
         function PaymentHistory(){
