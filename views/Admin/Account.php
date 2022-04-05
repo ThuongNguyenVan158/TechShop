@@ -61,6 +61,7 @@
                                                 <th>Giới tính</th>
                                                 <th>Ngày sinh</th>
                                                 <th>Điểm tích lũy</th>
+                                                <th scope="col">Xoá/Sửa</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -80,7 +81,25 @@
                                                     $output.=' <td>Nữ</td>';
                                                 }
                                                 $output.='<td>'.$item['BirthDay'].'</td>
-                                                <td>'.$item['Point'].'</td>
+                                                <td>'.$item['Point'].'</td>';
+                                                $output.= '
+                                                <td>
+                                                    <div style="display: flex;">
+                                                        <form asp-controller="ChiNhanh" asp-action="DeleteNhanVienChiNhanh">
+                                                            <input type="hidden" name="idNVChiNhanh" value="@quanly.MaNhanVien" />
+                                                            <button type="submit">
+                                                                <i class="far fa-trash-alt" aria-hidden="true"
+                                                                   style="font-size: 25px; margin-right: 10px; display:flex;"
+                                                                   }}></i>
+                                                            </button>
+                                                        </form>
+                                                        <a class=" mr-3"
+                                                           href="@Url.Action("UpdateNhanVienChiNhanh","ChiNhanh", new { id = quanly.MaNhanVien })">
+                                                            <i class="fa fa-edit"
+                                                               aria-hidden="true" style="font-size: 25px;"></i>
+                                                        </a>
+                                                    </div>
+                                                </td>
                                                 </tr>';
                                             }
                                             echo $output;

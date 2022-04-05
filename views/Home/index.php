@@ -42,7 +42,7 @@
                                                                     $star ="";
                                                                     for ($i = 0; $i < $item["Rating"]; $i++)
                                                                     {
-                                                                        $star.='<i class="fa fa-star"></i>';
+                                                                        $star.='<i class="fa fa-star"></i>'.'  ';
                                                                     }
                                                                     $output.= $star;
                                                                     $output.='
@@ -135,42 +135,47 @@
 						<!-- tab -->
 						<div id="tab1" class="tab-pane active">
 							<div class="products-slick" data-nav="#slick-nav-2">
-                                @foreach (var moi in Model)
+                            <?php 
+                                $listproduct = json_decode($data["productModel"], true);
+                                $output = '';
+                                foreach ($listproduct as $item)
                                 {
-                                    if (moi.Special == "moi")
+                                    if ($item['Special'] == "moi")
                                     {
-                                        <!-- product -->
-                                        <form asp-action="InsertProduct" asp-controller="Product" method="post" onsubmit="notify()">
-                                            <input type="hidden" name="ProductId" value="@moi.ProductId" />
-                                            <input type="hidden" name="Quantity" value="1" />
-                                            <input type="hidden" name="Name" value="@moi.Name" />
-                                            <input type="hidden" name="ProductPrice" value="@moi.Price" />                                                <div class="product">
-                                                    <div class="product-img">
-                                                        <img src="@moi.ImgUrl" alt="">
-                                                    </div>
-                                                    <div class="product-body">
-                                                        <p class="product-category">@moi.Producer</p>
-                                                        <h3 class="product-name"><a href="">@moi.Name</a></h3>
-                                                        <h4 class="product-price price">@moi.Price</h4>
-                                                        <div class="product-rating">
-                                                            @{
-                                                                for (int i = 0; i < moi.Rating; i++)
+                                        $output.='
+                                            <form asp-action="InsertProduct" asp-controller="Product" method="post" onsubmit="notify()">
+                                                <input type="hidden" name="ProductId" value="'.$item["ProductId"].'" />
+                                                <input type="hidden" name="Quantity" value="1" />
+                                                <input type="hidden" name="Name" value="'.$item["Name"].'" />
+                                                <input type="hidden" name="ProductPrice" value="'.$item["Price"].'" />                                                <div class="product">
+                                                        <div class="product-img">
+                                                            <img src="'.$item["ImgUrl"].'" alt="">
+                                                        </div>
+                                                        <div class="product-body">
+                                                            <p class="product-category">'.$item["Producer"].'</p>
+                                                            <h3 class="product-name"><a href="">'.$item["Name"].'</a></h3>
+                                                            <h4 class="product-price price">'.$item["Price"].'</h4>
+                                                            <div class="product-rating">';
+                                                                $star = "";
+                                                                for ($i = 0; $i < $item["Rating"]; $i++)
                                                                 {
-                                                                    <i class="fa fa-star"></i>
+                                                                    $star.='<i class="fa fa-star"></i>'.' ';
                                                                 }
-                                                            }
+                                                            $output.=$star;
+                                                            $output.='
+                                                            </div>
+                                                        </div>
+                                                        <div class="add-to-cart">
+                                                            <button class="add-to-cart-btn" type="submit">
+                                                                <i class="fa fa-shopping-cart"></i> add to cart
+                                                            </button>
                                                         </div>
                                                     </div>
-                                                    <div class="add-to-cart">
-                                                        <button class="add-to-cart-btn" type="submit">
-                                                            <i class="fa fa-shopping-cart"></i> add to cart
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                        </form>
-                                        <!-- /product -->
+                                            </form>';
                                     }
                                 }
+                                echo $output;
+                                ?>
                             </div>
                             <div id="slick-nav-2" class="products-slick-nav"></div>
                         </div>
@@ -205,43 +210,48 @@
 						<!-- tab -->
 						<div id="tab1" class="tab-pane active">
 							<div class="products-slick" data-nav="#slick-nav-3">
-                                @foreach (var banChay in Model)
+                            <?php 
+                                $listproduct = json_decode($data["productModel"], true);
+                                $output = '';
+                                foreach ($listproduct as $item)
                                 {
-                                    if (banChay.Special == "banchay")
+                                    if ($item['Special'] == "banchay")
                                     {
-                                        <!-- product -->
-                                        <form asp-action="InsertProduct" asp-controller="Product" method="post" onsubmit="notify()">
-                                            <input type="hidden" name="ProductId" value="@banChay.ProductId" />
-                                            <input type="hidden" name="Quantity" value="1" />
-                                            <input type="hidden" name="Name" value="@banChay.Name" />
-                                            <input type="hidden" name="ProductPrice" value="@banChay.Price" />
-                                                <div class="product">
-                                                    <div class="product-img">
-                                                        <img src="@banChay.ImgUrl" alt="">
-                                                    </div>
-                                                    <div class="product-body">
-                                                        <p class="product-category">@banChay.Producer</p>
-                                                        <h3 class="product-name"><a href="">@banChay.Name</a></h3>
-                                                        <h4 class="product-price price">@banChay.Price</h4>
-                                                        <div class="product-rating">
-                                                            @{
-                                                                for (int i = 0; i < banChay.Rating; i++)
-                                                                {
-                                                                    <i class="fa fa-star"></i>
-                                                                }
+                                        $output.='
+                                            <form asp-action="InsertProduct" asp-controller="Product" method="post" onsubmit="notify()">
+                                                <input type="hidden" name="ProductId" value="'.$item["ProductId"].'" />
+                                                <input type="hidden" name="Quantity" value="1" />
+                                                <input type="hidden" name="Name" value="'.$item["Name"].'" />
+                                                <input type="hidden" name="ProductPrice" value="'.$item["Price"].'" />
+                                                    <div class="product">
+                                                        <div class="product-img">
+                                                            <img src="'.$item["ImgUrl"].'" alt="">
+                                                        </div>
+                                                        <div class="product-body">
+                                                            <p class="product-category">'.$item["Producer"].'</p>
+                                                            <h3 class="product-name"><a href="">'.$item["Name"].'</a></h3>
+                                                            <h4 class="product-price price">'.$item["Price"].'</h4>
+                                                            <div class="product-rating">';
+                                                            $star = "";
+                                                            for ($i = 0; $i < $item["Rating"]; $i++)
+                                                            {
+                                                                $star.='<i class="fa fa-star"></i>'.' ';
                                                             }
+                                                            $output.=$star;
+                                                            $output.='
+                                                            </div>
+                                                        </div>
+                                                        <div class="add-to-cart">
+                                                            <button class="add-to-cart-btn" type="submit">
+                                                                <i class="fa fa-shopping-cart"></i> add to cart
+                                                            </button>
                                                         </div>
                                                     </div>
-                                                    <div class="add-to-cart">
-                                                        <button class="add-to-cart-btn" type="submit">
-                                                            <i class="fa fa-shopping-cart"></i> add to cart
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                        </form>
-                                        <!-- /product -->
+                                            </form>';
                                     }
                                 }
+                                echo $output;
+                            ?>
                             </div>
                             <div id="slick-nav-3" class="products-slick-nav"></div>
                         </div>
