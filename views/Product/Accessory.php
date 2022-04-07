@@ -9,9 +9,9 @@
                 <div class="aside">
                     <h3 class="aside-title">Loại phụ kiện</h3>
                     <div class="checkbox-filter">
-                        <form asp-controller="Product" asp-action="Accessory" method="post">
+                        <form action="<?=Domain?>/Product/Accessory" method="post">
                             <div class="input-checkbox">
-                                <input type="checkbox" id="category-1" value="Bàn phím" name="Category[]">
+                                <input type="checkbox" id="category-1" value="keyboard" name="Category[]">
                                 <label for="category-1">
                                     <span></span>
                                     Bàn phím
@@ -19,7 +19,7 @@
                             </div>
 
                             <div class="input-checkbox">
-                                <input type="checkbox" id="category-2" value="Chuột" name="Category[]">
+                                <input type="checkbox" id="category-2" value="mouse" name="Category[]">
                                 <label for="category-2">
                                     <span></span>
                                     Chuột
@@ -27,7 +27,7 @@
                             </div>
 
                             <div class="input-checkbox">
-                                <input type="checkbox" id="category-3" value="Tai nghe" name="Category[]">
+                                <input type="checkbox" id="category-3" value="headphone" name="Category[]">
                                 <label for="category-3">
                                     <span></span>
                                     Tai nghe
@@ -35,7 +35,7 @@
                             </div>
 
                             <div class="input-checkbox">
-                                <input type="checkbox" id="category-4" value="Ram" name="Category[]">
+                                <input type="checkbox" id="category-4" value="ram" name="Category[]">
                                 <label for="category-4">
                                     <span></span>
                                     Ram
@@ -43,7 +43,7 @@
                             </div>
 
                             <div class="input-checkbox">
-                                <input type="checkbox" id="category-5" value="Pin dự phòng" name="Category[]">
+                                <input type="checkbox" id="category-5" value="pin" name="Category[]">
                                 <label for="category-5">
                                     <span></span>
                                     Pin dự phòng
@@ -51,7 +51,7 @@
                             </div>
 
                             <div class="input-checkbox">
-                                <input type="checkbox" id="category-6" value="Dán chống xước" name="Category[]">
+                                <input type="checkbox" id="category-6" value="dan" name="Category[]">
                                 <label for="category-6">
                                     <span></span>
                                     Dán chống xước
@@ -59,7 +59,7 @@
                             </div>
 
                             <div class="input-checkbox">
-                                <input type="checkbox" id="category-7" value="Giá đỡ" name="Category[]">
+                                <input type="checkbox" id="category-7" value="giado" name="Category[]">
                                 <label for="category-7">
                                     <span></span>
                                     Giá đỡ
@@ -67,7 +67,7 @@
                             </div>
 
                             <div class="input-checkbox">
-                                <input type="checkbox" id="category-8" value="Bút" name="Category[]">
+                                <input type="checkbox" id="category-8" value="pen" name="Category[]">
                                 <label for="category-8">
                                     <span></span>
                                     Bút cảm ứng
@@ -85,51 +85,51 @@
             <div id="store" class="col-md-9">
                 <!-- store products -->
                 <div class="row">
-                    @foreach (var laptop in Model)
+                    <?php
+                    for($i = 0;$i<sizeof($data["accessory"]);$i++)
                     {
-                        <!-- product -->
-                        <form asp-action="InsertProduct" asp-controller="Product" method="post" onsubmit="return confirm('Bạn muốn thêm vào giỏ hàng?!!!');">
-                            <input type="hidden" name="product.InsertProductToCart.ProductId" value="@laptop.ProductId" />
-                            <input type="hidden" name="product.InsertProductToCart.Quantity" value="1" />
-                            <input type="hidden" name="product.InsertProductToCart.Name" value="@laptop.Name" />
-                            <input type="hidden" name="product.InsertProductToCart.ProductPrice" value="@laptop.Price" />
-                            <div class="col-md-4 col-xs-6">
-                                <div class="product">
-                                    <div class="product-img">
-                                        <img src="@laptop.ImgUrl" alt="">
+                        echo"
+                        <form action=\".\addCart\" method=\"post\" onsubmit=\"return confirm('Bạn muốn thêm vào giỏ hàng?!!!');\">
+                            <input type=\"hidden\" name=\"ProductId\" value=\"".$data["accessory"][$i]["ProductId"]."\" />
+                            <input type=\"hidden\" name=\"Quantity\" value=\"1\" />
+                            <input type=\"hidden\" name=\"Name\" value=\"".$data["accessory"][$i]["Name"]."\" />
+                            <input type=\"hidden\" name=\"ProductPrice\" value=\"".$data["accessory"][$i]["Price"]."\" />
+                            <div class=\"col-md-4 col-xs-6\">
+                                <div class=\"product\">
+                                    <div class=\"product-img\">
+                                        <img src=\"".$data["accessory"][$i]["ImgUrl"]."\" alt=\"\">
                                     </div>
-                                    <div class="product-body">
-                                        <p class="product-category">@laptop.Producer</p>
-                                        <h3 class="product-name"><a href="@Url.Action("Product",new { id=laptop.ProductId })">@laptop.Name</a></h3>
-                                        <div class="product-price-old-new">
-                                            @if (laptop.OldPrice != 0)
+                                    <div class=\"product-body\">
+                                        <h3 class=\"product-name\"><a href=\"./Accessory/".$data["accessory"][$i]["ProductId"]."\">".$data["accessory"][$i]["Name"]."</a></h3>
+                                        <div class=\"product-price-old-new\">
+                                        ";
+                                            if ($data["accessory"][$i]["OldPrice"] != 0)
                                             {
-                                                <h4 class="product-price price">@laptop.Price</h4> <del class="product-old-price price">@laptop.OldPrice</del>
+                                                echo "<h4 class=\"product-price price\">".$data["accessory"][$i]["Price"]."</h4> <del class=\"product-old-price price\">".$data["accessory"][$i]["OldPrice"]."</del>";
                                             }
                                             else
                                             {
-                                                <h4 class="product-price price">@laptop.Price </h4>
+                                                echo "<h4 class=\"product-price price\">".$data["accessory"][$i]["Price"]."</h4>";
                                             }
-                                        </div>
-                                        <div class="product-rating">
-                                            @{
-                                                for (int i = 0; i < laptop.Rating; i++)
+                                        echo "</div>
+                                        <div class=\"product-rating\">";
+                                                for ($j = 0; $j < $data["accessory"][$i]["Rating"];$j++)
                                                 {
-                                                    <i class="fa fa-star"></i>
+                                                    echo "<i class=\"fa fa-star\"></i>";
                                                 }
-                                            }
-                                        </div>
+                                        echo "</div>
                                     </div>
-                                    <div class="add-to-cart">
-                                        <button class="add-to-cart-btn" type="submit">
-                                            <i class="fa fa-shopping-cart"></i> add to cart
+                                    <div class=\"add-to-cart\">
+                                        <button class=\"add-to-cart-btn\" type=\"submit\">
+                                            <i class=\"fa fa-shopping-cart\"></i> add to cart
                                         </button>
                                     </div>
                                 </div>
                             </div>
                         </form>
-                        <!-- /product -->
+                        ";
                     }
+                    ?>
                 </div>
                 <!-- /store products -->
                 <!-- store bottom filter -->
