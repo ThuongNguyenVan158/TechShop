@@ -9,8 +9,9 @@
                 return false;
             }
             $pass = $this->getScurityHash($pass);
+            $gender = $gender == "True" ? 1 : 0;
             $query = "INSERT INTO customer(UserName, Password, Email, PhoneNumber, FullName,Gender, Point, Admin,BirthDay) 
-            VALUES ('$name', '$pass', '$email','$phonenumber', '$fullname', '$gender', '$point', '$admin', '$birthday')";
+            VALUES ('$name', '$pass', '$email','$phonenumber', '$fullname', '$gender ', '$point', '$admin', '$birthday')";
             $result = $this->excute($query);
             return $result == "true";
         }
@@ -29,6 +30,7 @@
         public function login($username, $password){
             $query = "SELECT * FROM customer WHERE UserName = '$username'";
             $User = $this->excuteResult($query, true);
+
             $obj = json_decode($User,true);
             $result = false;
             if($obj && password_verify($password, $obj["Password"])){
