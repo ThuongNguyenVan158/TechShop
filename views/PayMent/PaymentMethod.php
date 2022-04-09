@@ -21,28 +21,35 @@
         <div class="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12 padding">
             <div class="card">
                 <div class="card-header p-4">
-                    @{
-                        if (Model != null)
+                    <?php 
+                        $item = json_decode($data['bill'], true);
+                        $output ='';
+                        if (count([$item]) > 0 and $item !=null)
                         {
+                            $output.='
                             <h3 class="pt-2 d-inline-block">
                                 Mã đơn hàng<br />
-                                @Model.BillId
-                            </h3>
+                                '.$item['BillId'].'
+                            </h3>';
                         }
-
-                    }
+                        echo $output;
+                    ?>
                     <div class="float-right">
-                        @{
-                            if (Model != null)
+                        <?php
+                            $item = json_decode($data['bill'], true);
+                            $output ='';
+                            if (count([$item]) > 0 and $item !=null)
                             {
+                                $output.='
                                 <h3 class="mb-0" id="current-date">
-                                    Ngày: @Model.CreatedDate.ToLocalTime().ToString("dd/MM/yyyy")
+                                    Ngày: '.$item['DateCreateBill'].'.ToLocalTime().ToString("dd/MM/yyyy")
                                 </h3>
                                 <h4 class="mb-0" id="current-time">
-                                    Thời gian: @Model.CreatedDate.ToLocalTime().ToString("HH:mm")
-                                </h4>
+                                    Thời gian: '.$item['DateCreateBill'].'.ToLocalTime().ToString("HH:mm")
+                                </h4>';
                             }
-                        }
+                            echo $output
+                        ?>
                     </div>
                 </div>
                 <div class="card-body">
@@ -51,9 +58,12 @@
                             <td class="text-center">
                                 <b><span class="rth"><a id="return-home" href="@Url.Action("PayMent","PayMent")"></a></span></b>
                             </td>
-                            @{
-                                if (Model != null)
+                            <?php
+                                $item = json_decode($data['bill'], true);
+                                $output ='';
+                                if (count([$item]) > 0 and $item !=null)
                                 {
+                                    $output.='
                                     <th class="text-right">
                                         <div class="body-btn-payment">
                                             <div class="btn-payment">
@@ -74,14 +84,15 @@
                                                 <div class="right-side">
                                                     <div class="new">
                                                         <h4><strong class="text-dark">Thanh toán</strong></h4>
-                                                        <h4><strong class="text-dark price">@(Model.Total)</strong></h4>
+                                                        <h4><strong class="text-dark price">'.$item['TotalPrice'].'</strong></h4>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </th>
+                                    </th>';
+                                    echo $output;
                                 }
-                            }
+                            ?>
                         </tr>
                     </table>
                 </div>

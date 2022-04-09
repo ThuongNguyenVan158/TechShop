@@ -160,7 +160,7 @@
 							</label>
 						</div>
 						<div  class="text-right">
-						<a class="btn btn-info my-1"href="@Url.Action("Index", "Home")" >Tiếp tục mua hàng</a>
+						<a class="btn btn-info my-1"href="<?=Domain?>/Home/index" >Tiếp tục mua hàng</a>
 						<button class="btn btn-success my-1" value="p" name="bill.Type" style="margin-left:15px" form="payment">Đặt hàng</button>
 						
 						</div>
@@ -168,7 +168,7 @@
 						else
 						{
 							<div class="col-md-50 text-center">
-							<a class="btn btn-success my-1"href="@Url.Action("Index", "Home")" style="font-size: 25px;"><strong>Tiếp tục mua hàng</strong></a>
+							<a class="btn btn-success my-1"href="<?=Domain?>/Home/index" style="font-size: 25px;"><strong>Tiếp tục mua hàng</strong></a>
 							</div>
 						}
 					}
@@ -179,9 +179,9 @@
 		</div>
 		<!-- /container -->
 </div>
-@section Scripts{
-	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
-	<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
 <script type="text/javascript">
 	$('.price1').each(function () {
     var item = $(this).text();
@@ -345,4 +345,3 @@ function kiemtra(){
     return true;
 }
 </script>
-}
