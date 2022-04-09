@@ -39,6 +39,11 @@
 
                 ]);
             }
+            else{
+                $this->view("Home/Login",[
+
+                ]);
+            }
         }
         
         function Register(){

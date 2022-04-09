@@ -31,7 +31,7 @@
                 <ul class="header-links pull-right">
                     <?php  
                         if(!$this->isLoggedIn()){
-                            echo '<li><a href="./Home/Login"><i class="fa fa-user"></i>Đăng nhập</a></li>';
+                            echo '<li><a href="'.Domain.'/Home/Login\"><i class="fa fa-user"></i>Đăng nhập</a></li>';
                         }else{
                             $User = $_SESSION["account"];
                             $obj = json_decode($User,true);

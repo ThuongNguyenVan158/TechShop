@@ -6,7 +6,31 @@ class Product extends Controller{
             $this->productModel = $this->model("ProductModel");
         }
         function addCart(){
-
+            if(!$this->isLoggedIn()){
+                header("Location: ../Home/Login");
+            }
+            else{
+                $productId = $_POST["ProductId"];
+                $quantity = $_POST["Quantity"];
+                $productName = $_POST["Name"];
+                $productPrice = $_POST["ProductPrice"];
+                $user = json_decode($_SESSION["account"],true);
+                echo $user["Id"];
+                $billId = json_decode($this->productModel->existCart($user["Id"]),true);
+                if($billId != False){
+                    if($this->productModel->existBillProduct($productId,$billId["BillId"])){
+                        $this->productModel->addProductToCart($quantity,$productPrice,$billId["BillId"],$productId);
+                    }
+                    else{
+                        $this->productModel->addBillProduct($billId["BillId"],$productId,$productName,$productPrice,$quantity);
+                    }
+                }
+                else{
+                    $newBillId = json_decode($this->productModel->addBill($user["Id"],$user["UserName"]),true);
+                    $this->productModel->addBillProduct($newBillId["LAST_INSERT_ID()"],$productId,$productName,$productPrice,$quantity);
+                }
+                header("Location: ../Payment");
+            }
         }
         function Accessory($productId=""){
             if($productId == ""){
@@ -26,9 +50,30 @@ class Product extends Controller{
                 else{
                     $accessoryArr = json_decode($this->productModel->getProduct("accessory"),true);
                 }
+
+                $limit = 6;
+                $totalPage = ceil(sizeof($accessoryArr)/$limit);
+                if($totalPage == 0) {
+                    $totalPage = 1;
+                }
+                $currentPage = 1;
+                if(isset($_POST["CurrentPage"])){
+                    $currentPage = $_POST["CurrentPage"];
+                }
+                if($currentPage > $totalPage){
+                    $currentPage = $totalPage;
+                }
+                else if($currentPage < 1){
+                    $currentPage = 1;
+                }
+                $start = ($currentPage - 1) * $limit;
                 $this->view("_Layout",[
                     "Page"=>"Product/Accessory",
-                    "accessory" => $accessoryArr
+                    "accessory" => $accessoryArr,
+                    "CurrentPage" => $currentPage,
+                    "Start" => $start,
+                    "Limit" => $limit,
+                    "TotalPage" => $totalPage
                 ]);
             }
             else{
@@ -58,9 +103,29 @@ class Product extends Controller{
                 else{
                     $laptopArr = json_decode($this->productModel->getProduct("laptop"),true);
                 }
+                $limit = 6;
+                $totalPage = ceil(sizeof($laptopArr)/$limit);
+                if($totalPage == 0) {
+                    $totalPage = 1;
+                }
+                $currentPage = 1;
+                if(isset($_POST["CurrentPage"])){
+                    $currentPage = $_POST["CurrentPage"];
+                }
+                if($currentPage > $totalPage){
+                    $currentPage = $totalPage;
+                }
+                else if($currentPage < 1){
+                    $currentPage = 1;
+                }
+                $start = ($currentPage - 1) * $limit;
                 $this->view("_Layout",[
                     "Page"=>"Product/Laptop",
-                    "laptop" => $laptopArr
+                    "laptop" => $laptopArr,
+                    "CurrentPage" => $currentPage,
+                    "Start" => $start,
+                    "Limit" => $limit,
+                    "TotalPage" => $totalPage
                 ]);
             }
             else{
@@ -97,9 +162,29 @@ class Product extends Controller{
                 else{
                     $phoneArr = json_decode($this->productModel->getProduct("smartphone"),true);
                 }
+                $limit = 6;
+                $totalPage = ceil(sizeof($phoneArr)/$limit);
+                if($totalPage == 0) {
+                    $totalPage = 1;
+                }
+                $currentPage = 1;
+                if(isset($_POST["CurrentPage"])){
+                    $currentPage = $_POST["CurrentPage"];
+                }
+                if($currentPage > $totalPage){
+                    $currentPage = $totalPage;
+                }
+                else if($currentPage < 1){
+                    $currentPage = 1;
+                }
+                $start = ($currentPage - 1) * $limit;
                 $this->view("_Layout",[
                     "Page"=>"Product/Smart",
-                    "smartphone" => $phoneArr
+                    "smartphone" => $phoneArr,
+                    "CurrentPage" => $currentPage,
+                    "Start" => $start,
+                    "Limit" => $limit,
+                    "TotalPage" => $totalPage
                 ]);
             }
             else{

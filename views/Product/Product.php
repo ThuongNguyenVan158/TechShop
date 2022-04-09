@@ -11,7 +11,7 @@
             </div>
             <!-- /Product main img -->
             <!-- Product details -->
-            <form asp-action="InsertProduct" asp-controller="Product" method="post" onsubmit="return confirm('Bạn muốn thêm vào giỏ hàng?!!!')">
+            <form action="..\addCart" method="post" onsubmit="return confirm('Bạn muốn thêm vào giỏ hàng?!!!')">
                 <div class="col-md-6">
                     <div class="product-details">
                         <h2 class="product-name"><?php echo $data["product"]["Name"];?></h2>
@@ -48,9 +48,10 @@
                                 <input type="number" value=1 class="input-select" name="product.InsertProductToCart.Quantity" />
                             </label>
                         </div>
-                        <input type="hidden" name="product.InsertProductToCart.ProductId" value="@Model.ProductId" />
-                        <input type="hidden" name="product.InsertProductToCart.Name" value="@Model.Name" />
-                        <input type="hidden" name="product.InsertProductToCart.ProductPrice" value="@Model.Price" />
+                        <input type="hidden" name="ProductId" value="<?=$data["product"]["ProductId"];?>" />
+                        <input type="hidden" name="Name" value="<?=$data["product"]["Name"];?>" />
+                        <input type="hidden" name="Quantity" value="1" />
+                        <input type="hidden" name="ProductPrice" value="<?=$data["product"]["Price"];?>" />
                         <div class="add-to-cart">
                             <button type="submit" class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
                         </div>

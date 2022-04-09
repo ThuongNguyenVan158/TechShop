@@ -86,10 +86,12 @@
                 <!-- store products -->
                 <div class="row">
                     <?php
-                    for($i = 0;$i<sizeof($data["accessory"]);$i++)
+                    $n = sizeof($data["accessory"]);
+                    if($data["Start"]+$data["Limit"] < $n) $n = $data["Start"]+$data["Limit"];
+                    for($i = $data["Start"];$i<$n;$i++)
                     {
                         echo"
-                        <form action=\".\addCart\" method=\"post\" onsubmit=\"return confirm('Bạn muốn thêm vào giỏ hàng?!!!');\">
+                        <form action=\"".Domain."\Product\addCart\" method=\"post\" onsubmit=\"return confirm('Bạn muốn thêm vào giỏ hàng?!!!');\">
                             <input type=\"hidden\" name=\"ProductId\" value=\"".$data["accessory"][$i]["ProductId"]."\" />
                             <input type=\"hidden\" name=\"Quantity\" value=\"1\" />
                             <input type=\"hidden\" name=\"Name\" value=\"".$data["accessory"][$i]["Name"]."\" />
@@ -135,11 +137,19 @@
                 <!-- store bottom filter -->
                 <div class="store-filter clearfix">
                     <ul class="store-pagination">
-                        <li class="active">1</li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+                        <form action="../Product/Accessory" method="post">
+                            <?php
+                                for($i = 0;$i < $data["TotalPage"];$i++){
+                                    if($data["CurrentPage"] == $i + 1) echo '<button value="'.$i.'" name="CurrentPage" style="padding: 0;border:none;"><li class="active">'.($i+1).'</li></button>';
+                                    else echo '<button value="'.($i+1).'" name="CurrentPage" style="padding: 0;border:none;"><li>'.($i+1).'</li></button>';
+                                }
+                            ?>
+                        </form>
+<!--                        <li class="active">1</li>-->
+<!--                        <li><a href="#">2</a></li>-->
+<!--                        <li><a href="#">3</a></li>-->
+<!--                        <li><a href="#">4</a></li>-->
+<!--                        <li><a href="#"><i class="fa fa-angle-right"></i></a></li>-->
                     </ul>
                 </div>
                 <!-- /store bottom filter -->

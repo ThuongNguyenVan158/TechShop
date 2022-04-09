@@ -24,6 +24,7 @@
 
     <!--Custom styles-->
     <link rel="stylesheet" type="text/css" href="../assets/css/site.css" />
+    <link rel="stylesheet" type="text/css" href="<?=Domain?>/assets/css/site.css" />
 </head>
 <body class="login-page">
     <div class="container">
