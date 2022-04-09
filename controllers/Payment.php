@@ -12,9 +12,10 @@ class Payment extends Controller{
                 
             ]);
         }
-        function PaymentDetailHistory(){
+        function PaymentDetailHistory(int $billId){
             $this->view("_Layout",[
                 "Page"=>"PayMent/PaymentDetailHistory",
+                "billDetail" =>$this->paymentModel->GetPaymentDetail($billId)
             ]);
         }
         function PaymentHistory(){

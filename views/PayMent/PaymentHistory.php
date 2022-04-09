@@ -29,7 +29,6 @@
                     </thead>
                     <tbody>
                         <?php
-                            $i = 1;
                             $listbill = json_decode($data['listbill'], true);
                             $output='';
                             if (count($listbill) > 0){

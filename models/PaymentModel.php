@@ -15,5 +15,11 @@ class PaymentModel extends DB{
         $result = $this->excuteResult($query, true);
         return $result;
     }
+    function GetPaymentDetail(int $billId){
+        $query = "SELECT * FROM billproduct
+        Where BillId = '$billId'";
+        $result = $this->excuteResult($query);
+        return $result;
+    }
 }
 ?>
