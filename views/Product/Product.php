@@ -85,7 +85,7 @@
                                                 margin-left: auto;
                                                 margin-right: auto;
                                                 margin-bottom: 25px;
-                                                \" src=\"".$item["ImgUrl"]."\" alt=\"\" width=\"700\" height=\"500\" /></p>";
+                                                \" src=\"".$item["ImgUrl"]."\" alt=\"\" width=\"100%\" height=\"auto\" /></p>";
                                             }
                                         ?>
                                     </article>
