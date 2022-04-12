@@ -40,12 +40,19 @@
                             $output ='';
                             if (count([$item]) > 0 and $item !=null)
                             {
+                                // $localtime = $item['DateCreateBill'];
+                                // $timezone= (new DateTime)->getTimezone();
+                                // $localtime->setTimezone($timezone);
+                                // $date = $localtime->format('Y-m-d H:i:s T');
+                                // $hour =  $localtime->format('Y-m-d H:i:s T');
+                                $date = date("F j, Y", strtotime($item['DateCreateBill']));
+                                $hour= date("g:i a", strtotime($item['DateCreateBill']));
                                 $output.='
                                 <h3 class="mb-0" id="current-date">
-                                    Ngày: '.$item['DateCreateBill'].'.ToLocalTime().ToString("dd/MM/yyyy")
+                                    Ngày: '.$date.'
                                 </h3>
                                 <h4 class="mb-0" id="current-time">
-                                    Thời gian: '.$item['DateCreateBill'].'.ToLocalTime().ToString("HH:mm")
+                                    Thời gian: '.$hour.'
                                 </h4>';
                             }
                             echo $output
@@ -56,7 +63,7 @@
                     <table class="container">
                         <tr>
                             <td class="text-center">
-                                <b><span class="rth"><a id="return-home" href="@Url.Action("PayMent","PayMent")"></a></span></b>
+                                <b><span class="rth"><a id="return-home" href="<?=Domain?>/Payment/Payment""></a></span></b>
                             </td>
                             <?php
                                 $item = json_decode($data['bill'], true);
@@ -159,13 +166,13 @@
                                                     </th>
                                                 </tr>
                                             </table>
-                                            <form asp-controller="PayMent" asp-action="PaymentMethod" method="post">
+                                            <form action="../Payment/PaymentMethod" method="post">
                                                 <div class="text-center" id="momo-QR-code">
                                                     <img id="momo-QR-code" src="/images/momo_success.jpg"
                                                          alt='Pay Momo wallet success' />
                                                     <button class="finish-payment"
                                                             value="Ví điện tử Momo"
-                                                            name="payment.PaymentMethod">
+                                                            name="PaymentMethod">
                                                         <span>Hoàn thành</span>
                                                         <div class="liquid"></div>
                                                     </button>
@@ -175,7 +182,7 @@
                                                          alt='Pay ZaloPay wallet success' />
                                                     <button class="finish-payment"
                                                             value="Ví điện tử ZaloPay"
-                                                            name="payment.PaymentMethod">
+                                                            name="PaymentMethod">
                                                         <span>Hoàn thành</span>
                                                         <div class="liquid"></div>
                                                     </button>
@@ -185,7 +192,7 @@
                                                          alt='Pay Airpay wallet success' />
                                                     <button class="finish-payment"
                                                             value="Ví điện tử AirPay"
-                                                            name="payment.PaymentMethod">
+                                                            name="PaymentMethod">
                                                         <span>Hoàn thành</span>
                                                         <div class="liquid"></div>
                                                     </button>
@@ -324,9 +331,9 @@
                                             </div>
 
                                             <div class="card-footer">
-                                                <form asp-controller="PayMent" asp-action="PaymentMethod" method="post">
+                                                <form action="../Payment/PaymentMethod" method="post">
                                                     <button value="Thẻ ngân hàng"
-                                                            name="payment.PaymentMethod"
+                                                            name="PaymentMethod"
                                                             class="button-three">
                                                         Xác nhận
                                                     </button>
@@ -350,9 +357,9 @@
                                                 }
                                             }
                                             <div class="text-center">
-                                                <form asp-controller="PayMent" asp-action="PaymentMethod" method="post">
+                                                <form action="../Payment/PaymentMethod" method="post">
                                                     <button value="Chuyển khoản"
-                                                            name="payment.PaymentMethod"
+                                                            name="PaymentMethod"
                                                             class="button-three">
                                                         Xác nhận
                                                     </button>

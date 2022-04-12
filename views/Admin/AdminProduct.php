@@ -84,8 +84,8 @@
                                                 $output.='<tr>
                                                 <td>'.$item['ProductId'].'</td>
                                                 <td>'.$item['Name'].'</td>
-                                                <td>'.$item['Status'].'</td>
-                                                <td>'.$item['Producer'].'</td>
+                                                <td>'.$item['Type'].'</td>
+                                                <td>'.$item['BrandName'].'</td>
                                                 <td class="price">'.$item['Price'].'</td>
                                                 <td>'.$item['Rating'].'</td>';
                                                 $output.='

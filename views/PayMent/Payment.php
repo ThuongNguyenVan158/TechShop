@@ -1,4 +1,4 @@
-@model EcommerceStore.Models.BillAndBillDetailViewModel
+
 <style>
         .enMoney:after {
             content: ' ₫';
@@ -9,7 +9,7 @@
 			font-size: 1.7rem !important;
 		}
 </style>
-<form asp-controller="PayMent" asp-action="PayMent" method="post" id="payment" onsubmit="return kiemtra()"></form>
+<form action="../Payment/Payment" method="post" id="payment" onsubmit="return kiemtra()"></form>
 <div class="section">
 		<!-- container -->
 		<div class="container">
@@ -21,30 +21,67 @@
 						<div class="section-title">
 							<h3 class="title">Thông tin giao hàng</h3>
 						</div>
-						<div class="form-group">
+						<?php 
+						$item = json_decode($data['bill'], true); 
+						// var_dump($item);
+						// die();
+						if($item!=NULL){
+							$output = '';
+							$output.='
+							<div class="form-group">
 							<label>Họ và tên</label>
-							<input class="input" id="input11" type="text" name="bill.Name" value="@(Model.Name)" onchange="setValue1()" form="payment"/>
-						</div>
-						<div class="form-group">
-							<label>Số nhà/Tên đường - Thôn</label>
-							<input class="input" id="input22" type="text" name="bill.Hamlet" value="@(Model.Hamlet)" onchange="setValue2()" form="payment"/>
-						</div>
-						<div class="form-group">
-							<label>Xã - Phường - Thị trấn</label>
-							<input class="input" id="input33" type="text" name="bill.Village" value="@(Model.Village)" onchange="setValue3()" form="payment"/>
-						</div>
-						<div class="form-group">
-							<label>Quận - Huyện - Thành phố</label>
-							<input class="input" id="input44" type="text" name="bill.District" value="@(Model.District)" onchange="setValue4()" form="payment"/>
-						</div>
-						<div class="form-group">
-							<label>Tỉnh - Thành phố</label>
-							<input class="input" id="input55" type="text" name="bill.Province" value="@(Model.Province)" onchange="setValue5()" form="payment"/>
-						</div>
-						<div class="form-group">
-							<label>Số điện thoại</label>
-							<input class="input" id="input66" type="tel" name="bill.Telephone" value="@(Model.Telephone)" onchange="setValue6()" form="payment"/>
-						</div>
+							<input class="input" id="input11" type="text" name="Name" value="'.$item['UserName'].'" onchange="setValue1()" form="payment"/>
+							</div>
+							<div class="form-group">
+								<label>Số nhà/Tên đường - Thôn</label>
+								<input class="input" id="input22" type="text" name="Hamlet" value="'.$item['Thon'].'" onchange="setValue2()" form="payment"/>
+							</div>
+							<div class="form-group">
+								<label>Xã - Phường - Thị trấn</label>
+								<input class="input" id="input33" type="text" name="Village" value="'.$item['Xa'].'" onchange="setValue3()" form="payment"/>
+							</div>
+							<div class="form-group">
+								<label>Quận - Huyện - Thành phố</label>
+								<input class="input" id="input44" type="text" name="District" value="'.$item['Huyen'].'" onchange="setValue4()" form="payment"/>
+							</div>
+							<div class="form-group">
+								<label>Tỉnh - Thành phố</label>
+								<input class="input" id="input55" type="text" name="Province" value="'.$item['Tinh'].'" onchange="setValue5()" form="payment"/>
+							</div>
+							<div class="form-group">
+								<label>Số điện thoại</label>
+								<input class="input" id="input66" type="tel" name="Telephone" value="'.$item['PhoneNumber'].'" onchange="setValue6()" form="payment"/>
+							</div>';
+							echo $output;
+						}
+						else{
+							echo '
+								<div class="form-group">
+									<label>Họ và tên</label>
+									<input class="input" id="input11" type="text" name="Name" value="" onchange="setValue1()" form="payment"/>
+								</div>
+								<div class="form-group">
+									<label>Số nhà/Tên đường - Thôn</label>
+									<input class="input" id="input22" type="text" name="Hamlet" value="" onchange="setValue2()" form="payment"/>
+								</div>
+								<div class="form-group">
+									<label>Xã - Phường - Thị trấn</label>
+									<input class="input" id="input33" type="text" name="Village" value="" onchange="setValue3()" form="payment"/>
+								</div>
+								<div class="form-group">
+									<label>Quận - Huyện - Thành phố</label>
+									<input class="input" id="input44" type="text" name="District" value="" onchange="setValue4()" form="payment"/>
+								</div>
+								<div class="form-group">
+									<label>Tỉnh - Thành phố</label>
+									<input class="input" id="input55" type="text" name="Province" value="" onchange="setValue5()" form="payment"/>
+								</div>
+								<div class="form-group">
+									<label>Số điện thoại</label>
+									<input class="input" id="input66" type="tel" name="Telephone" value="" onchange="setValue6()" form="payment"/>
+								</div>';
+						}
+						?>
 					</div>
 					</div>
 				<!-- /Billing Details -->
@@ -66,112 +103,108 @@
 							</tr>
 						</thead>
 						<tbody>
-							@{
-								if(Model==null)
-								{
+							<?php
+								$cart = json_decode($data['cart'], true);
+								$output='';
+								if ($cart == NULL)
+								{echo '
 									<tr>
 										<td colspan="6" class="text-center">Không có sản phẩm nào để thanh toán</td>
-									</tr>
+									</tr>';
 								}
 								else
 								{
-										if (Model.ListProduct != null)
-										{
-											if (Model.ListProduct.Count > 0)
+									foreach ($cart as $item)
+									{
+										$output.='
+										<tr>
+											<td>
+											<a href="@Url.Action("Product","Product",new { id=Data.ProductId })">
+													<img src="@(Data.Url)" title="" width="60" height="60">
+											</a>
+											</td>
+											<td>
+											<a href="@Url.Action("Product","Product",new { id=Data.ProductId })">
+											'.$item['ProductName'];
+											if($item['SellOff']!="0")
 											{
-												foreach (var Data in Model.ListProduct)
-												{
-													<tr>
-														<td>
-														<a href="@Url.Action("Product","Product",new { id=Data.ProductId })">
-																<img src="@(Data.Url)" title="" width="60" height="60">
-														</a>
-														</td>
-														<td>
-														<a href="@Url.Action("Product","Product",new { id=Data.ProductId })">
-															@Data.ProductName
-															@{
-																if(@Data.SellOff!="0")
-																{
-																	<br>
-																	<i style="color:red">(-@Data.SellOff%)</i>
-																}
-															}
-														</a>
-														</td>
-														<td class="price1 text-right"style="width: 110px">@(Data.ProductPrice)</td>
-														<form asp-controller="PayMent" asp-action="PayMent" method="post">
-														<td class="text-center"style="width: 130px">
-															<input class="input1" type="hidden" name="bill.Name" value=""/>
-															<input class="input2" type="hidden" name="bill.Hamlet"  value="" />
-															<input class="input3" type="hidden" name="bill.Village"  value="" />
-															<input class="input4" type="hidden" name="bill.District"  value="" />
-															<input class="input5" type="hidden" name="bill.Province"  value="" />
-															<input class="input6" type="hidden" name="bill.Telephone"  value="" />
-															<input type="hidden" value="@Data.ProductId" name="bill.Product.ProductId"/>
-															<span><input style="width:25px;height:35px"  type="submit" value="-" name="bill.Type" /></span>
-															<span><input class="text-center" style="height:35px;text-align:center;width:50px" type="number" min="0" value="@Data.Quantity" name="bill.Product.Quantity" required /></span>
-															<span><input style="width:25px;height:35px" type="submit" value="+" name="bill.Type" /></span>
-															<button value="q" name="bill.Type" style="width:110px;margin-top:3px">
-															<i class="fas fa-edit" style="font-szie:30px"></i> Cập nhật
-															</button>
-														</td>
-														<td class="price1 text-right"style="width: 120px">@(Data.TotalProductPrice)</td>
-														<td class="text-center">
-															
-																<button class="remove_cart" rel="1" value="d" name="bill.Type">
-																	<i class="fa fa-trash"></i>
-																</button>
-														</td>
-														</form>
-													</tr>
-												}
+												$output.='
+												<br>
+												<i style="color:red">-'.$item['SellOff'].'%</i>';
 											}
-											else
-											{
-												<tr>
-													<td colspan="6" class="text-center">Không có sản phẩm nào để thanh toán</td>
-												</tr>
-											} 
-										}
-										else
-										{
-											<tr>
-												<td colspan="6" class="text-center">Không có sản phẩm nào để thanh toán</td>
-											</tr>
-										} 
+											$output.='
+											</a>
+											</td>
+											<td class="price1 text-right"style="width: 110px">'.$item['ProductPrice'].'</td>
+											<form action="../Payment/Payment" method="post">
+												<td class="text-center"style="width: 130px">
+													<input class="input1" type="hidden" name="Name" value=""/>
+													<input class="input2" type="hidden" name="Hamlet"  value="" />
+													<input class="input3" type="hidden" name="Village"  value="" />
+													<input class="input4" type="hidden" name="District"  value="" />
+													<input class="input5" type="hidden" name="Province"  value="" />
+													<input class="input6" type="hidden" name="Telephone"  value="" />
+													<input type="hidden" value="'.$item['BillId'].'" name="BillId"/>
+													<input type="hidden" value="'.$item['ProductId'].'" name="ProductId"/>
+													<input type="hidden" value="'.$item['TotalProductPrice'].'" name="TotalProductPrice"/>
+													<span><input style="width:25px;height:35px"  type="submit" value="-" name="Type" /></span>
+													<span><input class="text-center" style="height:35px;text-align:center;width:50px" type="number" min="0" value="'.$item['Quantity'].'" name="Quantity" required /></span>
+													<span><input style="width:25px;height:35px" type="submit" value="+" name="Type" /></span>
+													<button value="q" name="Type" style="width:110px;margin-top:3px">
+													<i class="fas fa-edit" style="font-szie:30px"></i> Cập nhật
+													</button>
+												</td>
+												<td class="price1 text-right"style="width: 120px">'.$item['TotalProductPrice'].'</td>
+												<td class="text-center">
+													
+														<button class="remove_cart" rel="1" value="d" name="Type">
+															<i class="fa fa-trash"></i>
+														</button>
+												</td>
+											</form>
+										</tr>';
 									}
 								}
+								echo $output;
+							?>
 						</tbody>
 					    </table>
 						<div class="order-col">
 							<div style="font-size:20px"><strong>Tổng giá tiền</strong></div>
-									<div><strong class="order-total price1">@Model.Total</strong></div>
+									<div><strong class="order-total price1">
+										<?php $bill = json_decode($data['bill'], true); 
+										echo $bill == null?  '0': $bill['TotalPrice'];
+										?>
+									</strong></div>
 						</div>
 					</div>
-					@{
-						if(Model!=null && Model.Total!=0 &&Model.ListProduct.Count!=0)
+					<?php
+						$cart = json_decode($data['cart'], true);
+						$bill = json_decode($data['bill'], true); 
+						$output='';
+						if($cart != NULL and $bill != NULL)
 						{
-						<div class="input-checkbox">
-							<input type="checkbox" id="terms" form="payment" checked>
-							<label for="terms">
-								<span></span>
-								Tôi đồng ý với các <a href="#" style="color: blue;">Điều khoản & và điều kiện</a>
-							</label>
-						</div>
-						<div  class="text-right">
-						<a class="btn btn-info my-1"href="<?=Domain?>/Home/index" >Tiếp tục mua hàng</a>
-						<button class="btn btn-success my-1" value="p" name="bill.Type" style="margin-left:15px" form="payment">Đặt hàng</button>
-						
-						</div>
+							echo '
+							<div class="input-checkbox">
+								<input type="checkbox" id="terms" form="payment" checked>
+								<label for="terms">
+									<span></span>
+									Tôi đồng ý với các <a href="#" style="color: blue;">Điều khoản & và điều kiện</a>
+								</label>
+							</div>
+							<div  class="text-right">
+							<a class="btn btn-info my-1"href="../Home/index" >Tiếp tục mua hàng</a>
+							<button class="btn btn-success my-1" value="p" name="Type" style="margin-left:15px" form="payment">Đặt hàng</button>
+							
+							</div>';
 						}
 						else
-						{
+						{echo '
 							<div class="col-md-50 text-center">
-							<a class="btn btn-success my-1"href="<?=Domain?>/Home/index" style="font-size: 25px;"><strong>Tiếp tục mua hàng</strong></a>
-							</div>
+							<a class="btn btn-success my-1"href="../Home/index" style="font-size: 25px;"><strong>Tiếp tục mua hàng</strong></a>
+							</div>';
 						}
-					}
+					?>
 				</div>
 				<!-- /Order Details -->
 			</div>

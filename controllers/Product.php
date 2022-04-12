@@ -29,7 +29,7 @@ class Product extends Controller{
                     $newBillId = json_decode($this->productModel->addBill($user["Id"],$user["UserName"]),true);
                     $this->productModel->addBillProduct($newBillId["LAST_INSERT_ID()"],$productId,$productName,$productPrice,$quantity);
                 }
-                header("Location: ../Payment");
+                header("Location: ../Payment/Payment");
             }
         }
         function Accessory($productId=""){

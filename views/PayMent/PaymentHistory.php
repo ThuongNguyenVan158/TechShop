@@ -31,18 +31,21 @@
                         <?php
                             $listbill = json_decode($data['listbill'], true);
                             $output='';
+                            $i=0;
                             if (count($listbill) > 0){
                                 foreach ($listbill as $item)
                                     {
+                                        $i++;
+                                        $date = date("F j, Y, g:i a", strtotime($item['DateCreateBill']));
                                         $output.='
                                         <tr>
-                                            <td class="text-center">$i++</td>
+                                            <td class="text-center">'.$i.'</td>
                                             <td class="text-center">
                                                 <a href="@Url.Action("PaymentDetailHistory","Payment",new { id=Data.Id })">Xem chi tiết: </a>
                                             </td>
-                                            <td class="text-right price">'.$item['Total'].'</td>
+                                            <td class="text-right price">'.$item['TotalPrice'].'</td>
                                             <td class="text-center">'.$item['PaymentMethod'].'</td>
-                                            <td class="text-center">'.$item['CreatedDate'].'.ToLocalTime().ToString("dd/MM/yyyy HH:mm")</td>
+                                            <td class="text-center">'.$date.'</td>
                                         </tr>';
                                     }
                                 }

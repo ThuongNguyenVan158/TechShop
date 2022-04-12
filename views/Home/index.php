@@ -35,7 +35,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="product-body">
-                                                                    <p class="product-category">'.$item["Producer"].'</p>
+                                                                    <p class="product-category">'.$item["BrandName"].'</p>
                                                                     <h3 class="product-name"><a href="">'.$item["Name"].'</a></h3>
                                                                     <h4 class="product-price price">'.$item["Price"].'</h4><del class="product-old-price price">'.$item["OldPrice"].'</del>
                                                                     <div class="product-rating">';
@@ -152,7 +152,7 @@
                                                             <img src="'.$item["ImgUrl"].'" alt="">
                                                         </div>
                                                         <div class="product-body">
-                                                            <p class="product-category">'.$item["Producer"].'</p>
+                                                            <p class="product-category">'.$item["BrandName"].'</p>
                                                             <h3 class="product-name"><a href="">'.$item["Name"].'</a></h3>
                                                             <h4 class="product-price price">'.$item["Price"].'</h4>
                                                             <div class="product-rating">';
@@ -228,7 +228,7 @@
                                                             <img src="'.$item["ImgUrl"].'" alt="">
                                                         </div>
                                                         <div class="product-body">
-                                                            <p class="product-category">'.$item["Producer"].'</p>
+                                                            <p class="product-category">'.$item["BrandName"].'</p>
                                                             <h3 class="product-name"><a href="">'.$item["Name"].'</a></h3>
                                                             <h4 class="product-price price">'.$item["Price"].'</h4>
                                                             <div class="product-rating">';
