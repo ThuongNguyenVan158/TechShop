@@ -105,6 +105,8 @@
 						<tbody>
 							<?php
 								$cart = json_decode($data['cart'], true);
+								// var_dump($cart);
+								// die();
 								$output='';
 								if ($cart == NULL)
 								{echo '
@@ -116,11 +118,12 @@
 								{
 									foreach ($cart as $item)
 									{
+										$productId = $item['ProductId'];
 										$output.='
 										<tr>
 											<td>
-											<a href="@Url.Action("Product","Product",new { id=Data.ProductId })">
-													<img src="@(Data.Url)" title="" width="60" height="60">
+											<a href="../Product/Product/'.$productId.'"">
+													<img src="'.$item['ImgUrl'].'" title="" width="60" height="60">
 											</a>
 											</td>
 											<td>
@@ -156,10 +159,9 @@
 												</td>
 												<td class="price1 text-right"style="width: 120px">'.$item['TotalProductPrice'].'</td>
 												<td class="text-center">
-													
-														<button class="remove_cart" rel="1" value="d" name="Type">
-															<i class="fa fa-trash"></i>
-														</button>
+													<button class="remove_cart" rel="1" value="d" name="Type" onclick="notify()">
+														<i class="fa fa-trash" onclick="notify()" ></i>
+													</button>
 												</td>
 											</form>
 										</tr>';
@@ -376,5 +378,8 @@ function kiemtra(){
         return false;
     }
     return true;
+}
+function notify(){
+	return confirm("Bạn chắc chắn muốn xoá khỏi giỏ hàng?");
 }
 </script>

@@ -22,7 +22,7 @@
                                 {
                                     if ($item["Special"] == "khuyenmai")
                                     {
-                                        $output .='<form asp-action="InsertProduct" asp-controller="Product" method="post" onsubmit="notify()">
+                                        $output .='<form action="../Product/addCart" method="post" onsubmit="notify()">
                                                         <input type="hidden" name="ProductId" value="'.$item["ProductId"].'" />
                                                         <input type="hidden" name="Quantity" value="1" />
                                                         <input type="hidden" name="Name" value="'.$item["Name"].'" />
@@ -143,7 +143,7 @@
                                     if ($item['Special'] == "moi")
                                     {
                                         $output.='
-                                            <form asp-action="InsertProduct" asp-controller="Product" method="post" onsubmit="notify()">
+                                            <form action="../Product/addCart" method="post" onsubmit="notify()">
                                                 <input type="hidden" name="ProductId" value="'.$item["ProductId"].'" />
                                                 <input type="hidden" name="Quantity" value="1" />
                                                 <input type="hidden" name="Name" value="'.$item["Name"].'" />
@@ -218,7 +218,7 @@
                                     if ($item['Special'] == "banchay")
                                     {
                                         $output.='
-                                            <form asp-action="InsertProduct" asp-controller="Product" method="post" onsubmit="notify()">
+                                            <form action="../Product/addCart" method="post" onsubmit="notify()">
                                                 <input type="hidden" name="ProductId" value="'.$item["ProductId"].'" />
                                                 <input type="hidden" name="Quantity" value="1" />
                                                 <input type="hidden" name="Name" value="'.$item["Name"].'" />
@@ -296,5 +296,8 @@
         function completed() {
             // Do whatever you need to do when the timer runs out...
         }
+    }
+    function notify(){
+        return confirm("Bạn muốn thêm vào giỏ hàng?!!!");
     }
 </script>

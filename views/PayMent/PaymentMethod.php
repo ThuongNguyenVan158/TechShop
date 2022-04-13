@@ -63,7 +63,7 @@
                     <table class="container">
                         <tr>
                             <td class="text-center">
-                                <b><span class="rth"><a id="return-home" href="<?=Domain?>/Payment/Payment""></a></span></b>
+                                <b><span class="rth"><a id="return-home" href="<?=Domain?>/Payment/Payment"></a></span></b>
                             </td>
                             <?php
                                 $item = json_decode($data['bill'], true);
@@ -343,19 +343,23 @@
                                         </div> <!-- End -->
                                         <!-- bank transfer info -->
                                         <div id="net-banking" class="tab-pane fade pt-3">
-                                            @{
-                                                if (Model != null)
+                                        <?php
+                                            $item = json_decode($data['bill'], true);
+                                            $output ='';
+                                            if (count([$item]) > 0 and $item !=null)
                                                 {
+                                                    echo '
                                                     <h4><b>Tài khoản: 123456789</b></h4>
                                                     <h4><b>Ngân hàng: ViettinBank</b></h4>
-                                                    <h4><b>Số tiền: </b><b class="price">@(Model.Total)</b></h4>
+                                                    <h4><b>Số tiền: </b><b class="price">'.$item['TotalPrice'].'</b></h4>
                                                     <h4><b>Nội dung: Thanh toán hóa đơn.</b></h4>
+                                                    ';
                                                 }
                                                 else
                                                 {
-                                                    <h3 class="text-center"><b>Thanh toán thất bại!</b></h3>
+                                                    echo '<h3 class="text-center"><b>Thanh toán thất bại!</b></h3>';
                                                 }
-                                            }
+                                        ?>
                                             <div class="text-center">
                                                 <form action="../Payment/PaymentMethod" method="post">
                                                     <button value="Chuyển khoản"

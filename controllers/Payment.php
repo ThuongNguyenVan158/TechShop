@@ -57,7 +57,10 @@ class Payment extends Controller{
                 "bill" =>$bill
             ]);
         }
-        function PaymentDetailHistory(int $billId){
+        function PaymentDetailHistory($billId){
+            $result = $this->paymentModel->GetPaymentDetail($billId);
+            // var_dump($result);
+            // die();
             $this->view("_Layout",[
                 "Page"=>"PayMent/PaymentDetailHistory",
                 "billDetail" =>$this->paymentModel->GetPaymentDetail($billId)

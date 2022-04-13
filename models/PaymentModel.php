@@ -1,6 +1,6 @@
 <?php
 class PaymentModel extends DB{
-    function GetPaymentHistory(int $id){
+    function GetPaymentHistory($id){
         $query = " SELECT * 
         FROM bill 
         WHERE CustomerId = '$id' AND PaymentMethod is not null AND PaymentMethod != ''
@@ -9,7 +9,7 @@ class PaymentModel extends DB{
         $result = $this->excuteResult($query);
         return $result;
     }
-    function GetPayment(int $id){
+    function GetPayment($id){
         $query = "SELECT * FROM bill
                 Where CustomerId= '$id' and (PaymentMethod is null or PaymentMethod='')";
         $result = $this->excuteResult($query, true, false);
@@ -19,8 +19,9 @@ class PaymentModel extends DB{
  
         return json_encode($result);
     }
-    function GetPaymentDetail(int $billId){
+    function GetPaymentDetail($billId){
         $query = "SELECT * FROM billproduct
+        join product on billproduct.ProductId = product.ProductId
         Where BillId = '$billId'";
         $result = $this->excuteResult($query);
         return $result;

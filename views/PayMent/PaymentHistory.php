@@ -36,12 +36,13 @@
                                 foreach ($listbill as $item)
                                     {
                                         $i++;
+                                        $billId= $item['BillId'];
                                         $date = date("F j, Y, g:i a", strtotime($item['DateCreateBill']));
                                         $output.='
                                         <tr>
                                             <td class="text-center">'.$i.'</td>
                                             <td class="text-center">
-                                                <a href="@Url.Action("PaymentDetailHistory","Payment",new { id=Data.Id })">Xem chi tiết: </a>
+                                                <a href="../Payment/PaymentDetailHistory/'.$billId.'">Xem chi tiết: </a>
                                             </td>
                                             <td class="text-right price">'.$item['TotalPrice'].'</td>
                                             <td class="text-center">'.$item['PaymentMethod'].'</td>

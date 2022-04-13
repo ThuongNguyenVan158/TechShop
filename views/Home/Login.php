@@ -84,7 +84,7 @@
                         </div>
                     </form>
                     <div class="form-group">
-                        <a href="./"
+                        <a href="../Home/index"
                            class="btn float-left login_btn">
                             Trở lại
                         </a>
@@ -92,7 +92,7 @@
                 </div>
                 <div class="card-footer">
                     <div class="d-flex justify-content-center links">
-                        Bạn chưa có tài khoản?<a href="./Register">Đăng ký</a>
+                        Bạn chưa có tài khoản?<a href="../Home/Register">Đăng ký</a>
                     </div>
                     <div class="d-flex justify-content-center">
                         <a href="/ResetPassword">Quên mật khẩu?</a>

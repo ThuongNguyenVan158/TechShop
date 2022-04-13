@@ -203,7 +203,7 @@
                         </div>
                     </form>
                     <div class="form-group">
-                        <a href="@Url.Action("Login", "Home")"
+                        <a href="<?=Domain?>/Home/Login"
                            class="btn float-left login_btn">
                             Trở lại
                         </a>

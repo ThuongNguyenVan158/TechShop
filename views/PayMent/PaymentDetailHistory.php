@@ -37,16 +37,17 @@
                                 foreach ($listbill as $item)
                                 {
                                     $i++;
+                                    $productId = $item['ProductId'];
                                     $output.='
                                         <tr>
-                                            <td class="text-center">$i</td>
+                                            <td class="text-center">'.$i.'</td>
                                             <td class="text-center">
-                                                <a href="@Url.Action("Product","Product",new { id='.$item['ProductId'].' })">
+                                                <a href="../../Product/Product/'.$productId.'">
                                                 '.$item['ProductName'].'
                                                 </a>
                                             </td>
                                             <td class="text-center">
-                                                <a href="@Url.Action("Product","Product",new { id='.$item['ProductId'].'})">
+                                                <a href="../../Product/Product/'.$productId.'">
                                                     <img src="'.$item['ImgUrl'].'" class="rounded" width="60" height="60">
                                                 </a>
                                             </td>
