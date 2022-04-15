@@ -7,10 +7,10 @@
     <title>EcommerceStore</title>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link type="text/css" rel="stylesheet" href="/TechShop/assets/css/slick.css" />
-    <link type="text/css" rel="stylesheet" href="/TechShop/assets/css/slick-theme.css"/>
-    <link type="text/css" rel="stylesheet" href="/TechShop/assets/css/nouislider.min.css"/>
-    <link type="text/css" rel="stylesheet" href="/TechShop/assets/css/site.css" />
+    <link type="text/css" rel="stylesheet" href="/assets/css/slick.css" />
+    <link type="text/css" rel="stylesheet" href="/assets/css/slick-theme.css"/>
+    <link type="text/css" rel="stylesheet" href="/assets/css/nouislider.min.css"/>
+    <link type="text/css" rel="stylesheet" href="/assets/css/site.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         .currSign:after {
@@ -184,13 +184,13 @@
         <!-- /top footer -->
     </footer>
     <!-- /FOOTER -->
-    <script src="../assets/lib/jquery/dist/jquery.min.js"></script>
-    <script src="../assets/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../assets/js/site.js" asp-append-version="true"></script>
-    <script src="../assets/js/jquery.min.js"></script>
-    <script src="../assets/js/bootstrap.min.js"></script>
-    <script src="../assets/js/slick.min.js"></script>
-    <script src="../assets/js/main.js"></script>
+    <script src="/assets/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/assets/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/site.js" asp-append-version="true"></script>
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/slick.min.js"></script>
+    <script src="/assets/js/main.js"></script>
     <script type="text/javascript">
         let x = document.querySelectorAll(".price");
         for (let i = 0, len = x.length; i < len; i++) {

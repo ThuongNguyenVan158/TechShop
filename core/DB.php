@@ -4,7 +4,7 @@ class DB{
 
     public $con;
     public $error;
-    protected $servername = "mysql";
+    protected $servername = "mysql_techshop";
     protected $username = "root";
     protected $password = "123";
     protected $dbname = "techshop";
