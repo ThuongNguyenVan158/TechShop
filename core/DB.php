@@ -4,9 +4,9 @@ class DB{
 
     public $con;
     public $error;
-    protected $servername = "localhost";
+    protected $servername = "mysql";
     protected $username = "root";
-    protected $password = "";
+    protected $password = "123";
     protected $dbname = "techshop";
 
     function __construct(){
