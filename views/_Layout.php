@@ -184,10 +184,10 @@
         <!-- /top footer -->
     </footer>
     <!-- /FOOTER -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/assets/js/jquery-3.3.1.slim.min.js"></script>  
+    <script src="/assets/js/popper.min.js"></script>  
+    <script src="/assets/js/bootstrap.min.js"></script>  
+    <script src="/assets/js/slick.min.js"></script>  
     <script type="text/javascript">
         let x = document.querySelectorAll(".price");
         for (let i = 0, len = x.length; i < len; i++) {
@@ -197,6 +197,6 @@
             x[i].classList.add("currSign");
         }
     </script>
-    <script src="/assets/js/site.js" asp-append-version="true"></script>        
+    <script src="/assets/js/site.js"></script>        
 </body>
 </html>
