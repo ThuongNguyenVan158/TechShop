@@ -10,48 +10,62 @@
                 <table class="table table-borderless table-striped table-hover">
                     <thead class="thead-dark">
                         <tr>
-                            @{
-                                foreach (var head in PaymentHeader)
-                                {
-                                    <th class="text-center">
-                                        @head
-                                    </th>
-                                }
-                            }
+                            <th class="text-center">
+                            STT
+                            </th>
+                            <th class="text-center">
+                            Tên sản phẩm
+                            </th>
+                            <th class="text-center">
+                            Hình ảnh
+                            </th>
+                            <th class="text-center">
+                            Giá (VNĐ)
+                            </th>
+                            <th class="text-center">
+                            Số LượngTổng (VNĐ)
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
-                        @{
-                            int i = 1;
-                            if (Model.Count > 0)
+                        <?php
+                            $i = 0;
+                            $listbill = json_decode($data['billDetail'], true);
+                            $output='';
+                            if (count($listbill) > 0)
                             {
-                                foreach (var Data in Model)
+                                foreach ($listbill as $item)
                                 {
+                                    $i++;
+                                    $productId = $item['ProductId'];
+                                    $output.='
                                         <tr>
-                                            <td class="text-center">@(i++)</td>
+                                            <td class="text-center">'.$i.'</td>
                                             <td class="text-center">
-                                                <a href="@Url.Action("Product","Product",new { id=Data.ProductId })">
-                                                   @Data.ProductName
+                                                <a href="../../Product/Product/'.$productId.'">
+                                                '.$item['ProductName'].'
                                                 </a>
                                             </td>
                                             <td class="text-center">
-                                                <a href="@Url.Action("Product","Product",new { id=Data.ProductId })">
-                                                    <img src="@(Data.ImgUrl)" class="rounded" width="60" height="60">
+                                                <a href="../../Product/Product/'.$productId.'">
+                                                    <img src="'.$item['ImgUrl'].'" class="rounded" width="60" height="60">
                                                 </a>
                                             </td>
-                                            <td class="text-center price">@Data.ProductPrice</td>
-                                            <td class="text-center">@Data.Quantity</td>
-                                            <td class="text-center price">@Data.TotalProductPrice</td>
-                                        </tr>
+                                            <td class="text-center price">'.$item['ProductPrice'].'</td>
+                                            <td class="text-center">'.$item['Quantity'].'</td>
+                                            <td class="text-center price">'.$item['TotalProductPrice'].'</td>
+                                        </tr>';
                                 }
                             }
                             else
                             {
+                                $output.='
                                 <tr>
                                     <td colspan="5" class="text-center">Bạn chưa thanh toán lần nào!!</td>
-                                </tr>
+                                </tr>';
                             }
-                        }
+                            echo $output;
+                        ?>
                     </tbody>
                 </table>
             </div>

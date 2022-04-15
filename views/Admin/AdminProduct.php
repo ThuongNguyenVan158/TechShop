@@ -73,7 +73,7 @@
                                                 <th>Hãng sản xuất</th>
                                                 <th>Giá sản phẩm</th>
                                                 <th>Đánh giá</th>
-                                                <th></th>
+                                                <th>Xoá/ Sửa</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -84,20 +84,37 @@
                                                 $output.='<tr>
                                                 <td>'.$item['ProductId'].'</td>
                                                 <td>'.$item['Name'].'</td>
-                                                <td>'.$item['Status'].'</td>
-                                                <td>'.$item['Producer'].'</td>
+                                                <td>'.$item['Type'].'</td>
+                                                <td>'.$item['BrandName'].'</td>
                                                 <td class="price">'.$item['Price'].'</td>
-                                                <td>'.$item['Rating'].'</td>
-                                                <form asp-controller="Admin" asp-action="DeleteProduct">
-                                                    <td class="text-center">
-                                                        <input name="product" type="hidden" value="'.$item['ProductId'].'" />
-                                                        <button type="submit" class="primary-btn">
-                                                            <i class="fas fa-trash"></i>
-                                                        </button>
-                                                    </td>
-                                                </form>
-                                            </tr>
-                                                ';
+                                                <td>'.$item['Rating'].'</td>';
+                                                $output.='
+                                                <td>
+                                                    <div style="display: flex;">
+                                                        <form asp-controller="ChiNhanh" asp-action="DeleteNhanVienChiNhanh">
+                                                            <input type="hidden" name="idNVChiNhanh" value="@quanly.MaNhanVien" />
+                                                            <button type="submit">
+                                                                <i class="far fa-trash-alt" aria-hidden="true"
+                                                                   style="font-size: 25px; margin-right: 10px; display:flex;"
+                                                                   }}></i>
+                                                            </button>
+                                                        </form>
+                                                        <a class=" mr-3"
+                                                           href="@Url.Action("UpdateNhanVienChiNhanh","ChiNhanh", new { id = quanly.MaNhanVien })">
+                                                            <i class="fa fa-edit"
+                                                               aria-hidden="true" style="font-size: 25px;"></i>
+                                                        </a>
+                                                    </div>
+                                                </td>';
+                                                // <form asp-controller="Admin" asp-action="DeleteProduct">
+                                                //     <td class="text-center">
+                                                //         <input name="product" type="hidden" value="'.$item['ProductId'].'" />
+                                                //         <button type="submit" class="primary-btn">
+                                                //             <i class="fas fa-trash"></i>
+                                                //         </button>
+                                                //     </td>
+                                                // </form>
+                                                $output.='</tr>';
                                             }
                                             echo $output;
                                             ?>

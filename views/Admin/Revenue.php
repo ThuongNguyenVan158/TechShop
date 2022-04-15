@@ -15,14 +15,10 @@
                                     </div>
                                     <div class="counter-info">
                                         <div class="counter-count">
-                                            @{
-                                                int i = 0;
-                                                foreach (var vene in Model)
-                                                {
-                                                    i++;
-                                                }
-                                            }
-                                            @i
+                                            <?php 
+                                                $listbill = json_decode($data['revenuelist'], true);
+                                                echo count($listbill);
+                                            ?>
                                         </div>
                                         <i class="fas fa-shopping-cart"></i>
                                     </div>
@@ -39,14 +35,10 @@
                                     </div>
                                     <div class="counter-info">
                                         <div class="counter-count price">
-                                            @{ 
-                                                int count = 0;
-                                                foreach(var count_ in Model)
-                                                {
-                                                    count += count_.TotalPrice;
-                                                }
-                                            }
-                                            @count
+                                            <?php 
+                                                $listbill = json_decode($data['revenuelist'], true);
+                                                echo count($listbill);
+                                            ?>
                                         </div>
                                         <i class="fas fa-donate"></i>
                                     </div>
@@ -67,6 +59,7 @@
                                         <thead>
                                             <tr>
                                                 <th>ID</th>
+                                                <th>Chi tiết</th>
                                                 <th>Tên</th>
                                                 <th>Phương thức thanh toán</th>
                                                 <th>Số điện thoại</th>
@@ -74,20 +67,28 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach (var revenue in Model)
+                                        <?php 
+                                            $listbill = json_decode($data['revenuelist'], true);
+                                            $output='';
+                                            foreach ($listbill as $item)
                                             {
+                                                $output.='
                                                 <tr>
-                                                    <td>@revenue.BillId</td>
+                                                    <td>'.$item['BillId'].'</td>
                                                     <td>
-                                                        @revenue.FullName
+                                                        <a href="">Xem chi tiết</a>
                                                     </td>
-                                                    <td>@revenue.PaymentMethod</td>
-                                                    <td>@revenue.PhoneNumber</td>
-                                                    <td class="price">@revenue.TotalPrice</td>
-                                                </tr>
+                                                    <td>
+                                                        '.$item['FullName'].'
+                                                    </td>
+                                                    <td>'.$item['PaymentMethod'].'</td>
+                                                    <td>'.$item['PhoneNumber'].'</td>
+                                                    <td class="price">'.$item['TotalPrice'].'</td>
+                                                </tr>';
+                                                echo $output;
                                             }
 
-
+                                        ?>
                                         </tbody>
                                     </table>
                                 </div>

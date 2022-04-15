@@ -8,6 +8,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Login Page</title>
     <!--Made with love by Mutiullah Samim -->
     <!--Bootsrap 4 CDN-->
@@ -24,6 +27,7 @@
 
     <!--Custom styles-->
     <link rel="stylesheet" type="text/css" href="../assets/css/site.css" />
+    <link rel="stylesheet" type="text/css" href="<?=Domain?>/assets/css/site.css" />
 </head>
 <body class="login-page">
     <div class="container">
@@ -80,7 +84,7 @@
                         </div>
                     </form>
                     <div class="form-group">
-                        <a href="./"
+                        <a href="../Home/index"
                            class="btn float-left login_btn">
                             Trở lại
                         </a>
@@ -88,7 +92,7 @@
                 </div>
                 <div class="card-footer">
                     <div class="d-flex justify-content-center links">
-                        Bạn chưa có tài khoản?<a href="./Register">Đăng ký</a>
+                        Bạn chưa có tài khoản?<a href="../Home/Register">Đăng ký</a>
                     </div>
                     <div class="d-flex justify-content-center">
                         <a href="/ResetPassword">Quên mật khẩu?</a>

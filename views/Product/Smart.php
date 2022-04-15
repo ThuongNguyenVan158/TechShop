@@ -71,62 +71,66 @@
             <div id="store" class="col-md-9">
                 <!-- store products -->
                 <div class="row">
-                    @foreach (var laptop in Model)
+                <?php
+                    $n = sizeof($data["smartphone"]);
+                    if($data["Start"]+$data["Limit"] < $n) $n = $data["Start"]+$data["Limit"];
+                    for($i = $data["Start"];$i<$n;$i++)
                     {
-                        <!-- product -->
-                        <form asp-action="InsertProduct" asp-controller="Product" method="post" onsubmit="return confirm('Bạn muốn thêm vào giỏ hàng?!!!')">
-                            <input type="hidden" name="product.InsertProductToCart.ProductId" value="@laptop.ProductId" />
-                            <input type="hidden" name="product.InsertProductToCart.Quantity" value="1" />
-                            <input type="hidden" name="product.InsertProductToCart.Name" value="@laptop.Name" />
-                            <input type="hidden" name="product.InsertProductToCart.ProductPrice" value="@laptop.Price" />
-                            <div class="col-md-4 col-xs-6">
-                                <div class="product">
-                                    <div class="product-img">
-                                        <img src="@laptop.ImgUrl" alt="">
+                        echo"
+                        <form action=\"".Domain."\Product\addCart\" method=\"post\" onsubmit=\"return confirm('Bạn muốn thêm vào giỏ hàng?!!!');\">
+                            <input type=\"hidden\" name=\"ProductId\" value=\"".$data["smartphone"][$i]["ProductId"]."\" />
+                            <input type=\"hidden\" name=\"Quantity\" value=\"1\" />
+                            <input type=\"hidden\" name=\"Name\" value=\"".$data["smartphone"][$i]["Name"]."\" />
+                            <input type=\"hidden\" name=\"ProductPrice\" value=\"".$data["smartphone"][$i]["Price"]."\" />
+                            <div class=\"col-md-4 col-xs-6\">
+                                <div class=\"product\">
+                                    <div class=\"product-img\">
+                                        <img src=\"".$data["smartphone"][$i]["ImgUrl"]."\" alt=\"\">
                                     </div>
-                                    <div class="product-body">
-                                        <p class="product-category">@laptop.Producer</p>
-                                        <h3 class="product-name"><a href="@Url.Action("Product",new { id=laptop.ProductId })">@laptop.Name</a></h3>
-                                        <div class="product-price-old-new">
-                                            @if (laptop.OldPrice != 0)
+                                    <div class=\"product-body\">
+                                        <h3 class=\"product-name\"><a href=\"./Smart/".$data["smartphone"][$i]["ProductId"]."\">".$data["smartphone"][$i]["Name"]."</a></h3>
+                                        <div class=\"product-price-old-new\">
+                                        ";
+                                            if ($data["smartphone"][$i]["OldPrice"] != 0)
                                             {
-                                                <h4 class="product-price price">@laptop.Price</h4> <del class="product-old-price price">@laptop.OldPrice</del>
+                                                echo "<h4 class=\"product-price price\">".$data["smartphone"][$i]["Price"]."</h4> <del class=\"product-old-price price\">".$data["smartphone"][$i]["OldPrice"]."</del>";
                                             }
                                             else
                                             {
-                                                <h4 class="product-price price">@laptop.Price </h4>
+                                                echo "<h4 class=\"product-price price\">".$data["smartphone"][$i]["Price"]."</h4>";
                                             }
-                                        </div>
-                                        <div class="product-rating">
-                                            @{
-                                                for (int i = 0; i < laptop.Rating; i++)
+                                        echo "</div>
+                                        <div class=\"product-rating\">";
+                                                for ($j = 0; $j < $data["smartphone"][$i]["Rating"];$j++)
                                                 {
-                                                    <i class="fa fa-star"></i>
+                                                    echo "<i class=\"fa fa-star\"></i>";
                                                 }
-                                            }
-                                        </div>
+                                        echo "</div>
                                     </div>
-                                    <div class="add-to-cart">
-                                        <button class="add-to-cart-btn" type="submit">
-                                            <i class="fa fa-shopping-cart"></i> add to
-                                            cart
+                                    <div class=\"add-to-cart\">
+                                        <button class=\"add-to-cart-btn\" type=\"submit\">
+                                            <i class=\"fa fa-shopping-cart\"></i> add to cart
                                         </button>
                                     </div>
                                 </div>
                             </div>
                         </form>
-                        <!-- /product -->
+                        ";
                     }
+                    ?>
                 </div>
                 <!-- /store products -->
                 <!-- store bottom filter -->
                 <div class="store-filter clearfix">
                     <ul class="store-pagination">
-                        <li class="active">1</li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+                        <form action="../Product/Smart" method="post">
+                            <?php
+                            for($i = 0;$i < $data["TotalPage"];$i++){
+                                if($data["CurrentPage"] == $i + 1) echo '<button value="'.$i.'" name="CurrentPage" style="padding: 0;border:none;"><li class="active">'.($i+1).'</li></button>';
+                                else echo '<button value="'.($i+1).'" name="CurrentPage" style="padding: 0;border:none;"><li>'.($i+1).'</li></button>';
+                            }
+                            ?>
+                        </form>
                     </ul>
                 </div>
                 <!-- /store bottom filter -->

@@ -49,6 +49,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Login Page</title>
     <!--Made with love by Mutiullah Samim -->
     <!--Bootsrap 4 CDN-->
@@ -200,7 +203,7 @@
                         </div>
                     </form>
                     <div class="form-group">
-                        <a href="@Url.Action("Login", "Home")"
+                        <a href="<?=Domain?>/Home/Login"
                            class="btn float-left login_btn">
                             Trở lại
                         </a>
