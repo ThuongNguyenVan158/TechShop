@@ -57,11 +57,5 @@ class App{
             return explode("/", filter_var(trim($_GET["url"], "/")));
         }
     }
-    function UrlProcess1(){
-        
-            return explode("/", filter_var(trim("htthinh1999.toh.info/Home/Index", "/")));
-        
-    }
-
 }
 ?>
