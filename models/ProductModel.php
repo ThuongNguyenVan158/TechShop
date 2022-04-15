@@ -77,6 +77,5 @@ class ProductModel extends DB{
         $result = $this->excute($query);
         return $result == "true";
     }
-
 }
 ?>

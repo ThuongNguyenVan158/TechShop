@@ -30,7 +30,6 @@
         public function login($username, $password){
             $query = "SELECT * FROM customer WHERE UserName = '$username'";
             $User = $this->excuteResult($query, true);
-
             $obj = json_decode($User,true);
             $result = false;
             if($obj && password_verify($password, $obj["Password"])){

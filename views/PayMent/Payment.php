@@ -214,7 +214,6 @@
 		</div>
 		<!-- /container -->
 </div>
-
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
 <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
 <script type="text/javascript">
@@ -383,3 +382,4 @@ function notify(){
 	return confirm("Bạn chắc chắn muốn xoá khỏi giỏ hàng?");
 }
 </script>
+

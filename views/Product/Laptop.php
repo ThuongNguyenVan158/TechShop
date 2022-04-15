@@ -9,7 +9,6 @@
                 <div class="aside">
                     <h3 class="aside-title">Nhà sản xuất</h3>
                     <div class="checkbox-filter">
-
                         <form action="<?=Domain?>/product/laptop" method="post">
                             <div class="input-checkbox">
                                 <input type="checkbox" id="category-1" value="Apple" name="Category[]">
