@@ -12,6 +12,9 @@
     <link type="text/css" rel="stylesheet" href="/assets/css/app.css" />
     <link type="text/css" rel="stylesheet" href="/assets/css/grid.css" />
     <link type="text/css" rel="stylesheet" href="/assets/css/theme.css" />
+    <!-- <link type="text/css" rel="stylesheet" href="/TechShop/assets/css/app.css" />
+    <link type="text/css" rel="stylesheet" href="/TechShop/assets/css/grid.css" />
+    <link type="text/css" rel="stylesheet" href="/TechShop/assets/css/theme.css" /> -->
     <style>
         .currSign:after {
             color: black;
@@ -35,25 +38,25 @@
         <!-- SIDEBAR MENU -->
         <ul class="sidebar-menu">
             <li>
-                <a href="<?=Domain?>/Admin/Revenue">
+                <a href="../Admin/Revenue">
                     <i class="fas fa-donate"></i>
                     <h4>Quản lí doanh thu</h4>
                 </a>
             </li>
             <li>
-                <a href="<?=Domain?>/Admin/Account">
+                <a href="../Admin/Account">
                     <i class="fas fa-user"></i>
                     <h4>Quản lí tài khoản</h4>
                 </a>
             </li>
             <li>
-                <a href="<?=Domain?>/Admin/AdminProduct">
+                <a href="../Admin/AdminProduct">
                     <i class="fas fa-tablet-alt"></i>
                     <h4>Quản lí sản phẩm</h4>
                 </a>
             </li>
             <li>
-                <a href="<?=Domain?>/Home/index">
+                <a href="../Home/index">
                     <i class="fab fa-intercom"></i>
                     <h4>Trạng thái khách hàng</h4>
                 </a>

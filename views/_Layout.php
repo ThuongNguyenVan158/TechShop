@@ -11,7 +11,11 @@
     <link type="text/css" rel="stylesheet" href="/assets/css/slick-theme.css"/>
     <link type="text/css" rel="stylesheet" href="/assets/css/nouislider.min.css"/>
     <link type="text/css" rel="stylesheet" href="/assets/css/site.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- <link type="text/css" rel="stylesheet" href="/TechShop/assets/css/slick.css" />
+    <link type="text/css" rel="stylesheet" href="/TechShop/assets/css/slick-theme.css"/>
+    <link type="text/css" rel="stylesheet" href="/TechShop/assets/css/nouislider.min.css"/>
+    <link type="text/css" rel="stylesheet" href="/TechShop/assets/css/site.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> -->
     <style>
         .currSign:after {
             color: black;
@@ -31,7 +35,7 @@
                 <ul class="header-links pull-right">
                     <?php  
                         if(!$this->isLoggedIn()){
-                            echo '<li><a href="'.Domain.'/Home/Login\"><i class="fa fa-user"></i>Đăng nhập</a></li>';
+                            echo '<li><a href="../Home/Login\"><i class="fa fa-user"></i>Đăng nhập</a></li>';
                         }else{
                             $User = $_SESSION["account"];
                             $obj = json_decode($User,true);
@@ -81,7 +85,7 @@
 							<div class="header-ctn">
 								<!-- Cart -->
 								<div class="dropdown">
-									<a href="<?=Domain?>/PayMent/PayMent">
+									<a href="../PayMent/PayMent">
 										<i class="fas fa-shopping-cart" style="font-size:20px;"></i>
 										<span  style="font-size:16px;">Giỏ hàng</span>
 									</a>
@@ -113,11 +117,11 @@
                 <div id="responsive-nav">
                     <!-- NAV -->
                     <ul class="main-nav nav navbar-nav">
-                        <li><a href="<?=Domain?>/Admin/Account">Trang chủ</a></li>
-                        <li><a href="<?=Domain?>/Product/Laptop">Laptop</a></li>
-                        <li><a href="<?=Domain?>/Product/Smart">Di động</a></li>
-                        <li><a href="<?=Domain?>/Product/Accessory">Phụ kiện</a></li>
-                        <li><a href="<?=Domain?>/Payment/PaymentHistory">Lịch sử thanh toán</a></li>
+                        <li><a href="../Admin/Account">Trang chủ</a></li>
+                        <li><a href="../Product/Laptop">Laptop</a></li>
+                        <li><a href="../Product/Smart">Di động</a></li>
+                        <li><a href="../Product/Accessory">Phụ kiện</a></li>
+                        <li><a href="../Payment/PaymentHistory">Lịch sử thanh toán</a></li>
                     </ul>
                     <!-- /NAV -->
                 </div>
