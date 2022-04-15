@@ -21,39 +21,56 @@
         <div class="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12 padding">
             <div class="card">
                 <div class="card-header p-4">
-                    @{
-                        if (Model != null)
+                    <?php 
+                        $item = json_decode($data['bill'], true);
+                        $output ='';
+                        if (count([$item]) > 0 and $item !=null)
                         {
+                            $output.='
                             <h3 class="pt-2 d-inline-block">
                                 Mã đơn hàng<br />
-                                @Model.BillId
-                            </h3>
+                                '.$item['BillId'].'
+                            </h3>';
                         }
-
-                    }
+                        echo $output;
+                    ?>
                     <div class="float-right">
-                        @{
-                            if (Model != null)
+                        <?php
+                            $item = json_decode($data['bill'], true);
+                            $output ='';
+                            if (count([$item]) > 0 and $item !=null)
                             {
+                                // $localtime = $item['DateCreateBill'];
+                                // $timezone= (new DateTime)->getTimezone();
+                                // $localtime->setTimezone($timezone);
+                                // $date = $localtime->format('Y-m-d H:i:s T');
+                                // $hour =  $localtime->format('Y-m-d H:i:s T');
+                                $date = date("F j, Y", strtotime($item['DateCreateBill']));
+                                $hour= date("g:i a", strtotime($item['DateCreateBill']));
+                                $output.='
                                 <h3 class="mb-0" id="current-date">
-                                    Ngày: @Model.CreatedDate.ToLocalTime().ToString("dd/MM/yyyy")
+                                    Ngày: '.$date.'
                                 </h3>
                                 <h4 class="mb-0" id="current-time">
-                                    Thời gian: @Model.CreatedDate.ToLocalTime().ToString("HH:mm")
-                                </h4>
+                                    Thời gian: '.$hour.'
+                                </h4>';
                             }
-                        }
+                            echo $output
+                        ?>
                     </div>
                 </div>
                 <div class="card-body">
                     <table class="container">
                         <tr>
                             <td class="text-center">
-                                <b><span class="rth"><a id="return-home" href="@Url.Action("PayMent","PayMent")"></a></span></b>
+                                <b><span class="rth"><a id="return-home" href="<?=Domain?>/Payment/Payment"></a></span></b>
                             </td>
-                            @{
-                                if (Model != null)
+                            <?php
+                                $item = json_decode($data['bill'], true);
+                                $output ='';
+                                if (count([$item]) > 0 and $item !=null)
                                 {
+                                    $output.='
                                     <th class="text-right">
                                         <div class="body-btn-payment">
                                             <div class="btn-payment">
@@ -74,14 +91,15 @@
                                                 <div class="right-side">
                                                     <div class="new">
                                                         <h4><strong class="text-dark">Thanh toán</strong></h4>
-                                                        <h4><strong class="text-dark price">@(Model.Total)</strong></h4>
+                                                        <h4><strong class="text-dark price">'.$item['TotalPrice'].'</strong></h4>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </th>
+                                    </th>';
+                                    echo $output;
                                 }
-                            }
+                            ?>
                         </tr>
                     </table>
                 </div>
@@ -148,13 +166,13 @@
                                                     </th>
                                                 </tr>
                                             </table>
-                                            <form asp-controller="PayMent" asp-action="PaymentMethod" method="post">
+                                            <form action="../Payment/PaymentMethod" method="post">
                                                 <div class="text-center" id="momo-QR-code">
                                                     <img id="momo-QR-code" src="/images/momo_success.jpg"
                                                          alt='Pay Momo wallet success' />
                                                     <button class="finish-payment"
                                                             value="Ví điện tử Momo"
-                                                            name="payment.PaymentMethod">
+                                                            name="PaymentMethod">
                                                         <span>Hoàn thành</span>
                                                         <div class="liquid"></div>
                                                     </button>
@@ -164,7 +182,7 @@
                                                          alt='Pay ZaloPay wallet success' />
                                                     <button class="finish-payment"
                                                             value="Ví điện tử ZaloPay"
-                                                            name="payment.PaymentMethod">
+                                                            name="PaymentMethod">
                                                         <span>Hoàn thành</span>
                                                         <div class="liquid"></div>
                                                     </button>
@@ -174,7 +192,7 @@
                                                          alt='Pay Airpay wallet success' />
                                                     <button class="finish-payment"
                                                             value="Ví điện tử AirPay"
-                                                            name="payment.PaymentMethod">
+                                                            name="PaymentMethod">
                                                         <span>Hoàn thành</span>
                                                         <div class="liquid"></div>
                                                     </button>
@@ -313,9 +331,9 @@
                                             </div>
 
                                             <div class="card-footer">
-                                                <form asp-controller="PayMent" asp-action="PaymentMethod" method="post">
+                                                <form action="../Payment/PaymentMethod" method="post">
                                                     <button value="Thẻ ngân hàng"
-                                                            name="payment.PaymentMethod"
+                                                            name="PaymentMethod"
                                                             class="button-three">
                                                         Xác nhận
                                                     </button>
@@ -325,23 +343,27 @@
                                         </div> <!-- End -->
                                         <!-- bank transfer info -->
                                         <div id="net-banking" class="tab-pane fade pt-3">
-                                            @{
-                                                if (Model != null)
+                                        <?php
+                                            $item = json_decode($data['bill'], true);
+                                            $output ='';
+                                            if (count([$item]) > 0 and $item !=null)
                                                 {
+                                                    echo '
                                                     <h4><b>Tài khoản: 123456789</b></h4>
                                                     <h4><b>Ngân hàng: ViettinBank</b></h4>
-                                                    <h4><b>Số tiền: </b><b class="price">@(Model.Total)</b></h4>
+                                                    <h4><b>Số tiền: </b><b class="price">'.$item['TotalPrice'].'</b></h4>
                                                     <h4><b>Nội dung: Thanh toán hóa đơn.</b></h4>
+                                                    ';
                                                 }
                                                 else
                                                 {
-                                                    <h3 class="text-center"><b>Thanh toán thất bại!</b></h3>
+                                                    echo '<h3 class="text-center"><b>Thanh toán thất bại!</b></h3>';
                                                 }
-                                            }
+                                        ?>
                                             <div class="text-center">
-                                                <form asp-controller="PayMent" asp-action="PaymentMethod" method="post">
+                                                <form action="../Payment/PaymentMethod" method="post">
                                                     <button value="Chuyển khoản"
-                                                            name="payment.PaymentMethod"
+                                                            name="PaymentMethod"
                                                             class="button-three">
                                                         Xác nhận
                                                     </button>

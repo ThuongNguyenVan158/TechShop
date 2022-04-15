@@ -6,6 +6,7 @@ class Admin extends Controller{
         {
             $this->accountModel = $this->model("AccountModel");
             $this->productModel = $this->model("ProductModel");
+            $this->revenueModel = $this->model("RevenueModel");
         }
         function Account(){
             if(isset($_POST["UserName"])){
@@ -80,7 +81,7 @@ class Admin extends Controller{
         function Revenue(){
             $this->view("_Admin",[
                 "Page"=>"Admin/Revenue",
-                "productModel" => $this->productModel->getProduct()
+                "revenuelist" => $this->revenueModel->getBill()
             ]);
         }
 }

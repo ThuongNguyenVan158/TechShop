@@ -10,39 +10,55 @@
                 <table class="table table-bordered table-striped table-hover">
                     <thead class="thead-dark">
                         <tr>
-                            @{
-                                foreach (var head in PaymentHeader)
-                                {
-                                    <th class="text-center">
-                                        @head
-                                    </th>
-                                }
-                            }
+                            <th class="text-center">
+                                STT
+                            </th>
+                            <th class="text-center">
+                            Chi tiết
+                            </th>
+                            <th class="text-center">
+                            Tổng (VNĐ)
+                            </th>
+                            <th class="text-center">
+                            Phương thức thanh toán
+                            </th>
+                            <th class="text-center">
+                            Ngày thanh toán
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
-                        @{
-                            int i = 1;
-                            if (Model.Count > 0)
-                                foreach (var Data in Model)
-                                {
-                                    <tr>
-                                        <td class="text-center">@(i++)</td>
-                                        <td class="text-center">
-                                            <a href="@Url.Action("PaymentDetailHistory","Payment",new { id=Data.Id })">Xem chi tiết: </a>
-                                        </td>
-                                        <td class="text-right price">@Data.Total</td>
-                                        <td class="text-center">@Data.PaymentMethod</td>
-                                        <td class="text-center">@Data.CreatedDate.ToLocalTime().ToString("dd/MM/yyyy HH:mm")</td>
-                                    </tr>
+                        <?php
+                            $listbill = json_decode($data['listbill'], true);
+                            $output='';
+                            $i=0;
+                            if (count($listbill) > 0){
+                                foreach ($listbill as $item)
+                                    {
+                                        $i++;
+                                        $billId= $item['BillId'];
+                                        $date = date("F j, Y, g:i a", strtotime($item['DateCreateBill']));
+                                        $output.='
+                                        <tr>
+                                            <td class="text-center">'.$i.'</td>
+                                            <td class="text-center">
+                                                <a href="../Payment/PaymentDetailHistory/'.$billId.'">Xem chi tiết: </a>
+                                            </td>
+                                            <td class="text-right price">'.$item['TotalPrice'].'</td>
+                                            <td class="text-center">'.$item['PaymentMethod'].'</td>
+                                            <td class="text-center">'.$date.'</td>
+                                        </tr>';
+                                    }
                                 }
                             else
                             {
+                                $output.='
                                 <tr>
                                     <td colspan="5" class="text-center">Bạn chưa thanh toán lần nào!!</td>
-                                </tr>
+                                </tr>';
                             }
-                        }
+                            echo $output;
+                        ?>
                     </tbody>
                 </table>
             </div>
