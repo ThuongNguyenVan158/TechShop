@@ -77,7 +77,7 @@
                     <h3>Đăng ký</h3>
                 </div>
                 <div class="card-body">
-                    <form method="post" action="<?=Domain?>/Home/Register" >
+                    <form method="post" action="../Home/Register" >
                         <!-- <span class="text-danger"></span> -->
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
@@ -203,7 +203,7 @@
                         </div>
                     </form>
                     <div class="form-group">
-                        <a href="<?=Domain?>/Home/Login"
+                        <a href="../Home/Login"
                            class="btn float-left login_btn">
                             Trở lại
                         </a>

@@ -6,7 +6,7 @@
                         <h3>Tạo tài khoản Admin</h3>
                     </div>
                     <div class="card__body">
-                        <form action="<?=Domain?>/Admin/Account" method="post">
+                        <form action="../Admin/Account" method="post">
                             <div class="form-group">
                                 <lable>Tên tài khoản</lable>
                                 <input type="text" class="form-control" name="UserName" 

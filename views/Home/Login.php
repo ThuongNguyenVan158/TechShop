@@ -27,7 +27,7 @@
 
     <!--Custom styles-->
     <link rel="stylesheet" type="text/css" href="../assets/css/site.css" />
-    <link rel="stylesheet" type="text/css" href="<?=Domain?>/assets/css/site.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/site.css" />
 </head>
 <body class="login-page">
     <div class="container">
@@ -44,7 +44,7 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <form action="<?=Domain?>/Home/Login" method="post">
+                    <form action="../Home/Login" method="post">
                         <!-- <span asp-validation-for="UserName" class="text-danger"></span> -->
                         <div class="input-group form-group">
                             <div class="input-group-prepend">

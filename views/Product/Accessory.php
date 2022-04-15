@@ -9,7 +9,7 @@
                 <div class="aside">
                     <h3 class="aside-title">Loại phụ kiện</h3>
                     <div class="checkbox-filter">
-                        <form action="<?=Domain?>/Product/Accessory" method="post">
+                        <form action="../Product/Accessory" method="post">
                             <div class="input-checkbox">
                                 <input type="checkbox" id="category-1" value="keyboard" name="Category[]">
                                 <label for="category-1">
@@ -91,7 +91,7 @@
                     for($i = $data["Start"];$i<$n;$i++)
                     {
                         echo"
-                        <form action=\"".Domain."\Product\addCart\" method=\"post\" onsubmit=\"return confirm('Bạn muốn thêm vào giỏ hàng?!!!');\">
+                        <form action=\"..\Product\addCart\" method=\"post\" onsubmit=\"return confirm('Bạn muốn thêm vào giỏ hàng?!!!');\">
                             <input type=\"hidden\" name=\"ProductId\" value=\"".$data["accessory"][$i]["ProductId"]."\" />
                             <input type=\"hidden\" name=\"Quantity\" value=\"1\" />
                             <input type=\"hidden\" name=\"Name\" value=\"".$data["accessory"][$i]["Name"]."\" />

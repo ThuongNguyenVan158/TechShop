@@ -63,7 +63,7 @@
                     <table class="container">
                         <tr>
                             <td class="text-center">
-                                <b><span class="rth"><a id="return-home" href="<?=Domain?>/Payment/Payment"></a></span></b>
+                                <b><span class="rth"><a id="return-home" href="../Payment/Payment"></a></span></b>
                             </td>
                             <?php
                                 $item = json_decode($data['bill'], true);

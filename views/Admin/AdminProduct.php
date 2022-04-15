@@ -6,7 +6,7 @@
                         <h3>Quản lí sản phẩm</h3>
                     </div>
                     <div class="card__body">
-                        <form action="<?=Domain?>/Admin/AdminProduct" method="post">
+                        <form action="../Admin/AdminProduct" method="post">
                             <!-- <div class="form-group">
                                 <lable>Mã sản phẩm</lable>
                                 <input type="text" class="form-control"/>
