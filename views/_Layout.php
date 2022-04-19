@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>EcommerceStore</title>
+    <meta name="description" content="Trang bán máy tính / laptop / điện thoại">
+    <meta name="og:title" property="og:title" content="Ecommerce Store">
+    <meta name="og:description" property="og:description" content="Trang bán máy tính / laptop / điện thoại">
+    <meta name="og:image" property="og:image" content="https://laptophainam.com/wp-content/uploads/2021/12/laptop-gaming-cu-acer-nitro-5-ryzen-3.jpg">	
+	
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link type="text/css" rel="stylesheet" href="/assets/css/slick.css" />
