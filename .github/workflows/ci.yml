@@ -38,3 +38,13 @@ jobs:
       run: |
         rm -rf /tmp/.buildx-cache
         mv /tmp/.buildx-cache-new /tmp/.buildx-cache
+    - name: Deploy new version to host via ssh command
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST_SERVER }}
+        username: ${{ secrets.USERNAME_SERVER }}
+        password: ${{ secrets.PASSWORD_SERVER }}
+        script_stop: true
+        script: |
+          cd ~/techshop/website/
+          ./deploy.sh
