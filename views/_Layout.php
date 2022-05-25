@@ -12,15 +12,10 @@
 	
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link type="text/css" rel="stylesheet" href="/assets/css/slick.css" />
-    <link type="text/css" rel="stylesheet" href="/assets/css/slick-theme.css"/>
-    <link type="text/css" rel="stylesheet" href="/assets/css/nouislider.min.css"/>
-    <link type="text/css" rel="stylesheet" href="/assets/css/site.css" />
-    <!-- <link type="text/css" rel="stylesheet" href="/TechShop/assets/css/slick.css" />
-    <link type="text/css" rel="stylesheet" href="/TechShop/assets/css/slick-theme.css"/>
-    <link type="text/css" rel="stylesheet" href="/TechShop/assets/css/nouislider.min.css"/>
-    <link type="text/css" rel="stylesheet" href="/TechShop/assets/css/site.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> -->
+    <link type="text/css" rel="stylesheet" href="/TechShop//assets/css/slick.css" />
+    <link type="text/css" rel="stylesheet" href="/TechShop//assets/css/slick-theme.css"/>
+    <link type="text/css" rel="stylesheet" href="/TechShop//assets/css/nouislider.min.css"/>
+    <link type="text/css" rel="stylesheet" href="/TechShop//assets/css/site.css" />
     <style>
         .currSign:after {
             color: black;
@@ -90,7 +85,7 @@
 							<div class="header-ctn">
 								<!-- Cart -->
 								<div class="dropdown">
-									<a href="../PayMent/PayMent">
+									<a href="<?=Domain?>/PayMent/PayMent">
 										<i class="fas fa-shopping-cart" style="font-size:20px;"></i>
 										<span  style="font-size:16px;">Giỏ hàng</span>
 									</a>
@@ -122,11 +117,11 @@
                 <div id="responsive-nav">
                     <!-- NAV -->
                     <ul class="main-nav nav navbar-nav">
-                        <li><a href="../Admin/Account">Trang chủ</a></li>
-                        <li><a href="../Product/Laptop">Laptop</a></li>
-                        <li><a href="../Product/Smart">Di động</a></li>
-                        <li><a href="../Product/Accessory">Phụ kiện</a></li>
-                        <li><a href="../Payment/PaymentHistory">Lịch sử thanh toán</a></li>
+                        <li><a href="<?=Domain?>/Admin/Account">Trang chủ</a></li>
+                        <li><a href="<?=Domain?>/Product/Laptop">Laptop</a></li>
+                        <li><a href="<?=Domain?>/Product/Smart">Di động</a></li>
+                        <li><a href="<?=Domain?>/Product/Accessory">Phụ kiện</a></li>
+                        <li><a href="<?=Domain?>/Payment/PaymentHistory">Lịch sử thanh toán</a></li>
                     </ul>
                     <!-- /NAV -->
                 </div>
@@ -193,10 +188,10 @@
         <!-- /top footer -->
     </footer>
     <!-- /FOOTER -->
-    <script src="/assets/js/jquery-3.3.1.slim.min.js"></script>  
-    <script src="/assets/js/popper.min.js"></script>  
-    <script src="/assets/js/bootstrap.min.js"></script>  
-    <script src="/assets/js/slick.min.js"></script>  
+    <script src="../assets/js/jquery-3.3.1.slim.min.js"></script>  
+    <script src="../assets/js/popper.min.js"></script>  
+    <script src="../assets/js/bootstrap.min.js"></script>  
+    <script src="../assets/js/slick.min.js"></script>  
     <script type="text/javascript">
         let x = document.querySelectorAll(".price");
         for (let i = 0, len = x.length; i < len; i++) {
@@ -206,6 +201,6 @@
             x[i].classList.add("currSign");
         }
     </script>
-    <script src="/assets/js/site.js"></script>        
+    <script src="../assets/js/site.js"></script>        
 </body>
 </html>

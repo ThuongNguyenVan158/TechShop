@@ -9,12 +9,9 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link type="text/css" rel="stylesheet" href="/assets/css/app.css" />
-    <link type="text/css" rel="stylesheet" href="/assets/css/grid.css" />
-    <link type="text/css" rel="stylesheet" href="/assets/css/theme.css" />
-    <!-- <link type="text/css" rel="stylesheet" href="/TechShop/assets/css/app.css" />
-    <link type="text/css" rel="stylesheet" href="/TechShop/assets/css/grid.css" />
-    <link type="text/css" rel="stylesheet" href="/TechShop/assets/css/theme.css" /> -->
+    <link type="text/css" rel="stylesheet" href="/TechShop//assets/css/app.css" />
+    <link type="text/css" rel="stylesheet" href="/TechShop//assets/css/grid.css" />
+    <link type="text/css" rel="stylesheet" href="/TechShop//assets/css/theme.css" />
     <style>
         .currSign:after {
             color: black;
@@ -31,9 +28,10 @@
                     <h4>Hi Thuong</h4>
                 </div>
             </div>
-            <a href="@Url.Action("Logout","Home")" class="btn btn-outline">
-                <i class="fas fa-sign-in-alt"></i>
-            </a>
+            <!-- <a href="@Url.Action("Logout","Home")" class="btn btn-outline"> -->
+            <li><a href="../Home/Logout"><i class="fas fa-sign-out-alt"></i>Đăng xuất</a></li>
+                <!-- <i class="fas fa-sign-in-alt"></i>
+            </a> -->
         </div>
         <!-- SIDEBAR MENU -->
         <ul class="sidebar-menu">

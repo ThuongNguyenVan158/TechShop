@@ -79,7 +79,7 @@
                                                         <a href="">Xem chi tiết</a>
                                                     </td>
                                                     <td>
-                                                        '.$item['FullName'].'
+                                                        '.$item['UserName'].'
                                                     </td>
                                                     <td>'.$item['PaymentMethod'].'</td>
                                                     <td>'.$item['PhoneNumber'].'</td>
