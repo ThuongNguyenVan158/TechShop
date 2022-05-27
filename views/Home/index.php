@@ -1,3 +1,4 @@
+<body onload="startCountdown(100000)">
 <div class="section">
     <!-- container -->
     <div class="container">
@@ -265,6 +266,7 @@
     <!-- /container -->
 </div>
 <!-- /SECTION -->
+</body>
 <script type="text/javascript">
     function startCountdown(timeLeft) {
         var interval = setInterval( countdown, 1000 );

@@ -16,6 +16,7 @@
     <link type="text/css" rel="stylesheet" href="/TechShop//assets/css/slick-theme.css"/>
     <link type="text/css" rel="stylesheet" href="/TechShop//assets/css/nouislider.min.css"/>
     <link type="text/css" rel="stylesheet" href="/TechShop//assets/css/site.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         .currSign:after {
             color: black;
@@ -188,10 +189,16 @@
         <!-- /top footer -->
     </footer>
     <!-- /FOOTER -->
-    <script src="../assets/js/jquery-3.3.1.slim.min.js"></script>  
-    <script src="../assets/js/popper.min.js"></script>  
-    <script src="../assets/js/bootstrap.min.js"></script>  
-    <script src="../assets/js/slick.min.js"></script>  
+    <script src="/TechShop//assets/js/jquery-3.3.1.slim.min.js"></script>  
+    <script src="/TechShop//assets/js/popper.min.js"></script>  
+
+    <script src="/TechShop//assets/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/TechShop//assets/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/TechShop//assets/js/site.js"></script>
+    <script src="/TechShop//assets/js/jquery.min.js"></script>
+    <script src="/TechShop//assets/js/bootstrap.min.js"></script>  
+    <script src="/TechShop//assets/js/slick.min.js"></script>  
+    <script src="/TechShop//assets/js/main.js"></script>
     <script type="text/javascript">
         let x = document.querySelectorAll(".price");
         for (let i = 0, len = x.length; i < len; i++) {
