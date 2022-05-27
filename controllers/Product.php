@@ -141,7 +141,10 @@ class Product extends Controller{
         function Product($productId){
             $this->view("_Layout",[
                 "Page"=>"Product/Product",
-                "productModel" => $this->productModel->getProductById($productId)
+                // "productModel" => json_decode($this->productModel->getProductById($productId),true)
+                "product" => json_decode($this->productModel->getProductById($productId),true),
+                "eval" => json_decode($this->productModel->getEvalByProductId($productId),true),
+                "desc" => json_decode($this->productModel->getDescByProductId($productId),true)
             ]);
         }
         function Smart($productId = ""){
