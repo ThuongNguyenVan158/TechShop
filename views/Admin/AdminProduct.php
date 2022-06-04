@@ -17,11 +17,17 @@
                             </div>
                             <div class="form-group">
                                 <lable>Loại sản phẩm</lable>
-                                <input type="text" class="form-control" name="Status"/>
+                                <!-- <input type="text" class="form-control" name="Type"/> -->
+                                <select name="Type" class="form-control">
+                                    <option value="">Chọn 1 trong các loại</option>
+                                    <option value="laptop">Laptop</option>
+                                    <option value="smartphone">Smartphone</option>
+                                    <option value="accessory">Accessory</option>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <lable>Hãng sản xuất</lable>
-                                <input type="text" class="form-control" name="Producer"/>
+                                <input type="text" class="form-control" name="BrandName"/>
                             </div>
                             <div class="form-group">
                                 <lable>Giá</lable>
@@ -91,8 +97,8 @@
                                                 $output.='
                                                 <td>
                                                     <div style="display: flex;">
-                                                        <form asp-controller="ChiNhanh" asp-action="DeleteNhanVienChiNhanh">
-                                                            <input type="hidden" name="idNVChiNhanh" value="@quanly.MaNhanVien" />
+                                                        <form action="../Admin/DeleteProduct" method="post" onsubmit="return confirm('."'Bạn chắc chắc muốn xoá!!!'".');">
+                                                            <input type="hidden" name="ProductId" value="'.$item['ProductId'].'" />
                                                             <button type="submit">
                                                                 <i class="far fa-trash-alt" aria-hidden="true"
                                                                    style="font-size: 25px; margin-right: 10px; display:flex;"
@@ -100,7 +106,7 @@
                                                             </button>
                                                         </form>
                                                         <a class=" mr-3"
-                                                           href="@Url.Action("UpdateNhanVienChiNhanh","ChiNhanh", new { id = quanly.MaNhanVien })">
+                                                            href="../Admin/EditProduct/'.$item['ProductId'].'"">
                                                             <i class="fa fa-edit"
                                                                aria-hidden="true" style="font-size: 25px;"></i>
                                                         </a>
