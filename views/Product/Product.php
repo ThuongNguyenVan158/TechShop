@@ -65,7 +65,11 @@
                     <!-- product tab nav -->
                     <ul class="tab-nav">
                         <li class="active"><a data-toggle="tab" href="#tab1">Mô tả chi tiết</a></li>
-                        <li><a data-toggle="tab" href="#tab2">Đánh giá (3)</a></li>
+                        <li><a data-toggle="tab" href="#tab2">Đánh giá (
+                            <?php
+                            echo sizeof($data["eval"]);
+                            ?>
+                            )</a></li>
                     </ul>
                     <!-- /product tab nav -->
                     <!-- product tab content -->
