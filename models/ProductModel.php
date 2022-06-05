@@ -27,7 +27,7 @@ class ProductModel extends DB{
         return $result;
     }
     function getEvalByProductId($id){
-        $query = "SELECT * FROM evaluation WHERE ProductId='$id'";
+        $query = "SELECT * FROM evaluation JOIN customer ON CustomerId = Id WHERE ProductId='$id'";
         $result = $this->excuteResult($query);
         return $result;
     }

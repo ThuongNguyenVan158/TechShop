@@ -4,6 +4,7 @@ class Product extends Controller{
         function __construct()
         {
             $this->productModel = $this->model("ProductModel");
+            $this->evaluationModel = $this->model("EvaluationModel");
         }
         function addCart(){
             if(!$this->isLoggedIn()){
@@ -77,6 +78,8 @@ class Product extends Controller{
                 ]);
             }
             else{
+                // echo $this->productModel->getEvalByProductId($productId);
+                // die();
                 $this->view("_Layout",[
                     "Page"=>"Product/Product",
                     "product" => json_decode($this->productModel->getProductById($productId),true),
@@ -198,6 +201,34 @@ class Product extends Controller{
                     "desc" => json_decode($this->productModel->getDescByProductId($productId),true)
                 ]);
             }
+        }
+        function CommentProduct(){
+            if(!$this->isLoggedIn()){
+                header("Location: ../Home/Login");
+            }
+            if(isset($_POST["Comment"])){
+                $productId = $this->get_POST('ProductId');
+                $comment = $this->get_POST('Comment');
+                $rating =$this->get_POST('Rating');
+                $page =$this->get_POST('Page');
+                if($page == "laptop"){
+                    $page = "Laptop";
+                }
+                elseif($page == "smartphone"){
+                    $page = "Smart";
+                }
+                elseif($page == "accessory"){
+                    $page = "Accessory";
+                }
+                $evalTime = date("Y-m-d H:i:s");
+                $User = $_SESSION["account"];
+                $obj = json_decode($User,true);
+                $customerId = $obj['Id'];
+                $this->evaluationModel->insertEvaluation($productId, $customerId, $rating, $comment, $evalTime);
+                // echo $this->productModel->getEvalByProductId($productId);
+                // die();
+            }
+            header("Location: $page/$productId");
         }
 }
 ?>

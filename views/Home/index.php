@@ -108,7 +108,7 @@
                         </li>
                     </ul>
                     <h2 class="text-uppercase">Khuyến mãi hot nhất</h2>
-					<p>New Collection Up to @Model.Max(p=>p.SellOff)% OFF</p>
+					<!-- <p>New Collection Up to @Model.Max(p=>p.SellOff)% OFF</p> -->
                     <a class="primary-btn cta-btn" href="">Xem chi tiết</a>
                 </div>
             </div>

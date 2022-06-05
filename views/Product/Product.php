@@ -127,23 +127,23 @@
                                                         $count1 = 0;    
                                                         for ($i = 0;$i < sizeof($data["eval"]);$i++)
                                                         {
-                                                            if ($data["eval"]["Rating"] == 5)
+                                                            if ($data["eval"][$i]["Rating"] == 5)
                                                             {
                                                                 $count5++;
                                                             }
-                                                            if ($data["eval"]["Rating"] == 4)
+                                                            if ($data["eval"][$i]["Rating"] == 4)
                                                             {
                                                                 $count4++;
                                                             }
-                                                            if ($data["eval"]["Rating"] == 3)
+                                                            if ($data["eval"][$i]["Rating"] == 3)
                                                             {
                                                                 $count3++;
                                                             }
-                                                            if ($data["eval"]["Rating"] == 2)
+                                                            if ($data["eval"][$i]["Rating"] == 2)
                                                             {
                                                                 $count2++;
                                                             }
-                                                            if ($data["eval"]["Rating"] == 1)
+                                                            if ($data["eval"][$i]["Rating"] == 1)
                                                             {
                                                                 $count1++;
                                                             }
@@ -205,24 +205,28 @@
                                 <div class="col-md-6">
                                     <div id="reviews">
                                         <ul class="reviews">
-                                            @foreach (var eval in Model.Evalutions)
-                                            {
-                                                <li>
-                                                    <div class="review-heading">
-                                                        <h5 class="name">@eval.Fullname</h5>
-                                                        <p class="date">@eval.EvalTime.ToLocalTime().ToString("dd/MM/yyyy HH:mm")</p>
-                                                        <div class="review-rating">
-                                                            @for (int i = 0; i < eval.Rating; i++)
-                                                            {
-                                                                <i class="fa fa-star"></i>
-                                                            }
+                                            <?php
+                                                for($i = 0;$i < sizeof($data["eval"]);$i++)
+                                                {
+                                                    $date = date("F j, Y", strtotime($data["eval"][$i]['EvalTime']));
+                                                   echo '
+                                                    <li>
+                                                        <div class="review-heading">
+                                                            <h5 class="name">'.$data["eval"][$i]['FullName'].'</h5>
+                                                            <p class="date">'.$date.'</p>
+                                                            <div class="review-rating">';
+                                                    for($j = 0; $j < $data["eval"][$i]['Rating']; $j++)
+                                                    {
+                                                        echo '<i class="fa fa-star"></i>';
+                                                    }
+                                                    echo '</div>
                                                         </div>
-                                                    </div>
-                                                    <div class="review-body">
-                                                        <p>@eval.Comment</p>
-                                                    </div>
-                                                </li>
-                                            }
+                                                        <div class="review-body">
+                                                            <p>'.$data["eval"][$i]['Comment'].'</p>
+                                                        </div>
+                                                    </li>';
+                                                }
+                                            ?>
                                         </ul>
                                     </div>
                                 </div>
@@ -230,8 +234,8 @@
                                 <!-- Review Form -->
                                 <div class="col-md-3">
                                     <div id="review-form">
-                                        <form class="review-form text-center" asp-controller="Product" asp-action="InsertEvaluation" method="post">
-                                            <input class="input" type="text" placeholder="Nhận xét" name="product.InsertEvaluation.Comment" />
+                                        <form class="review-form text-center" action="../CommentProduct" method="post">
+                                            <input class="input" type="text" placeholder="Nhận xét" name="Comment" />
                                             <div class="input-rating">
                                                 <span>Xếp hạng: </span>
                                                 <div class="review-rating" style="color: red;">
@@ -242,14 +246,15 @@
                                                     <i class="fa fa-star"></i>
                                                 </div>
                                                 <div class="stars">
-                                                    <input id="star5" name="product.InsertEvaluation.Rating" value="5" type="radio"><label for="star5"></label>
-                                                    <input id="star4" name="product.InsertEvaluation.Rating" value="4" type="radio"><label for="star4"></label>
-                                                    <input id="star3" name="product.InsertEvaluation.Rating" value="3" type="radio"><label for="star3"></label>
-                                                    <input id="star2" name="product.InsertEvaluation.Rating" value="2" type="radio"><label for="star2"></label>
-                                                    <input id="star1" name="product.InsertEvaluation.Rating" value="1" type="radio"><label for="star1"></label>
+                                                    <input id="star5" name="Rating" value="5" type="radio"><label for="star5"></label>
+                                                    <input id="star4" name="Rating" value="4" type="radio"><label for="star4"></label>
+                                                    <input id="star3" name="Rating" value="3" type="radio"><label for="star3"></label>
+                                                    <input id="star2" name="Rating" value="2" type="radio"><label for="star2"></label>
+                                                    <input id="star1" name="Rating" value="1" type="radio"><label for="star1"></label>
                                                 </div>
                                             </div>
-                                            <input type="hidden" name="product.InsertEvaluation.ProductId" value="@Model.ProductId" />
+                                            <input type="hidden" name="Page" value="<?=$data["product"]["Type"];?>" />
+                                            <input type="hidden" name="ProductId" value="<?=$data["product"]["ProductId"];?>" />
                                             <button type="submit" class="primary-btn">Đánh giá</button>
                                         </form>
                                     </div>
