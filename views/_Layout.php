@@ -16,7 +16,7 @@
     <link type="text/css" rel="stylesheet" href="/TechShop//assets/css/slick-theme.css"/>
     <link type="text/css" rel="stylesheet" href="/TechShop//assets/css/nouislider.min.css"/>
     <link type="text/css" rel="stylesheet" href="/TechShop//assets/css/site.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         .currSign:after {
             color: black;
@@ -42,12 +42,12 @@
                             $obj = json_decode($User,true);
                             if($obj["Admin"] == 1){
                                 echo '<li><a href="../Admin/Revenue">Quản lí</a></li>
-                                <li style="color:white;">Xin Chào' .$obj["FullName"] .' |</li>
+                                <li style="color:white;">Xin Chào <b>' .$obj["FullName"] .' </b></li>
                                 <li><a href="../Home/Logout"><i class="fas fa-sign-out-alt"></i>Đăng xuất</a></li>
                                 ';
                             }
                             else {
-                                echo '<li style="color:white;">Xin Chào '.$obj["FullName"] .' |</li>
+                                echo '<li style="color:white;">Xin Chào <b>'.$obj["FullName"] .' </b></li>
                                 <li><a href="../Home/Logout"><i class="fas fa-sign-out-alt"></i>Đăng xuất</a></li>';
                             }
                         }
