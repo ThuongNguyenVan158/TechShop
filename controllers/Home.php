@@ -85,5 +85,22 @@
             $this->accountModel->logout();
             header("Location: Login");
         }
+        function Introduce(){
+            // if($this->isLoggedIn()) {
+            //     $this->view("_Layout",[
+            //         "Page"=>"Home/index",
+            //         "homeModel" => $this->homeModel->getProduct()
+            //     ]);
+            // } else {
+            //     $this->view("Home/Login",[
+                    
+            //     ]);
+            // }
+            // $data = $this->productModel->getProduct();
+            // var_dump($data);
+            // die();
+            $this->view("Home/introduce",[
+            ]);
+        }
     }
 ?>
