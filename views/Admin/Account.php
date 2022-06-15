@@ -54,7 +54,7 @@
                                     <thead>
                                         <tr>
                                             <th>Tên</th>
-                                            <th>Giới tính</th>
+                                            <th>Vai trò</th>
                                             <th>Ngày sinh</th>
                                             <th>Số điện thoại</th>
                                             <th>Điểm tích lũy</th>
@@ -68,10 +68,10 @@
                                         foreach ($listaccount as $item) {
                                             $output .= '<tr>
                                                 <td>' . $item['FullName'] . '</td>';
-                                            if ($item['Gender'] == true) {
-                                                $output .= ' <td>Nam</td>';
+                                            if ($item['Admin'] == 1) {
+                                                $output .= ' <td>Admin</td>';
                                             } else {
-                                                $output .= ' <td>Nữ</td>';
+                                                $output .= ' <td>Khách hàng</td>';
                                             }
                                             $output .= '<td>' . $item['BirthDay'] . '</td>
                                                 <td>' . $item['PhoneNumber'] . '</td>

@@ -8,7 +8,7 @@
                 <div>
                     <form action="../Admin/Revenue" method="post">
                         <input type="month" name="date" />
-                        <button type="submit">
+                        <button type="submit" style="background-color: #bfe9c3; border-radius:2px;">
                             Tìm kiếm
                         </button>
                     </form>
@@ -63,7 +63,7 @@
                                 <input type="date" name="date1" />
                                 <label>Đến</label>
                                 <input type="date" name="date2" />
-                                <button type="submit">
+                                <button type="submit" style="background-color: #bfe9c3; border-radius:2px;">
                                     Tìm kiếm
                                 </button>
                             </form>
@@ -71,7 +71,7 @@
                         <!-- ORDERS TABLE -->
                         <div class="box">
                             <div class="box-header">
-                                Danh sách Bill đã thanh toán trong ngày
+                                Danh sách Bill đã thanh toán
                             </div>
                             <div class="box-body overflow-scroll">
                                 <table>

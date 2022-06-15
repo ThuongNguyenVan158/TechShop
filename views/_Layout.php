@@ -120,7 +120,20 @@
                 <div id="responsive-nav">
                     <!-- NAV -->
                     <ul class="main-nav nav navbar-nav">
-                        <li><a href="<?=Domain?>/Admin/Account">Trang chủ</a></li>
+                        <?php 
+                            if($_SESSION["account"]!= null)
+                            {
+                                $User = $_SESSION["account"];
+                                $obj = json_decode($User,true);
+                                if($obj["Admin"] == 1){
+                                    echo '<li><a href="../Admin/Revenue">Quản lí</a></li>';
+                                }
+                                else{
+                                    echo '<li><a href="../Home/Index">Trang chủ</a></li>';
+                                }
+                            }
+                        ?>
+                        <!-- <li><a href="<?=Domain?>/Admin/Account">Trang chủ</a></li> -->
                         <li><a href="<?=Domain?>/Product/Laptop">Laptop</a></li>
                         <li><a href="<?=Domain?>/Product/Smart">Di động</a></li>
                         <li><a href="<?=Domain?>/Product/Accessory">Phụ kiện</a></li>

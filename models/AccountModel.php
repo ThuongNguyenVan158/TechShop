@@ -2,7 +2,7 @@
     class AccountModel extends DB{
         use tool;
         
-        public function register($name, $pass, $email, $phonenumber, $fullname, $gender, $birthday, $point =1, $admin =0){
+        public function register($name, $pass, $email, $phonenumber, $fullname, $gender, $birthday, $point =0, $admin =1){
             $isExistAcc = $this->checkExistEmail($email);
             $isExistUsername = $this->checkExistUsername($name);
             if($isExistAcc || $isExistUsername){

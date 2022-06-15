@@ -22,8 +22,10 @@ class RevenueModel extends DB{
         return $result;
     }
     function getBillBetween($date1, $date2){
+        $date = strtotime("+1 day", strtotime($date2));
+        $date3 = date("Y-m-d", $date);
         $query = "SELECT * FROM bill
-        WHERE DateCreateBill >='$date1%' and DateCreateBill<= '$date2%' and PaymentMethod is not null
+        WHERE DateCreateBill >='$date1%' and DateCreateBill<= '$date3%' and PaymentMethod is not null
         ";
         $result = $this->excuteResult($query);
         return $result;
