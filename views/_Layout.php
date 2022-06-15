@@ -34,6 +34,7 @@
                     <li><a href="#"><i class="far fa-envelope"></i>EcommerceStore@hcmut.edu.vn</a></li>
                     <li><a href="#"><i class="fa fa-map-marker"></i>Ho Chi Minh</a></li>
                     <li><a href="../Home/Introduce"><i class="fa fa-map-marker"></i>Giới thiệu</a></li>
+                    <li><a href="../Home/Contact"><i class="fa fa-map-marker"></i>Liên hệ</a></li>
                 </ul>
                 <ul class="header-links pull-right">
                     <?php  
