@@ -85,5 +85,13 @@
             $this->accountModel->logout();
             header("Location: Login");
         }
+        function Introduce(){
+            $this->view("Home/introduce",[
+            ]);
+        }
+        function Contact(){
+            $this->view("Home/contact",[
+            ]);
+        }
     }
 ?>

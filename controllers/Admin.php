@@ -49,8 +49,8 @@ class Admin extends Controller{
         function AdminProduct(){
             if(isset($_POST["Name"])){
                 $name = $this->get_POST('Name');
-                $status =$this->get_POST('Status');
-                $producer = $this->get_POST('Producer');
+                $status =$this->get_POST('Type');
+                $producer = $this->get_POST('BrandName');
                 $price = $this->get_POST('Price');
                 $special = $this->get_POST('Special');
                 $imgUrl = $this->get_POST('ImgUrl');
@@ -79,10 +79,85 @@ class Admin extends Controller{
             ]);
         }
         function Revenue(){
+            // $date = date("Y-m-d H:i:s");
+            $date = date("Y-m");
+            $bill = [];
+            if(isset($_POST['date'])){
+                $date = $this->get_POST('date');
+            }
+            if(isset($_POST['date1']) and isset($_POST['date2'])){
+                $date1 = $this->get_POST('date1');
+                $date2 = $this->get_POST('date2');
+                $bill = $this->revenueModel->getBillBetween($date1, $date2);
+            }
+            
             $this->view("_Admin",[
                 "Page"=>"Admin/Revenue",
-                "revenuelist" => $this->revenueModel->getBill()
+                "numberbill" => $this->revenueModel->getNumberBill($date),
+                "revenuelist" =>$bill == []? $this->revenueModel->getBill($date) : $bill,
+                "totalbill" => $this->revenueModel->getTotalOfMonth($date)
+
             ]);
         }
-}
+        function DeleteProduct(){
+            if(isset($_POST["ProductId"])){
+                $id = $this->get_POST('ProductId');
+            }
+            $this->productModel->deleteProduct($id);
+            header("Location: AdminProduct");
+        }
+        function DeleteAccount(){
+            if(isset($_POST["idAccount"])){
+                $id = $this->get_POST('idAccount');
+            }
+            $this->accountModel->deleteAccount($id);
+            header("Location: Account");
+        }
+        function EditAccount($accountId){
+            // $result = $this->accountModel->getDetailAccount($accountId);
+            // echo $result;
+            // die();
+            $this->view("_Admin",[
+                "Page"=>"Admin/EditAccount",
+                "accountdetail" => $this->accountModel->getDetailAccount($accountId)
+            ]);
+        }
+        function UpdateAccount(){
+            if(isset($_POST["update"])){
+                $id = $this->get_POST('Id');
+                $gender = $this->get_POST('Gender');
+                $fullName = $this->get_POST('FullName');
+                $email = $this->get_POST('Email');
+                $admin = $this->get_POST('Admin');
+                $phone = $this->get_POST('Phone');
+            }
+            // echo $id,$userName,$fullName,$email,$admin;
+            // die();
+            $this->accountModel-> UpdateAccount($id, $gender, $fullName, $email, $admin, $phone);
+            header("Location: Account");
+        }
+        function EditProduct($productId){
+            $this->view("_Admin",[
+                "Page"=>"Admin/EditProduct",
+                "productdetail" => $this->productModel->getDetailProduct($productId)
+            ]);
+        }
+        function UpdateProduct(){
+            if(isset($_POST["Name"])){
+                $id = $this->get_POST('Id');
+                $name = $this->get_POST('Name');
+                $type =$this->get_POST('Type');
+                $brandName = $this->get_POST('BrandName');
+                $price = $this->get_POST('Price');
+                $special = $this->get_POST('Special');
+                $sellOff = $this->get_POST('SellOff');
+                $imgUrl = $this->get_POST('ImgUrl');
+            }
+            // // echo $id,$userName,$fullName,$email,$admin;
+            // // die();
+            // $this->accountModel-> UpdateAccount($id, $gender, $fullName, $email, $admin, $phone);
+            $this->productModel->UpdateProduct($id, $name, $type, $brandName, $price, $special, $sellOff, $imgUrl);
+            header("Location: AdminProduct");
+        }
+    }
 ?>

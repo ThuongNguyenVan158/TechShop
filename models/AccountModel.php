@@ -2,7 +2,7 @@
     class AccountModel extends DB{
         use tool;
         
-        public function register($name, $pass, $email, $phonenumber, $fullname, $gender, $birthday, $point =1, $admin =0){
+        public function register($name, $pass, $email, $phonenumber, $fullname, $gender, $birthday, $point =0, $admin =1){
             $isExistAcc = $this->checkExistEmail($email);
             $isExistUsername = $this->checkExistUsername($name);
             if($isExistAcc || $isExistUsername){
@@ -48,6 +48,27 @@
             $query = "SELECT * FROM customer";
             $accountlist = $this->excuteResult($query);
             return $accountlist;
+        }
+        function deleteAccount($id){
+            $query = "DELETE FROM customer 
+            WHERE Id = '$id'";
+            $result = $this->excute($query);
+            return $result == "true";
+        }
+        function getDetailAccount($id){
+            $query = "SELECT * FROM customer
+            WHERE id = '$id'
+            ";
+            $result = $this->excuteResult($query, true);
+            return $result;
+        }
+        function UpdateAccount($id, $gender, $fullName, $email, $admin, $phone){
+            $query = "UPDATE customer
+            SET Gender='$gender', Email='$email', FullName='$fullName', Admin='$admin', PhoneNumber = '$phone'
+            WHere Id = '$id'
+            ";
+            $result = $this->excute($query);
+            return $result;
         }
     }
 ?>

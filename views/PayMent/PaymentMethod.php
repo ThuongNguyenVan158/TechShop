@@ -168,7 +168,7 @@
                                             </table>
                                             <form action="../Payment/PaymentMethod" method="post">
                                                 <div class="text-center" id="momo-QR-code">
-                                                    <img id="momo-QR-code" src="/images/momo_success.jpg"
+                                                    <img id="momo-QR-code" src="../assets/images/momo_success.jpg"
                                                          alt='Pay Momo wallet success' />
                                                     <button class="finish-payment"
                                                             value="Ví điện tử Momo"
@@ -178,7 +178,7 @@
                                                     </button>
                                                 </div>
                                                 <div class="text-center" id="zalopay-QR-code">
-                                                    <img id="zalopay-QR-code" src="/images/zalopay_success.jpg"
+                                                    <img id="zalopay-QR-code" src="../assets/images/zalopay_success.jpg"
                                                          alt='Pay ZaloPay wallet success' />
                                                     <button class="finish-payment"
                                                             value="Ví điện tử ZaloPay"
@@ -188,7 +188,7 @@
                                                     </button>
                                                 </div>
                                                 <div class="text-center" id="airpay-QR-code">
-                                                    <img id="airpay-QR-code" src="/images/airpay_success.jpg"
+                                                    <img id="airpay-QR-code" src="../assets/images/airpay_success.jpg"
                                                          alt='Pay Airpay wallet success' />
                                                     <button class="finish-payment"
                                                             value="Ví điện tử AirPay"

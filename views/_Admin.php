@@ -9,12 +9,9 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link type="text/css" rel="stylesheet" href="/assets/css/app.css" />
-    <link type="text/css" rel="stylesheet" href="/assets/css/grid.css" />
-    <link type="text/css" rel="stylesheet" href="/assets/css/theme.css" />
-    <!-- <link type="text/css" rel="stylesheet" href="/TechShop/assets/css/app.css" />
-    <link type="text/css" rel="stylesheet" href="/TechShop/assets/css/grid.css" />
-    <link type="text/css" rel="stylesheet" href="/TechShop/assets/css/theme.css" /> -->
+    <link type="text/css" rel="stylesheet" href="/TechShop//assets/css/app.css" />
+    <link type="text/css" rel="stylesheet" href="/TechShop//assets/css/grid.css" />
+    <link type="text/css" rel="stylesheet" href="/TechShop//assets/css/theme.css" />
     <style>
         .currSign:after {
             color: black;
@@ -22,6 +19,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- SIDEBAR -->
     <div class="sidebar">
@@ -31,11 +29,15 @@
                     <h4>Hi Thuong</h4>
                 </div>
             </div>
-            <a href="@Url.Action("Logout","Home")" class="btn btn-outline">
-                <i class="fas fa-sign-in-alt"></i>
-            </a>
+            <!-- <a href="@Url.Action("Logout","Home")" class="btn btn-outline"> -->
+            <li class="rs_logout"><a href="../Home/Logout"><i class="fas fa-sign-out-alt"></i>Đăng xuất</a></li>
+            <!-- <i class="fas fa-sign-in-alt"></i>
+            </a> -->
         </div>
         <!-- SIDEBAR MENU -->
+        <button class="moblie-menu" onclick="mobile_dropdown()">
+            <i class="fas fa-bars"></i>
+        </button>
         <ul class="sidebar-menu">
             <li>
                 <a href="../Admin/Revenue">
@@ -62,10 +64,11 @@
                 </a>
             </li>
         </ul>
+
         <!-- END SIDEBAR MENU -->
     </div>
     <!-- END SIDEBAR -->
-    <?php require_once "./views/".$data["Page"].".php" ?>
+    <?php require_once "./views/" . $data["Page"] . ".php" ?>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script type="text/javascript">
@@ -76,6 +79,35 @@
             x[i].innerHTML = num;
             x[i].classList.add("currSign");
         }
+
+        function mobile_dropdown() {
+            const sidebar_menu = document.querySelector(".sidebar-menu");
+            if (sidebar_menu.classList.contains("active")) {
+                sidebar_menu.classList.remove("active");
+            } else {
+                sidebar_menu.classList.add("active");
+            }
+        }
+        const mobile_sidebar = document.querySelector('.sidebar');
+
+        if ($(document).width() <= 540) {
+            mobile_sidebar.classList.add("sidebar1");
+            mobile_sidebar.classList.remove("sidebar");
+        } else {
+            mobile_sidebar.classList.add("sidebar");
+            mobile_sidebar.classList.remove("sidebar1");
+        }
+
+        window.addEventListener("resize", function(event) {
+            if ($(document).width() <= 540) {
+                mobile_sidebar.classList.add("sidebar1");
+                mobile_sidebar.classList.remove("sidebar");
+            } else {
+                mobile_sidebar.classList.add("sidebar");
+                mobile_sidebar.classList.remove("sidebar1");
+            }
+        })
     </script>
 </body>
+
 </html>

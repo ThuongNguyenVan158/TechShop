@@ -5,11 +5,9 @@ class DB{
     public $con;
     public $error;
     //use when deploy
-    protected $servername = "mysql_techshop";
-    //use when test local with db online
-    // protected $servername = "118.69.91.46";
+    protected $servername = "localhost";
     protected $username = "root";
-    protected $password = "123";
+    protected $password = "";
     protected $dbname = "techshop";
 
     function __construct(){
