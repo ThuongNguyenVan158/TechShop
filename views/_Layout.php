@@ -12,15 +12,12 @@
 	
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link type="text/css" rel="stylesheet" href="/assets/css/slick.css" />
-    <link type="text/css" rel="stylesheet" href="/assets/css/slick-theme.css"/>
-    <link type="text/css" rel="stylesheet" href="/assets/css/nouislider.min.css"/>
-    <link type="text/css" rel="stylesheet" href="/assets/css/site.css" />
-    <!-- <link type="text/css" rel="stylesheet" href="/TechShop/assets/css/slick.css" />
-    <link type="text/css" rel="stylesheet" href="/TechShop/assets/css/slick-theme.css"/>
-    <link type="text/css" rel="stylesheet" href="/TechShop/assets/css/nouislider.min.css"/>
-    <link type="text/css" rel="stylesheet" href="/TechShop/assets/css/site.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> -->
+    <link type="text/css" rel="stylesheet" href="/TechShop//assets/css/slick.css" />
+    <link type="text/css" rel="stylesheet" href="/TechShop//assets/css/slick-theme.css"/>
+    <link type="text/css" rel="stylesheet" href="/TechShop//assets/css/nouislider.min.css"/>
+    <link type="text/css" rel="stylesheet" href="/TechShop//assets/css/site.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         .currSign:after {
             color: black;
@@ -36,6 +33,8 @@
                     <li><a href="#"><i class="fa fa-phone"></i>0394003431</a></li>
                     <li><a href="#"><i class="far fa-envelope"></i>EcommerceStore@hcmut.edu.vn</a></li>
                     <li><a href="#"><i class="fa fa-map-marker"></i>Ho Chi Minh</a></li>
+                    <li><a href="../Home/Introduce"><i class="fa fa-map-marker"></i>Giới thiệu</a></li>
+                    <li><a href="../Home/Contact"><i class="fa fa-map-marker"></i>Liên hệ</a></li>
                 </ul>
                 <ul class="header-links pull-right">
                     <?php  
@@ -46,12 +45,12 @@
                             $obj = json_decode($User,true);
                             if($obj["Admin"] == 1){
                                 echo '<li><a href="../Admin/Revenue">Quản lí</a></li>
-                                <li style="color:white;">Xin Chào' .$obj["FullName"] .' |</li>
+                                <li style="color:white;">Xin Chào <b>' .$obj["FullName"] .' </b></li>
                                 <li><a href="../Home/Logout"><i class="fas fa-sign-out-alt"></i>Đăng xuất</a></li>
                                 ';
                             }
                             else {
-                                echo '<li style="color:white;">Xin Chào '.$obj["FullName"] .' |</li>
+                                echo '<li style="color:white;">Xin Chào <b>'.$obj["FullName"] .' </b></li>
                                 <li><a href="../Home/Logout"><i class="fas fa-sign-out-alt"></i>Đăng xuất</a></li>';
                             }
                         }
@@ -90,7 +89,7 @@
 							<div class="header-ctn">
 								<!-- Cart -->
 								<div class="dropdown">
-									<a href="../PayMent/PayMent">
+									<a href="<?=Domain?>/PayMent/PayMent">
 										<i class="fas fa-shopping-cart" style="font-size:20px;"></i>
 										<span  style="font-size:16px;">Giỏ hàng</span>
 									</a>
@@ -122,11 +121,25 @@
                 <div id="responsive-nav">
                     <!-- NAV -->
                     <ul class="main-nav nav navbar-nav">
-                        <li><a href="../Admin/Account">Trang chủ</a></li>
-                        <li><a href="../Product/Laptop">Laptop</a></li>
-                        <li><a href="../Product/Smart">Di động</a></li>
-                        <li><a href="../Product/Accessory">Phụ kiện</a></li>
-                        <li><a href="../Payment/PaymentHistory">Lịch sử thanh toán</a></li>
+                        <?php 
+                            if(isset($_SESSION["account"]))
+                            {
+                                $User = $_SESSION["account"];
+                                $obj = json_decode($User,true);
+                                if($obj["Admin"] == 1){
+                                    echo '<li><a href="../Admin/Revenue">Quản lí</a></li>';
+                                }
+                                else{
+                                    echo '<li><a href="../Home/Index">Trang chủ</a></li>';
+                                }
+                            }
+                            else  echo '<li><a href="../Home/Index">Trang chủ</a></li>';
+                        ?>
+                        <!-- <li><a href="<?=Domain?>/Admin/Account">Trang chủ</a></li> -->
+                        <li><a href="<?=Domain?>/Product/Laptop">Laptop</a></li>
+                        <li><a href="<?=Domain?>/Product/Smart">Di động</a></li>
+                        <li><a href="<?=Domain?>/Product/Accessory">Phụ kiện</a></li>
+                        <li><a href="<?=Domain?>/Payment/PaymentHistory">Lịch sử thanh toán</a></li>
                     </ul>
                     <!-- /NAV -->
                 </div>
@@ -193,10 +206,16 @@
         <!-- /top footer -->
     </footer>
     <!-- /FOOTER -->
-    <script src="/assets/js/jquery-3.3.1.slim.min.js"></script>  
-    <script src="/assets/js/popper.min.js"></script>  
-    <script src="/assets/js/bootstrap.min.js"></script>  
-    <script src="/assets/js/slick.min.js"></script>  
+    <script src="/TechShop//assets/js/jquery-3.3.1.slim.min.js"></script>  
+    <script src="/TechShop//assets/js/popper.min.js"></script>  
+
+    <script src="/TechShop//assets/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/TechShop//assets/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/TechShop//assets/js/site.js"></script>
+    <script src="/TechShop//assets/js/jquery.min.js"></script>
+    <script src="/TechShop//assets/js/bootstrap.min.js"></script>  
+    <script src="/TechShop//assets/js/slick.min.js"></script>  
+    <script src="/TechShop//assets/js/main.js"></script>
     <script type="text/javascript">
         let x = document.querySelectorAll(".price");
         for (let i = 0, len = x.length; i < len; i++) {
@@ -206,6 +225,6 @@
             x[i].classList.add("currSign");
         }
     </script>
-    <script src="/assets/js/site.js"></script>        
+    <script src="../assets/js/site.js"></script>        
 </body>
 </html>

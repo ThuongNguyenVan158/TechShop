@@ -27,7 +27,7 @@ class ProductModel extends DB{
         return $result;
     }
     function getEvalByProductId($id){
-        $query = "SELECT * FROM evaluation WHERE ProductId='$id'";
+        $query = "SELECT * FROM evaluation JOIN customer ON CustomerId = Id WHERE ProductId='$id'";
         $result = $this->excuteResult($query);
         return $result;
     }
@@ -71,11 +71,33 @@ class ProductModel extends DB{
 
         return $this->excuteResult($query0,true);
     }
-    function insertProduct($Name, $Producer, $Price, $Status, $ImgUrl, $Rating, $Special, $SellOff, $TimeSellOff, $OldPrice){
-        $query = "INSERT INTO product(Name, Producer, Price, Status, ImgUrl, Rating, Special, SellOff, TimeSellOff, OldPrice) 
-        VALUES ('$Name', '$Producer', '$Price','$Status', '$ImgUrl', '$Rating', '$Special', '$SellOff', '$TimeSellOff', '$OldPrice')";
+    function insertProduct($Name, $BrandName, $Price, $Type, $ImgUrl, $Rating, $Special, $SellOff, $TimeSellOff, $OldPrice){
+        $query = "INSERT INTO product(Name, BrandName, Price, Type, ImgUrl, Rating, Special, SellOff, TimeSellOff, OldPrice) 
+        VALUES ('$Name', '$BrandName', '$Price','$Type', '$ImgUrl', '$Rating', '$Special', '$SellOff', '$TimeSellOff', '$OldPrice')";
         $result = $this->excute($query);
         return $result == "true";
     }
+    function deleteProduct($id){
+        $query = "DELETE FROM product 
+        WHERE ProductId = '$id'";
+        $result = $this->excute($query);
+        return $result == "true";
+    }
+    function getDetailProduct($productId){
+        $query = "SELECT * FROM product
+            WHERE ProductId = '$productId'
+            ";
+            $result = $this->excuteResult($query, true);
+            return $result;
+    }
+    function UpdateProduct($id, $name, $type, $brandName, $price, $special, $sellOff, $imgUrl){
+        $query = "UPDATE product
+        SET Name='$name', Type='$type', BrandName='$brandName', Price='$price', Special = '$special', SellOff='$sellOff', ImgUrl = '$imgUrl'
+        WHere ProductId = '$id'
+        ";
+        $result = $this->excute($query);
+        return $result;
+    }
+
 }
 ?>
