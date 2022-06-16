@@ -122,7 +122,7 @@
                     <!-- NAV -->
                     <ul class="main-nav nav navbar-nav">
                         <?php 
-                            if($_SESSION["account"]!= null)
+                            if(isset($_SESSION["account"]))
                             {
                                 $User = $_SESSION["account"];
                                 $obj = json_decode($User,true);
@@ -133,6 +133,7 @@
                                     echo '<li><a href="../Home/Index">Trang chủ</a></li>';
                                 }
                             }
+                            else  echo '<li><a href="../Home/Index">Trang chủ</a></li>';
                         ?>
                         <!-- <li><a href="<?=Domain?>/Admin/Account">Trang chủ</a></li> -->
                         <li><a href="<?=Domain?>/Product/Laptop">Laptop</a></li>
