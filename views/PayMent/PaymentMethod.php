@@ -168,7 +168,8 @@
                                             </table>
                                             <form action="/Payment/PaymentMethod" method="post">
                                                 <div class="text-center" id="momo-QR-code">
-                                                    <img id="momo-QR-code" src="/images/momo_success.jpg"
+                                                    <!-- <img id="momo-QR-code" src="/images/momo_success.jpg" -->
+                                                    <img id="momo-QR-code" src="https://drive.google.com/file/d/1QvcOSx8jRW6G_jIOxkE5esuOpdnzJj5y/view"
                                                          alt='Pay Momo wallet success' />
                                                     <button class="finish-payment"
                                                             value="Ví điện tử Momo"
