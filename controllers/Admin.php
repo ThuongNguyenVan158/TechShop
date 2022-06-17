@@ -104,14 +104,14 @@ class Admin extends Controller{
                 $id = $this->get_POST('ProductId');
             }
             $this->productModel->deleteProduct($id);
-            header("Location: AdminProduct");
+            header("Location: /Admin/AdminProduct");
         }
         function DeleteAccount(){
             if(isset($_POST["idAccount"])){
                 $id = $this->get_POST('idAccount');
             }
             $this->accountModel->deleteAccount($id);
-            header("Location: Account");
+            header("Location: /Admin/Account");
         }
         function EditAccount($accountId){
             // $result = $this->accountModel->getDetailAccount($accountId);
@@ -134,7 +134,7 @@ class Admin extends Controller{
             // echo $id,$userName,$fullName,$email,$admin;
             // die();
             $this->accountModel-> UpdateAccount($id, $gender, $fullName, $email, $admin, $phone);
-            header("Location: Account");
+            header("Location: /Admin/Account");
         }
         function EditProduct($productId){
             $this->view("_Admin",[
@@ -157,7 +157,7 @@ class Admin extends Controller{
             // // die();
             // $this->accountModel-> UpdateAccount($id, $gender, $fullName, $email, $admin, $phone);
             $this->productModel->UpdateProduct($id, $name, $type, $brandName, $price, $special, $sellOff, $imgUrl);
-            header("Location: AdminProduct");
+            header("Location: /Admin/AdminProduct");
         }
     }
 ?>

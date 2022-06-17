@@ -33,7 +33,7 @@
                 $pass = $this->get_POST('Password');
                 $result = $this->accountModel->login($name, $pass);
                 if($result){
-                    header("Location: ./index");
+                    header("Location: /Home/index");
                 }
                 $this->view("Home/Login",[
 
@@ -69,7 +69,7 @@
                     $issuccess = $this->accountModel->register($name, $pass, $email, $phonenumber, $fullname, $gender, $birthday, 1, 0);
                 }
                 if($issuccess){
-                    header('Location: Login');
+                    header('Location: /Home/Login');
                     die();
                 }
                 else{
@@ -83,7 +83,7 @@
         }
         function Logout(){
             $this->accountModel->logout();
-            header("Location: Login");
+            header("Location: /Home/Login");
         }
         function Introduce(){
             $this->view("Home/introduce",[
