@@ -101,5 +101,56 @@ class Payment extends Controller{
             ]);
             }
         }
+        function Payment(){
+            if(!$this->isLoggedIn()){
+                header("Location: /Home/Login");
+                die();
+            }
+            $User = $_SESSION["account"];
+            $obj = json_decode($User,true);
+            $bill = $this->paymentModel->GetBillNoPayMent($obj['Id']);
+            $bill_decode = json_decode($bill,true);
+
+            if(isset($_POST['Type']))
+             {
+                $typ = $this->get_POST('Type');
+                $idProduct = $this->get_POST('ProductId');
+                $total = $this->get_POST('TotalProductPrice');
+                $quantity = $this->get_POST('Quantity');
+                $billId = $this->get_POST('BillId');
+                $result =  false;
+                $Name='';$Hamlet='';$Village='';$District='';$Province='';$Telephone='';
+                if($typ == 'p' and $bill!= "null"){
+                    $Name = $this->get_POST('Name');
+                    $Hamlet = $this->get_POST('Hamlet');
+                    $Village = $this->get_POST('Village');
+                    $District = $this->get_POST('District');
+                    $Province = $this->get_POST('Province');
+                    $Telephone =  $this->get_POST('Telephone');
+                    $result = $this->paymentModel->UpdateAddressOfBill($bill_decode['BillId'], $Name,$Hamlet, $Village, $District, $Province, $Telephone);
+                    header("Location: /Payment/PaymentMethod");
+                    // die();
+                }
+                else if($typ == '+')
+                {
+                    $result= $this->paymentModel->UpdateBillAndBillDetailById($billId, $idProduct, $quantity+1);
+                }
+                else if($typ == '-'){
+                    $result= $this->paymentModel->UpdateBillAndBillDetailById($billId, $idProduct, $quantity-1);
+                }
+                else if($typ == 'q'){
+                    $result= $this->paymentModel->UpdateBillAndBillDetailById($billId, $idProduct, $quantity);
+                }
+                else if($typ == 'd'){
+                    $result= $this->paymentModel->UpdateBillAndBillDetailById($billId, $idProduct, 0);
+                }
+             }
+            $bill = $this->paymentModel->GetBillNoPayMent($obj['Id']);
+            $this->view("_Layout",[
+                "Page"=>"PayMent/Payment",
+                "cart" =>$bill == "null"? $bill : $this->paymentModel->GetListProductOfBillNoPayMent($bill_decode['BillId']),
+                "bill" =>$bill
+            ]);
+        }
     }
 ?>

@@ -89,7 +89,7 @@
 							<div class="header-ctn">
 								<!-- Cart -->
 								<div class="dropdown">
-									<a href="/PayMent/index">
+									<a href="/PayMent/Payment">
 										<i class="fas fa-shopping-cart" style="font-size:20px;"></i>
 										<span  style="font-size:16px;">Giỏ hàng</span>
 									</a>
