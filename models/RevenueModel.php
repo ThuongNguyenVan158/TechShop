@@ -24,7 +24,7 @@ class RevenueModel extends DB{
     function getBillBetween($date1, $date2){
         $time = strtotime($date1. '-7 hours');
         $date1 = date("Y-m-d H:i:s", $time);  
-        $time2 = strtotime($date2. '+24 hours');;
+        $time2 = strtotime($date2. '+17 hours');
         $date3 = date("Y-m-d H:i:s", $time2);
         $query = "SELECT * FROM bill
         WHERE DateCreateBill >='$date1%' and DateCreateBill<= '$date3%' and PaymentMethod is not null
