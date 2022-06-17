@@ -42,12 +42,12 @@
                                         <tr>
                                             <td class="text-center">'.$i.'</td>
                                             <td class="text-center">
-                                                <a href="../../Product/Product/'.$productId.'">
+                                                <a href="/Product/Product/'.$productId.'">
                                                 '.$item['ProductName'].'
                                                 </a>
                                             </td>
                                             <td class="text-center">
-                                                <a href="../../Product/Product/'.$productId.'">
+                                                <a href="/Product/Product/'.$productId.'">
                                                     <img src="'.$item['ImgUrl'].'" class="rounded" width="60" height="60">
                                                 </a>
                                             </td>

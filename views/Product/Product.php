@@ -11,7 +11,7 @@
             </div>
             <!-- /Product main img -->
             <!-- Product details -->
-            <form action="..\addCart" method="post" onsubmit="return confirm('Bạn muốn thêm vào giỏ hàng?!!!')">
+            <form action="\addCart" method="post" onsubmit="return confirm('Bạn muốn thêm vào giỏ hàng?!!!')">
                 <div class="col-md-6">
                     <div class="product-details">
                         <h2 class="product-name"><?php echo $data["product"]["Name"];?></h2>
@@ -238,7 +238,7 @@
                                 <!-- Review Form -->
                                 <div class="col-md-3">
                                     <div id="review-form">
-                                        <form class="review-form text-center" action="../CommentProduct" method="post">
+                                        <form class="review-form text-center" action="/CommentProduct" method="post">
                                             <input class="input" type="text" placeholder="Nhận xét" name="Comment" />
                                             <div class="input-rating">
                                                 <span>Xếp hạng: </span>

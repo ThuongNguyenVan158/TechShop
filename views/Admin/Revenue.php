@@ -6,7 +6,7 @@
                     <h3>Quản lí doanh thu</h3>
                 </div>
                 <div>
-                    <form action="../Admin/Revenue" method="post">
+                    <form action="/Admin/Revenue" method="post">
                         <input type="month" name="date" />
                         <button type="submit" style="background-color: #bfe9c3; border-radius:2px;">
                             Tìm kiếm
@@ -58,7 +58,7 @@
                 <div className="card__body">
                     <div class="col-12">
                         <div class="counter-title">
-                            <form action="../Admin/Revenue" method="post">
+                            <form action="/Admin/Revenue" method="post">
                                 <label>Từ</label>
                                 <input type="date" name="date1" />
                                 <label>Đến</label>
@@ -131,7 +131,7 @@
                     <h3>Quản lí doanh thu</h3>
                 </div>
                 <div>
-                    <form action="../Admin/Revenue" method="post">
+                    <form action="/Admin/Revenue" method="post">
                         <input type="month" name="date" />
                         <button type="submit">
                             Tìm kiếm
@@ -183,7 +183,7 @@
                 <div className="card__body">
                     <div class="col-12">
                         <div class="counter-title">
-                            <form action="../Admin/Revenue" method="post">
+                            <form action="/Admin/Revenue" method="post">
                                 <label>Từ</label>
                                 <input type="date" name="date1" />
                                 <label>Đến</label>

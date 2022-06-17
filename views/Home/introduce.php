@@ -47,7 +47,7 @@
                 <img src="https://www.w3schools.com/w3images/avatar5.png">
             </div>
             <div class="d-flex justify-content-center">
-                        <a href="../Home/Index">Trở về</a>
+                        <a href="/Home/Index">Trở về</a>
                     </div>
             
         </div>

@@ -9,7 +9,7 @@
 			font-size: 1.7rem !important;
 		}
 </style>
-<form action="../Payment/Payment" method="post" id="payment" onsubmit="return kiemtra()"></form>
+<form action="/Payment/Payment" method="post" id="payment" onsubmit="return kiemtra()"></form>
 <div class="section">
 		<!-- container -->
 		<div class="container">
@@ -122,7 +122,7 @@
 										$output.='
 										<tr>
 											<td>
-											<a href="../Product/Product/'.$productId.'"">
+											<a href="/Product/Product/'.$productId.'"">
 													<img src="'.$item['ImgUrl'].'" title="" width="60" height="60">
 											</a>
 											</td>
@@ -139,7 +139,7 @@
 											</a>
 											</td>
 											<td class="price1 text-right"style="width: 110px">'.$item['ProductPrice'].'</td>
-											<form action="../Payment/Payment" method="post">
+											<form action="/Payment/Payment" method="post">
 												<td class="text-center"style="width: 130px">
 													<input class="input1" type="hidden" name="Name" value=""/>
 													<input class="input2" type="hidden" name="Hamlet"  value="" />
@@ -195,7 +195,7 @@
 								</label>
 							</div>
 							<div  class="text-right">
-							<a class="btn btn-info my-1"href="../Home/index" >Tiếp tục mua hàng</a>
+							<a class="btn btn-info my-1"href="/Home/index" >Tiếp tục mua hàng</a>
 							<button class="btn btn-success my-1" value="p" name="Type" style="margin-left:15px" form="payment">Đặt hàng</button>
 							
 							</div>';
@@ -203,7 +203,7 @@
 						else
 						{echo '
 							<div class="col-md-50 text-center">
-							<a class="btn btn-success my-1"href="../Home/index" style="font-size: 25px;"><strong>Tiếp tục mua hàng</strong></a>
+							<a class="btn btn-success my-1"href="/Home/index" style="font-size: 25px;"><strong>Tiếp tục mua hàng</strong></a>
 							</div>';
 						}
 					?>

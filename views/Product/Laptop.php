@@ -83,7 +83,7 @@
                     for($i = $data["Start"];$i<$n;$i++)
                     {
                         echo"
-                        <form action=\"..\Product\addCart\" method=\"post\" onsubmit=\"return confirm('Bạn muốn thêm vào giỏ hàng?!!!');\">
+                        <form action=\"\Product\addCart\" method=\"post\" onsubmit=\"return confirm('Bạn muốn thêm vào giỏ hàng?!!!');\">
                             <input type=\"hidden\" name=\"ProductId\" value=\"".$data["laptop"][$i]["ProductId"]."\" />
                             <input type=\"hidden\" name=\"Quantity\" value=\"1\" />
                             <input type=\"hidden\" name=\"Name\" value=\"".$data["laptop"][$i]["Name"]."\" />
@@ -129,7 +129,7 @@
                 <!-- store bottom filter -->
                 <div class="store-filter clearfix">
                     <ul class="store-pagination">
-                        <form action="../Product/Laptop" method="post">
+                        <form action="/Product/Laptop" method="post">
                             <?php
                             for($i = 0;$i < $data["TotalPage"];$i++){
                                 if($data["CurrentPage"] == $i + 1) echo '<button value="'.$i.'" name="CurrentPage" style="padding: 0;border:none;"><li class="active">'.($i+1).'</li></button>';

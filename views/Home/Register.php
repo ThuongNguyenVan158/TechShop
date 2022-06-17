@@ -67,7 +67,7 @@
           crossorigin="anonymous" />
 
     <!--Custom styles-->
-    <link rel="stylesheet" type="text/css" href="../assets/css/site.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/site.css" />
 </head>
 <body class="login-page">
     <div class="container">
@@ -77,7 +77,7 @@
                     <h3>Đăng ký</h3>
                 </div>
                 <div class="card-body">
-                    <form method="post" action="../Home/Register" >
+                    <form method="post" action="/Home/Register" >
                         <!-- <span class="text-danger"></span> -->
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
@@ -203,7 +203,7 @@
                         </div>
                     </form>
                     <div class="form-group">
-                        <a href="../Home/Login"
+                        <a href="/Home/Login"
                            class="btn float-left login_btn">
                             Trở lại
                         </a>

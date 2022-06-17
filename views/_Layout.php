@@ -33,25 +33,25 @@
                     <li><a href="#"><i class="fa fa-phone"></i>0394003431</a></li>
                     <li><a href="#"><i class="far fa-envelope"></i>EcommerceStore@hcmut.edu.vn</a></li>
                     <li><a href="#"><i class="fa fa-map-marker"></i>Ho Chi Minh</a></li>
-                    <li><a href="../Home/Introduce"><i class="fa fa-map-marker"></i>Giới thiệu</a></li>
-                    <li><a href="../Home/Contact"><i class="fa fa-map-marker"></i>Liên hệ</a></li>
+                    <li><a href="/Home/Introduce"><i class="fa fa-map-marker"></i>Giới thiệu</a></li>
+                    <li><a href="/Home/Contact"><i class="fa fa-map-marker"></i>Liên hệ</a></li>
                 </ul>
                 <ul class="header-links pull-right">
                     <?php  
                         if(!$this->isLoggedIn()){
-                            echo '<li><a href="../Home/Login"><i class="fa fa-user"></i>Đăng nhập</a></li>';
+                            echo '<li><a href="/Home/Login"><i class="fa fa-user"></i>Đăng nhập</a></li>';
                         }else{
                             $User = $_SESSION["account"];
                             $obj = json_decode($User,true);
                             if($obj["Admin"] == 1){
-                                echo '<li><a href="../Admin/Revenue">Quản lí</a></li>
+                                echo '<li><a href="/Admin/Revenue">Quản lí</a></li>
                                 <li style="color:white;">Xin Chào <b>' .$obj["FullName"] .' </b></li>
-                                <li><a href="../Home/Logout"><i class="fas fa-sign-out-alt"></i>Đăng xuất</a></li>
+                                <li><a href="/Home/Logout"><i class="fas fa-sign-out-alt"></i>Đăng xuất</a></li>
                                 ';
                             }
                             else {
                                 echo '<li style="color:white;">Xin Chào <b>'.$obj["FullName"] .' </b></li>
-                                <li><a href="../Home/Logout"><i class="fas fa-sign-out-alt"></i>Đăng xuất</a></li>';
+                                <li><a href="/Home/Logout"><i class="fas fa-sign-out-alt"></i>Đăng xuất</a></li>';
                             }
                         }
                     ?>
@@ -89,7 +89,7 @@
 							<div class="header-ctn">
 								<!-- Cart -->
 								<div class="dropdown">
-									<a href="../PayMent/PayMent">
+									<a href="/PayMent/PayMent">
 										<i class="fas fa-shopping-cart" style="font-size:20px;"></i>
 										<span  style="font-size:16px;">Giỏ hàng</span>
 									</a>
@@ -127,18 +127,18 @@
                                 $User = $_SESSION["account"];
                                 $obj = json_decode($User,true);
                                 if($obj["Admin"] == 1){
-                                    echo '<li><a href="../Admin/Revenue">Quản lí</a></li>';
+                                    echo '<li><a href="/Admin/Revenue">Quản lí</a></li>';
                                 }
                                 else{
-                                    echo '<li><a href="../Home/Index">Trang chủ</a></li>';
+                                    echo '<li><a href="/Home/Index">Trang chủ</a></li>';
                                 }
                             }
-                            else  echo '<li><a href="../Home/Index">Trang chủ</a></li>';
+                            else  echo '<li><a href="/Home/Index">Trang chủ</a></li>';
                         ?>
-                        <li><a href="../Product/Laptop">Laptop</a></li>
-                        <li><a href="../Product/Smart">Di động</a></li>
-                        <li><a href="../Product/Accessory">Phụ kiện</a></li>
-                        <li><a href="../Payment/PaymentHistory">Lịch sử thanh toán</a></li>
+                        <li><a href="/Product/Laptop">Laptop</a></li>
+                        <li><a href="/Product/Smart">Di động</a></li>
+                        <li><a href="/Product/Accessory">Phụ kiện</a></li>
+                        <li><a href="/Payment/PaymentHistory">Lịch sử thanh toán</a></li>
                     </ul>
                     <!-- /NAV -->
                 </div>
@@ -224,6 +224,6 @@
             x[i].classList.add("currSign");
         }
     </script>
-    <script src="../assets/js/site.js"></script>        
+    <script src="/assets/js/site.js"></script>        
 </body>
 </html>

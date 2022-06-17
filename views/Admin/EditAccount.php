@@ -9,7 +9,7 @@
                     <?php
                      $item = json_decode($data['accountdetail'], true);
                     echo '
-                        <form action="../../Admin/UpdateAccount" method="post">
+                        <form action="/Admin/UpdateAccount" method="post">
                             
                             <input type="hidden" class="form-control" name="Id" value="'.$item['Id'].'"
                             />

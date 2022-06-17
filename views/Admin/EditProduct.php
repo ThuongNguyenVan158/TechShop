@@ -9,7 +9,7 @@
                     <?php
                     $item = json_decode($data['productdetail'], true);
                     echo '
-                    <form action="../../Admin/UpdateProduct" method="post">
+                    <form action="//Admin/UpdateProduct" method="post">
                         <input type="hidden" class="form-control" name="Id" value="'.$item['ProductId'].'" />
                         <div class="form-group">
                         <lable>Tên sản phẩm</lable>

@@ -30,7 +30,7 @@
                 </div>
             </div>
             <!-- <a href="@Url.Action("Logout","Home")" class="btn btn-outline"> -->
-            <li class="rs_logout"><a href="../Home/Logout"><i class="fas fa-sign-out-alt"></i>Đăng xuất</a></li>
+            <li class="rs_logout"><a href="/Home/Logout"><i class="fas fa-sign-out-alt"></i>Đăng xuất</a></li>
             <!-- <i class="fas fa-sign-in-alt"></i>
             </a> -->
         </div>
@@ -40,25 +40,25 @@
         </button>
         <ul class="sidebar-menu">
             <li>
-                <a href="../Admin/Revenue">
+                <a href="/Admin/Revenue">
                     <i class="fas fa-donate"></i>
                     <h4>Quản lí doanh thu</h4>
                 </a>
             </li>
             <li>
-                <a href="../Admin/Account">
+                <a href="/Admin/Account">
                     <i class="fas fa-user"></i>
                     <h4>Quản lí tài khoản</h4>
                 </a>
             </li>
             <li>
-                <a href="../Admin/AdminProduct">
+                <a href="/Admin/AdminProduct">
                     <i class="fas fa-tablet-alt"></i>
                     <h4>Quản lí sản phẩm</h4>
                 </a>
             </li>
             <li>
-                <a href="../Home/index">
+                <a href="/Home/index">
                     <i class="fab fa-intercom"></i>
                     <h4>Trạng thái khách hàng</h4>
                 </a>

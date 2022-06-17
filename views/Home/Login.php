@@ -26,7 +26,7 @@
           crossorigin="anonymous" />
 
     <!--Custom styles-->
-    <link rel="stylesheet" type="text/css" href="../assets/css/site.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/site.css" />
 </head>
 <body class="login-page">
     <div class="container">
@@ -43,7 +43,7 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <form action="../Home/Login" method="post">
+                    <form action="/Home/Login" method="post">
                         <!-- <span asp-validation-for="UserName" class="text-danger"></span> -->
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
@@ -83,7 +83,7 @@
                         </div>
                     </form>
                     <div class="form-group">
-                        <a href="../Home/index"
+                        <a href="/Home/index"
                            class="btn float-left login_btn">
                             Trở lại
                         </a>
@@ -91,7 +91,7 @@
                 </div>
                 <div class="card-footer">
                     <div class="d-flex justify-content-center links">
-                        Bạn chưa có tài khoản?<a href="../Home/Register">Đăng ký</a>
+                        Bạn chưa có tài khoản?<a href="/Home/Register">Đăng ký</a>
                     </div>
                     <div class="d-flex justify-content-center">
                         <a href="/ResetPassword">Quên mật khẩu?</a>

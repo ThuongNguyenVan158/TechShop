@@ -8,7 +8,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" crossorigin="anonymous" />
 
-    <link rel="stylesheet" type="text/css" href="../assets/css/payment.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/payment.css" />
     <style>
         .currSign:after {
             content: ' VND';
@@ -63,7 +63,7 @@
                     <table class="container">
                         <tr>
                             <td class="text-center">
-                                <b><span class="rth"><a id="return-home" href="../Payment/Payment"></a></span></b>
+                                <b><span class="rth"><a id="return-home" href="/Payment/Payment"></a></span></b>
                             </td>
                             <?php
                                 $item = json_decode($data['bill'], true);
@@ -166,9 +166,9 @@
                                                     </th>
                                                 </tr>
                                             </table>
-                                            <form action="../Payment/PaymentMethod" method="post">
+                                            <form action="/Payment/PaymentMethod" method="post">
                                                 <div class="text-center" id="momo-QR-code">
-                                                    <img id="momo-QR-code" src="../assets/images/momo_success.jpg"
+                                                    <img id="momo-QR-code" src="/assets/images/momo_success.jpg"
                                                          alt='Pay Momo wallet success' />
                                                     <button class="finish-payment"
                                                             value="Ví điện tử Momo"
@@ -178,7 +178,7 @@
                                                     </button>
                                                 </div>
                                                 <div class="text-center" id="zalopay-QR-code">
-                                                    <img id="zalopay-QR-code" src="../assets/images/zalopay_success.jpg"
+                                                    <img id="zalopay-QR-code" src="/assets/images/zalopay_success.jpg"
                                                          alt='Pay ZaloPay wallet success' />
                                                     <button class="finish-payment"
                                                             value="Ví điện tử ZaloPay"
@@ -188,7 +188,7 @@
                                                     </button>
                                                 </div>
                                                 <div class="text-center" id="airpay-QR-code">
-                                                    <img id="airpay-QR-code" src="../assets/images/airpay_success.jpg"
+                                                    <img id="airpay-QR-code" src="/assets/images/airpay_success.jpg"
                                                          alt='Pay Airpay wallet success' />
                                                     <button class="finish-payment"
                                                             value="Ví điện tử AirPay"
@@ -331,7 +331,7 @@
                                             </div>
 
                                             <div class="card-footer">
-                                                <form action="../Payment/PaymentMethod" method="post">
+                                                <form action="/Payment/PaymentMethod" method="post">
                                                     <button value="Thẻ ngân hàng"
                                                             name="PaymentMethod"
                                                             class="button-three">
@@ -361,7 +361,7 @@
                                                 }
                                         ?>
                                             <div class="text-center">
-                                                <form action="../Payment/PaymentMethod" method="post">
+                                                <form action="/Payment/PaymentMethod" method="post">
                                                     <button value="Chuyển khoản"
                                                             name="PaymentMethod"
                                                             class="button-three">

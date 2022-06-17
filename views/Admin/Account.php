@@ -6,7 +6,7 @@
                     <h3>Tạo tài khoản Admin</h3>
                 </div>
                 <div class="card__body">
-                    <form action="../Admin/Account" method="post">
+                    <form action="/Admin/Account" method="post">
                         <div class="form-group">
                             <lable>Tên tài khoản</lable>
                             <input type="text" class="form-control" name="UserName" />
@@ -79,7 +79,7 @@
                                             $output .= '
                                                 <td>
                                                     <div style="display: flex;">
-                                                        <form action="../Admin/DeleteAccount" method="post" onsubmit="return confirm(' . "'Bạn chắc chắc muốn xoá!!!'" . ');">
+                                                        <form action="/Admin/DeleteAccount" method="post" onsubmit="return confirm(' . "'Bạn chắc chắc muốn xoá!!!'" . ');">
                                                             <input type="hidden" name="idAccount" value="' . $item['Id'] . '" />
                                                             <button type="submit">
                                                                 <i class="far fa-trash-alt" aria-hidden="true"
@@ -88,7 +88,7 @@
                                                             </button>
                                                         </form>
                                                         <a class=" mr-3"
-                                                            href="../Admin/EditAccount/' . $item['Id'] . '"">
+                                                            href="/Admin/EditAccount/' . $item['Id'] . '"">
                                                             <i class="fa fa-edit"
                                                                aria-hidden="true" style="font-size: 25px;"></i>
                                                         </a>
@@ -119,7 +119,7 @@
                     <h3>Tạo tài khoản Admin</h3>
                 </div>
                 <div class="card__body">
-                    <form action="../Admin/Account" method="post">
+                    <form action="/Admin/Account" method="post">
                         <div class="form-group">
                             <lable>Tên tài khoản</lable>
                             <input type="text" class="form-control" name="UserName" />
@@ -194,7 +194,7 @@
                                             $output .= '
                                                 <td>
                                                     <div style="display: flex;">
-                                                        <form action="../Admin/DeleteAccount" method="post" onsubmit="return confirm(' . "'Bạn chắc chắc muốn xoá!!!'" . ');">
+                                                        <form action="/Admin/DeleteAccount" method="post" onsubmit="return confirm(' . "'Bạn chắc chắc muốn xoá!!!'" . ');">
                                                             <input type="hidden" name="idAccount" value="' . $item['Id'] . '" />
                                                             <button type="submit">
                                                                 <i class="far fa-trash-alt" aria-hidden="true"
@@ -203,7 +203,7 @@
                                                             </button>
                                                         </form>
                                                         <a class=" mr-3"
-                                                            href="../Admin/EditAccount/' . $item['Id'] . '"">
+                                                            href="/Admin/EditAccount/' . $item['Id'] . '"">
                                                             <i class="fa fa-edit"
                                                                aria-hidden="true" style="font-size: 25px;"></i>
                                                         </a>

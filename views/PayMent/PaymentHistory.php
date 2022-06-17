@@ -42,7 +42,7 @@
                                         <tr>
                                             <td class="text-center">'.$i.'</td>
                                             <td class="text-center">
-                                                <a href="../Payment/PaymentDetailHistory/'.$billId.'">Xem chi tiết: </a>
+                                                <a href="/Payment/PaymentDetailHistory/'.$billId.'">Xem chi tiết: </a>
                                             </td>
                                             <td class="text-right price">'.$item['TotalPrice'].'</td>
                                             <td class="text-center">'.$item['PaymentMethod'].'</td>
