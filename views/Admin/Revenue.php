@@ -91,7 +91,9 @@
                                         $listbill = json_decode($data['revenuelist'], true);
                                         $output = '';
                                         foreach ($listbill as $item) {
-                                            $timepayment = date("F j, Y", strtotime($item['DateCreateBill']));
+                                            // $timepayment = date("F j, Y", strtotime($item['DateCreateBill']));
+                                            $time = strtotime($item['DateCreateBill'].'+5 hours');
+                                            $timepayment = date("Y-m-d H:i:s", $time);  
                                             $output .= '
                                                 <tr>
                                                     <td>' . $item['BillId'] . '</td>
