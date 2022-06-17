@@ -28,7 +28,7 @@
             ]);
         }
         function Login(){
-            if(isset($_POST)) {
+            if(isset($_POST['UserName']) &&  isset($_POST['Password'])) {
                 $name = $this->get_POST('UserName');
                 $pass = $this->get_POST('Password');
                 $result = $this->accountModel->login($name, $pass);
@@ -47,7 +47,7 @@
         }
         
         function Register(){
-            if(isset($_POST)) {
+            if(isset($_POST['UserName'])) {
                 $name = $this->get_POST('UserName');
                 $pass =$this->get_POST('Password');
                 $repass = $this->get_POST('RePassword');
