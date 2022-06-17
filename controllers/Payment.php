@@ -120,7 +120,7 @@ class Payment extends Controller{
                 $billId = $this->get_POST('BillId');
                 $result =  false;
                 $Name='';$Hamlet='';$Village='';$District='';$Province='';$Telephone='';
-                if($typ == 'p' and $bill!= "null"){
+                if($typ == 'p' && $bill!= "null" && isset($_POST['Name'])){
                     $Name = $this->get_POST('Name');
                     $Hamlet = $this->get_POST('Hamlet');
                     $Village = $this->get_POST('Village');
