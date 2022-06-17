@@ -89,7 +89,7 @@
 							<div class="header-ctn">
 								<!-- Cart -->
 								<div class="dropdown">
-									<a href="/PayMent/PayMent">
+									<a href="/PayMent/index">
 										<i class="fas fa-shopping-cart" style="font-size:20px;"></i>
 										<span  style="font-size:16px;">Giỏ hàng</span>
 									</a>
@@ -168,7 +168,7 @@
                             <ul class="footer-links">
                                 <li><i class="fa fa-map-marker"></i>Hồ Chí Minh</li>
                                 <li><i class="fa fa-phone"></i>0394003434</li>
-                                <li><i class="far fa-envelope"></i>EcommerceStore@hcmut.edu.vn</li>
+                                <li><i class="far fa-envelope"></i>techshop@hcmut.edu.vn</li>
                             </ul>
                         </div>
                     </div>
