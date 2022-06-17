@@ -38,7 +38,8 @@
                                         $i++;
                                         $billId= $item['BillId'];
                                         // $date = date("F j, Y, g:i a", strtotime($item['DateCreateBill']));
-                                        $time = strtotime($item['DateCreateBill'].' UTC');
+                                       
+                                        $time = strtotime($item['DateCreateBill'].'+5 hours');
                                         $date = date("Y-m-d H:i:s", $time);  
                                         $output.='
                                         <tr>
