@@ -8,7 +8,7 @@ class Payment extends Controller{
         }
         function index(){
             if(!$this->isLoggedIn()){
-                header("Location: ../Home/Login");
+                header("Location: /Home/Login");
                 die();
             }
             $User = $_SESSION["account"];
@@ -33,7 +33,7 @@ class Payment extends Controller{
                     $Province = $this->get_POST('Province');
                     $Telephone =  $this->get_POST('Telephone');
                     $result = $this->paymentModel->UpdateAddressOfBill($bill_decode['BillId'], $Name,$Hamlet, $Village, $District, $Province, $Telephone);
-                    header("Location: ../Payment/PaymentMethod");
+                    header("Location: /Payment/PaymentMethod");
                     // die();
                 }
                 else if($typ == '+')
@@ -68,7 +68,7 @@ class Payment extends Controller{
         }
         function PaymentHistory(){
             if(!$this->isLoggedIn()){
-                header("Location: ../Home/Login");
+                header("Location: /Home/Login");
             }else{
                 $User = $_SESSION["account"];
                 $obj = json_decode($User,true);
@@ -82,7 +82,7 @@ class Payment extends Controller{
         }
         function PaymentMethod(){
             if(!$this->isLoggedIn()){
-                header("Location: ../Home/Login");
+                header("Location: /Home/Login");
             }else{
             $User = $_SESSION["account"];
             $obj = json_decode($User,true);
@@ -93,7 +93,7 @@ class Payment extends Controller{
                 $paymentmethod= $this->get_POST('PaymentMethod');
                 $datepayment= date("Y-m-d H:i");
                 $this->paymentModel->UpdatepaymentMethodOfBill($bill_decode['BillId'], $paymentmethod, $datepayment);
-                header("Location: ../Payment/PaymentHistory");
+                header("Location: /Payment/PaymentHistory");
 
             }
             $this->view("PayMent/PaymentMethod",[

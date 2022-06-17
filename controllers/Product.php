@@ -8,7 +8,7 @@ class Product extends Controller{
         }
         function addCart(){
             if(!$this->isLoggedIn()){
-                header("Location: ../Home/Login");
+                header("Location: /Home/Login");
             }
             else{
                 $productId = $_POST["ProductId"];
@@ -30,7 +30,7 @@ class Product extends Controller{
                     $newBillId = json_decode($this->productModel->addBill($user["Id"],$user["UserName"]),true);
                     $this->productModel->addBillProduct($newBillId["LAST_INSERT_ID()"],$productId,$productName,$productPrice,$quantity);
                 }
-                header("Location: ../Payment/Payment");
+                header("Location: /Payment/Payment");
             }
         }
         function Accessory($productId=""){
@@ -204,7 +204,7 @@ class Product extends Controller{
         }
         function CommentProduct(){
             if(!$this->isLoggedIn()){
-                header("Location: ../Home/Login");
+                header("Location: /Home/Login");
             }
             if(isset($_POST["Comment"])){
                 $productId = $this->get_POST('ProductId');
