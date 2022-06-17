@@ -31,7 +31,7 @@
             <div class="container">
                 <ul class="header-links pull-left">
                     <li><a href="#"><i class="fa fa-phone"></i>0394003431</a></li>
-                    <li><a href="#"><i class="far fa-envelope"></i>EcommerceStore@hcmut.edu.vn</a></li>
+                    <li><a href="#"><i class="far fa-envelope"></i>TechShop@hcmut.edu.vn</a></li>
                     <li><a href="#"><i class="fa fa-map-marker"></i>Ho Chi Minh</a></li>
                     <li><a href="../Home/Introduce"><i class="fa fa-map-marker"></i>Giới thiệu</a></li>
                     <li><a href="../Home/Contact"><i class="fa fa-map-marker"></i>Liên hệ</a></li>
@@ -169,7 +169,7 @@
                             <ul class="footer-links">
                                 <li><i class="fa fa-map-marker"></i>Hồ Chí Minh</li>
                                 <li><i class="fa fa-phone"></i>0394003434</li>
-                                <li><i class="far fa-envelope"></i>EcommerceStore@hcmut.edu.vn</li>
+                                <li><i class="far fa-envelope"></i>TechShop@hcmut.edu.vn</li>
                             </ul>
                         </div>
                     </div>

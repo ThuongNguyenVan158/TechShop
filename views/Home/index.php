@@ -73,51 +73,6 @@
     <!-- /container -->
 </div>
 <!-- /SECTION -->
-<!-- HOT DEAL SECTION -->
-<div id="hot-deal" class="section"> 
-    <!-- container -->
-    <div class="container">
-        <!-- row -->
-        <div class="row">
-            <div class="col-md-12">
-                <div class="hot-deal">
-                    <ul class="hot-deal-countdown">
-                        <li>
-                            <div>
-                                <h3 id = "ngay">5</h3>
-                                <span>Ngày</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <h3 id = "gio">3</h3>
-                                <span>Giờ</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <h3 id = "phut">2</h3>
-                                <span>Phút</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <h3 id = "giay">55</h3>
-                                <span>Giây</span>
-                            </div>
-                        </li>
-                    </ul>
-                    <h2 class="text-uppercase">Khuyến mãi hot nhất</h2>
-					<!-- <p>New Collection Up to @Model.Max(p=>p.SellOff)% OFF</p> -->
-                    <a class="primary-btn cta-btn" href="">Xem chi tiết</a>
-                </div>
-            </div>
-        </div>
-        <!-- /row -->
-    </div>
-    <!-- /container -->
-</div>
-<!-- /HOT DEAL SECTION -->
 <!-- SECTION -->
 <div class="section">
     <!-- container -->

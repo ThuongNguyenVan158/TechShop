@@ -60,8 +60,8 @@
               </div>
               <div class="col-lg-4 ml-auto">
                 <h3 class="mb-4">Share us your thinking.</h3>
-                <p>Our Phone: 0123456789</p>
-                <p>Our Mail: abcxyz@gmail.com</p>
+                <p>Our Phone: 0394003431</p>
+                <p>Our Mail: TechShop@hcmut.edu.vn</p>
               </div>
             </div>
           </div>  
