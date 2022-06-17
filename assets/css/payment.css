@@ -53,7 +53,7 @@ input[type="radio"] {
 }
 
     .button.type1 {
-        background-image: url("/images/momo_icon.jpg");
+        background-image: url("/assets/images/momo_icon.jpg");
         background-size: cover;
         opacity: 0.7;
     }
@@ -97,7 +97,7 @@ input[type="radio"] {
         }
 
     .button.type2 {
-        background-image: url("/images/zalopay_icon.jpg");
+        background-image: url("/assets/images/zalopay_icon.jpg");
         background-size: cover;
         opacity: 0.7;
     }
@@ -129,7 +129,7 @@ input[type="radio"] {
         }
 
     .button.type3 {
-        background-image: url("/images/airpay_icon.jpg");
+        background-image: url("/assets/images/airpay_icon.jpg");
         background-size: cover;
         opacity: 0.7;
     }
@@ -303,7 +303,7 @@ button.finish-payment {
 }
 
 .payment {
-    background: url("/images/background_payment.jpg");
+    background: url("/assets/images/background_payment.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     width: auto;
