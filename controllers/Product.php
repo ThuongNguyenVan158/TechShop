@@ -6,7 +6,7 @@ class Product extends Controller{
             $this->productModel = $this->model("ProductModel");
             $this->evaluationModel = $this->model("EvaluationModel");
         }
-        function addCart(){
+        function AddCart(){
             if(!$this->isLoggedIn()){
                 header("Location: /Home/Login");
             }
@@ -16,7 +16,7 @@ class Product extends Controller{
                 $productName = $_POST["Name"];
                 $productPrice = $_POST["ProductPrice"];
                 $user = json_decode($_SESSION["account"],true);
-                echo $user["Id"];
+                // echo $user["Id"];
                 $billId = json_decode($this->productModel->existCart($user["Id"]),true);
                 if($billId != False){
                     if($this->productModel->existBillProduct($productId,$billId["BillId"])){

@@ -23,7 +23,7 @@
                                 {
                                     if ($item["Special"] == "khuyenmai")
                                     {
-                                        $output .='<form action="/Product/addCart" method="post" onsubmit="notify()">
+                                        $output .='<form action="/Product/AddCart" method="post" onsubmit="notify()">
                                                         <input type="hidden" name="ProductId" value="'.$item["ProductId"].'" />
                                                         <input type="hidden" name="Quantity" value="1" />
                                                         <input type="hidden" name="Name" value="'.$item["Name"].'" />
@@ -144,7 +144,7 @@
                                     if ($item['Special'] == "moi")
                                     {
                                         $output.='
-                                            <form action="/Product/addCart" method="post" onsubmit="notify()">
+                                            <form action="/Product/AddCart" method="post" onsubmit="notify()">
                                                 <input type="hidden" name="ProductId" value="'.$item["ProductId"].'" />
                                                 <input type="hidden" name="Quantity" value="1" />
                                                 <input type="hidden" name="Name" value="'.$item["Name"].'" />
@@ -219,7 +219,7 @@
                                     if ($item['Special'] == "banchay")
                                     {
                                         $output.='
-                                            <form action="/Product/addCart" method="post" onsubmit="notify()">
+                                            <form action="/Product/AddCart" method="post" onsubmit="notify()">
                                                 <input type="hidden" name="ProductId" value="'.$item["ProductId"].'" />
                                                 <input type="hidden" name="Quantity" value="1" />
                                                 <input type="hidden" name="Name" value="'.$item["Name"].'" />

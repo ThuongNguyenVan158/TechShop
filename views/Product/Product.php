@@ -11,7 +11,7 @@
             </div>
             <!-- /Product main img -->
             <!-- Product details -->
-            <form action="\addCart" method="post" onsubmit="return confirm('Bạn muốn thêm vào giỏ hàng?!!!')">
+            <form action="\AddCart" method="post" onsubmit="return confirm('Bạn muốn thêm vào giỏ hàng?!!!')">
                 <div class="col-md-6">
                     <div class="product-details">
                         <h2 class="product-name"><?php echo $data["product"]["Name"];?></h2>

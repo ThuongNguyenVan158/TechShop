@@ -77,7 +77,7 @@
                     for($i = $data["Start"];$i<$n;$i++)
                     {
                         echo"
-                        <form action=\"\Product\addCart\" method=\"post\" onsubmit=\"return confirm('Bạn muốn thêm vào giỏ hàng?!!!');\">
+                        <form action=\"\Product\AddCart\" method=\"post\" onsubmit=\"return confirm('Bạn muốn thêm vào giỏ hàng?!!!');\">
                             <input type=\"hidden\" name=\"ProductId\" value=\"".$data["smartphone"][$i]["ProductId"]."\" />
                             <input type=\"hidden\" name=\"Quantity\" value=\"1\" />
                             <input type=\"hidden\" name=\"Name\" value=\"".$data["smartphone"][$i]["Name"]."\" />
