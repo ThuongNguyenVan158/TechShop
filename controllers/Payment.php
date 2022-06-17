@@ -114,10 +114,6 @@ class Payment extends Controller{
             if(isset($_POST['Type']))
              {
                 $typ = $this->get_POST('Type');
-                $idProduct = $this->get_POST('ProductId');
-                $total = $this->get_POST('TotalProductPrice');
-                $quantity = $this->get_POST('Quantity');
-                $billId = $this->get_POST('BillId');
                 $result =  false;
                 $Name='';$Hamlet='';$Village='';$District='';$Province='';$Telephone='';
                 if($typ == 'p' && $bill!= "null" && isset($_POST['Name'])){
@@ -129,20 +125,26 @@ class Payment extends Controller{
                     $Telephone =  $this->get_POST('Telephone');
                     $result = $this->paymentModel->UpdateAddressOfBill($bill_decode['BillId'], $Name,$Hamlet, $Village, $District, $Province, $Telephone);
                     header("Location: /Payment/PaymentMethod");
-                    // die();
+                    die();
                 }
-                else if($typ == '+')
-                {
-                    $result= $this->paymentModel->UpdateBillAndBillDetailById($billId, $idProduct, $quantity+1);
-                }
-                else if($typ == '-'){
-                    $result= $this->paymentModel->UpdateBillAndBillDetailById($billId, $idProduct, $quantity-1);
-                }
-                else if($typ == 'q'){
-                    $result= $this->paymentModel->UpdateBillAndBillDetailById($billId, $idProduct, $quantity);
-                }
-                else if($typ == 'd'){
-                    $result= $this->paymentModel->UpdateBillAndBillDetailById($billId, $idProduct, 0);
+                else{
+                    $idProduct = $this->get_POST('ProductId');
+                    $total = $this->get_POST('TotalProductPrice');
+                    $quantity = $this->get_POST('Quantity');
+                    $billId = $this->get_POST('BillId');
+                    if($typ == '+')
+                    {
+                        $result= $this->paymentModel->UpdateBillAndBillDetailById($billId, $idProduct, $quantity+1);
+                    }
+                    else if($typ == '-'){
+                        $result= $this->paymentModel->UpdateBillAndBillDetailById($billId, $idProduct, $quantity-1);
+                    }
+                    else if($typ == 'q'){
+                        $result= $this->paymentModel->UpdateBillAndBillDetailById($billId, $idProduct, $quantity);
+                    }
+                    else if($typ == 'd'){
+                        $result= $this->paymentModel->UpdateBillAndBillDetailById($billId, $idProduct, 0);
+                    }
                 }
              }
             $bill = $this->paymentModel->GetBillNoPayMent($obj['Id']);
