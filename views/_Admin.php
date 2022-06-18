@@ -31,7 +31,7 @@
                             $User = $_SESSION["account"];
                             $obj = json_decode($User,true);
                             if($obj["Admin"] == 1){
-                                echo '<h4>Hi' .$obj["UserName"].'</h4>';
+                                echo '<h4>Hi ' .$obj["UserName"].'</h4>';
                             }
                         }
                                
