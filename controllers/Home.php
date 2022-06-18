@@ -82,7 +82,7 @@
             }
             else{
                 $this->view("Home/Register",[
-
+                    "err" => "",
                 ]);
             }
         }
