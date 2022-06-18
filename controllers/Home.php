@@ -77,7 +77,7 @@
                         "err" => $err,
                         "acc" =>$account
                     ]);
-                    die();
+                    // die();
                 }
             }
         }
