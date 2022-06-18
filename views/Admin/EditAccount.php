@@ -20,7 +20,7 @@
                             </div>
                             <div class="form-group">
                                 <lable>Email</lable>
-                                <input type="email" class="form-control" name="Email" value="'.$item['Email'].'"
+                                <input type="email" class="form-control" readonly="readonly" name="Email" value="'.$item['Email'].'"
                                 />
                             </div>
                             <div class="form-group">

@@ -57,7 +57,7 @@ class Admin extends Controller{
                 
                 $isSuccess = false;
                 if($name && $status && $producer && $price && $special && $imgUrl ){
-                    $isSuccess = $this->productModel->insertProduct($name, $producer, $price, $status, $imgUrl, 5, $special, 1, '2001-02-10', 1000);
+                    $isSuccess = $this->productModel->insertProduct($name, $producer, $price, $status, $imgUrl, 5, $special, 1, 0, 1000);
                 }
                 if($isSuccess){
                     $this->view("_Admin",[
