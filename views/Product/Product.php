@@ -45,7 +45,7 @@
                         <div class="product-options">
                             <label>
                                 Số lượng
-                                <input type="number" value=1 class="input-select" name="product.InsertProductToCart.Quantity" />
+                                <input type="number" value=1 min="1" class="input-select" name="product.InsertProductToCart.Quantity" />
                             </label>
                         </div>
                         <input type="hidden" name="ProductId" value="<?=$data["product"]["ProductId"];?>" />
