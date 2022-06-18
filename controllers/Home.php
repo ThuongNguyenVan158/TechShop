@@ -80,6 +80,11 @@
                     // die();
                 }
             }
+            else{
+                $this->view("Home/Register",[
+
+                ]);
+            }
         }
         function Logout(){
             $this->accountModel->logout();
