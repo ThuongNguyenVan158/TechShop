@@ -31,8 +31,8 @@
                             <div class="form-group">
                                 <lable>Giới tính</lable>
                                 <select class="form-control" name="Gender">
-                                    <option value="true">Nam</option>
-                                    <option value="false">Nữ</option>
+                                    <option value="0">Nam</option>
+                                    <option value="1">Nữ</option>
                                 </select>
                             </div>
                             <div class="form-group">
