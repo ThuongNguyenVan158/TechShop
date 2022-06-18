@@ -152,11 +152,13 @@ class Admin extends Controller{
                 $special = $this->get_POST('Special');
                 $sellOff = $this->get_POST('SellOff');
                 $imgUrl = $this->get_POST('ImgUrl');
+
+                $this->productModel->UpdateProduct($id, $name, $type, $brandName, $price, $special, $sellOff, $imgUrl);
             }
             // // echo $id,$userName,$fullName,$email,$admin;
             // // die();
             // $this->accountModel-> UpdateAccount($id, $gender, $fullName, $email, $admin, $phone);
-            $this->productModel->UpdateProduct($id, $name, $type, $brandName, $price, $special, $sellOff, $imgUrl);
+           
             header("Location: /Admin/AdminProduct");
         }
     }

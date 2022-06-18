@@ -26,7 +26,15 @@
         <div class="sidebar-user">
             <div class="sidebar-user-info">
                 <div class="sidebar-user-name">
-                    <h4>Hi Thuong</h4>
+                <?php  
+                        if(isset($_SESSION["account"])){
+                            $User = $_SESSION["account"];
+                            $obj = json_decode($User,true);
+                            if($obj["Admin"] == 1){
+                                echo '<h4>Hi' .$obj["UserName"].'</h4>';
+                            }
+                               
+                    ?>
                 </div>
             </div>
             <!-- <a href="@Url.Action("Logout","Home")" class="btn btn-outline"> -->
