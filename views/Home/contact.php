@@ -9,9 +9,33 @@
     <link rel="stylesheet" href="/TechShop//assets/css/contact.css">
 
     <title>Contact Page</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link type="text/css" rel="stylesheet" href="/TechShop//assets/css/slick.css" />
+        <link type="text/css" rel="stylesheet" href="/TechShop//assets/css/slick-theme.css"/>
+        <link type="text/css" rel="stylesheet" href="/TechShop//assets/css/nouislider.min.css"/>
+        <link type="text/css" rel="stylesheet" href="/TechShop//assets/css/site.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
 
   <body>
+
+      <header>
+            <div id="top-header">
+                <div class="container">
+                    <ul class="header-links pull-left">
+                        <li><a href="#"><i class="fa fa-phone"></i>0394003431</a></li>
+                        <li><a href="#"><i class="far fa-envelope"></i>TechShop@hcmut.edu.vn</a></li>
+                        <li><a href="#"><i class="fa fa-map-marker"></i>Ho Chi Minh</a></li>
+                        <li><a href="../Home/Introduce"><i class="fa fa-users"></i>Giới thiệu</a></li>
+                        <li><a href="../Home/Contact"><i class="fa fa-fax"></i>Liên hệ</a></li>
+                    </ul>
+                </div>
+            </div>
+      </header>
+
     <div class="content">
       
       <div class="container">
@@ -71,6 +95,60 @@
                     </div>
       </div>
     </div>
+
+    <!-- FOOTER -->
+    <footer id="footer">
+            <!-- top footer -->
+            <div class="section">
+                <!-- container -->
+                <div class="container">
+                    <!-- row -->
+                    <div class="row">
+                        <div class="col-md-5 col-xs-6">
+                            <div class="footer">
+                                <h3 class="footer-title">Mọi thắc mắc vui lòng liên hệ</h3>
+                                <ul class="footer-links">
+                                    <li><i class="fa fa-map-marker"></i>Hồ Chí Minh</li>
+                                    <li><i class="fa fa-phone"></i>0394003434</li>
+                                    <li><i class="far fa-envelope"></i>TechShop@hcmut.edu.vn</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-xs-6">
+                            <div class="footer">
+                                <h3 class="footer-title">Các dòng sản phẩm</h3>
+                                <ul class="footer-links">
+                                    <li>Laptop</li>
+                                    <li>Di động</li>
+                                    <li>Phụ kiện</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="clearfix visible-xs"></div>
+                        <div class="col-md-4 col-xs-6">
+                            <div class="footer">
+                                <h3 class="footer-title">Dịch vụ</h3>
+                                <ul class="footer-links">
+                                    <li>Thanh toán online, tiết kiệm thời gian</li>
+                                    <li>Mua online, giao hàng tận nơi</li>
+                                    <li>Tri ân khách hàng</li>
+                                    <li>Mua trả góp lãi xuất 0%</li>
+                                    <li>Hỗ trợ giải đáp mọi thắc mắc</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /row -->
+                </div>
+                <!-- /container -->
+            </div>
+            <!-- /top footer -->
+        </footer>
+        <!-- /FOOTER -->
+
+
   </body>
 
 </html>

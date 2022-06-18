@@ -33,8 +33,8 @@
                     <li><a href="#"><i class="fa fa-phone"></i>0394003431</a></li>
                     <li><a href="#"><i class="far fa-envelope"></i>TechShop@hcmut.edu.vn</a></li>
                     <li><a href="#"><i class="fa fa-map-marker"></i>Ho Chi Minh</a></li>
-                    <li><a href="../Home/Introduce"><i class="fa fa-map-marker"></i>Giới thiệu</a></li>
-                    <li><a href="../Home/Contact"><i class="fa fa-map-marker"></i>Liên hệ</a></li>
+                    <li><a href="../Home/Introduce"><i class="fa fa-users"></i>Giới thiệu</a></li>
+                        <li><a href="../Home/Contact"><i class="fa fa-fax"></i>Liên hệ</a></li>
                 </ul>
                 <ul class="header-links pull-right">
                     <?php  
