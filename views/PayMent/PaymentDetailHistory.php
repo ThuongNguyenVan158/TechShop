@@ -25,6 +25,9 @@
                             <th class="text-center">
                             Số LượngTổng (VNĐ)
                             </th>
+                            <th class="text-center">
+                            Tổng (VNĐ)
+                            </th>
                         </tr>
                     </thead>
                     <tbody>

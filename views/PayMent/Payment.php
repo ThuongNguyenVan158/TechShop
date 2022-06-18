@@ -173,7 +173,7 @@
 					    </table>
 						<div class="order-col">
 							<div style="font-size:20px"><strong>Tổng giá tiền</strong></div>
-									<div><strong class="order-total price1">
+									<div><strong class="order-total price">
 										<?php $bill = json_decode($data['bill'], true); 
 										echo $bill == null?  '0': $bill['TotalPrice'];
 										?>
