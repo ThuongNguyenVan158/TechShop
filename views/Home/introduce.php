@@ -97,5 +97,52 @@
                     </div>
             
         </div>
+        <footer id="footer">
+            <!-- top footer -->
+            <div class="section">
+                <!-- container -->
+                <div class="container">
+                    <!-- row -->
+                    <div class="row">
+                        <div class="col-md-5 col-xs-6">
+                            <div class="footer">
+                                <h3 class="footer-title">Mọi thắc mắc vui lòng liên hệ</h3>
+                                <ul class="footer-links">
+                                    <li><i class="fa fa-map-marker"></i>Hồ Chí Minh</li>
+                                    <li><i class="fa fa-phone"></i>0394003434</li>
+                                    <li><i class="far fa-envelope"></i>techshop@hcmut.edu.vn</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-6">
+                            <div class="footer">
+                                <h3 class="footer-title">Các dòng sản phẩm</h3>
+                                <ul class="footer-links">
+                                    <li>Laptop</li>
+                                    <li>Di động</li>
+                                    <li>Phụ kiện</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="clearfix visible-xs"></div>
+                        <div class="col-md-4 col-xs-6">
+                            <div class="footer">
+                                <h3 class="footer-title">Dịch vụ</h3>
+                                <ul class="footer-links">
+                                    <li>Thanh toán online, tiết kiệm thời gian</li>
+                                    <li>Mua online, giao hàng tận nơi</li>
+                                    <li>Tri ân khách hàng</li>
+                                    <li>Mua trả góp lãi xuất 0%</li>
+                                    <li>Hỗ trợ giải đáp mọi thắc mắc</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /row -->
+                </div>
+                <!-- /container -->
+            </div>
+            <!-- /top footer -->
+        </footer>
     </body>
 </html>
