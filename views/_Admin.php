@@ -33,6 +33,7 @@
                             if($obj["Admin"] == 1){
                                 echo '<h4>Hi' .$obj["UserName"].'</h4>';
                             }
+                        }
                                
                     ?>
                 </div>
