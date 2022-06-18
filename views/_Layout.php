@@ -121,20 +121,7 @@
                 <div id="responsive-nav">
                     <!-- NAV -->
                     <ul class="main-nav nav navbar-nav">
-                        <?php 
-                            if(isset($_SESSION["account"]))
-                            {
-                                $User = $_SESSION["account"];
-                                $obj = json_decode($User,true);
-                                if($obj["Admin"] == 1){
-                                    echo '<li><a href="/Admin/Revenue">Quản lí</a></li>';
-                                }
-                                else{
-                                    echo '<li><a href="/Home/Index">Trang chủ</a></li>';
-                                }
-                            }
-                            else  echo '<li><a href="/Home/Index">Trang chủ</a></li>';
-                        ?>
+                        <li><a href="/Home/Index">Trang chủ</a></li>
                         <li><a href="/Product/Laptop">Laptop</a></li>
                         <li><a href="/Product/Smart">Di động</a></li>
                         <li><a href="/Product/Accessory">Phụ kiện</a></li>
