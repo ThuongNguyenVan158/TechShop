@@ -32,7 +32,7 @@
             </div>
         </header>
 
-        <div class="container text-center main-introduce">
+        <div class="container text-center main-introduce" style="margin: 10rem 0 3rem 0;">
             <h1>- Chúng tôi là <span style="color:blue">TechShop</span> -</h2>
             <h3>Cam kết phân phối các sản phẩm laptop, điện thoại, phụ kiện chính hãng</h3>
 
@@ -45,7 +45,7 @@
                 </p>
             </div>
             
-            <div class="container">
+            <div class="container" style="padding: 20px 10px">
                 <p>
                     Đây là một trang web bán và giới thiệu sản phẩm của cửa hàng (bao gồm các mặt hàng công
                     nghệ như laptop, điện thoại và các phụ kiện như bàn phím, chuột, tai nghe...) đến người
@@ -78,8 +78,8 @@
                     thị trường.
                 </p>
             </div>
-
-            <h2>Về team chúng tôi</h2>
+           <div style="margin: 5rem 0 10rem 0;">
+            <h2 style="margin-bottom: 1rem;">Về team chúng tôi</h2>
             <div class="image-center">
                 <img src="https://www.w3schools.com/howto/img_avatar.png">
                 <img src="https://www.w3schools.com/howto/img_avatar2.png">
@@ -90,7 +90,7 @@
             <div class="d-flex justify-content-center">
                         <a href="/Home/index">Trở về</a>
                     </div>
-            
+                </div>   
         </div>
 
         <!-- FOOTER -->
