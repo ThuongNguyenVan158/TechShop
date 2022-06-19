@@ -23,18 +23,18 @@
                 <div class="container">
                     <ul class="header-links pull-left">
                         <li><a href="#"><i class="fa fa-phone"></i>0394003431</a></li>
-                        <li><a href="#"><i class="far fa-envelope"></i>techshop@hcmut.edu.vn</a></li>
+                        <li><a href="#"><i class="far fa-envelope"></i>TechShop@hcmut.edu.vn</a></li>
                         <li><a href="#"><i class="fa fa-map-marker"></i>Ho Chi Minh</a></li>
-                        <li><a href="/Home/Introduce"><i class="fa fa-users"></i>Giới thiệu</a></li>
-                        <li><a href="/Home/Contact"><i class="fa fa-fax"></i>Liên hệ</a></li>
+                        <li><a href="../Home/Introduce"><i class="fa fa-users"></i>Giới thiệu</a></li>
+                        <li><a href="../Home/Contact"><i class="fa fa-fax"></i>Liên hệ</a></li>
                     </ul>
                 </div>
             </div>
         </header>
 
-        <div class="container text-center main-introduce" style="margin: 10rem 0 3rem 0;">
-            <h1>- Chúng tôi là <span style="color:blue">TechShop</span> -</h2>
-            <h3>Cam kết phân phối các sản phẩm laptop, điện thoại, phụ kiện chính hãng</h3>
+        <div class="container text-center main-introduce">
+            <h1  style="margin: 10rem 0 3rem 0;"> Chúng tôi là <span style="color:red;">TechShop</span> </h2>
+            <h3  style="margin: 3rem 0 3rem 0;">Cam kết phân phối các sản phẩm laptop, điện thoại, phụ kiện chính hãng</h3>
 
             <div class="container" style="padding-top: 10px">
                 <p>
@@ -45,7 +45,7 @@
                 </p>
             </div>
             
-            <div class="container" style="padding: 20px 10px">
+            <div class="container">
                 <p>
                     Đây là một trang web bán và giới thiệu sản phẩm của cửa hàng (bao gồm các mặt hàng công
                     nghệ như laptop, điện thoại và các phụ kiện như bàn phím, chuột, tai nghe...) đến người
@@ -78,19 +78,20 @@
                     thị trường.
                 </p>
             </div>
-           <div style="margin: 5rem 0 10rem 0;">
-            <h2 style="margin-bottom: 1rem;">Về team chúng tôi</h2>
-            <div class="image-center">
-                <img src="https://www.w3schools.com/howto/img_avatar.png">
-                <img src="https://www.w3schools.com/howto/img_avatar2.png">
-                <img src="https://www.w3schools.com/w3images/avatar2.png">
-                <img src="https://www.w3schools.com/w3images/avatar6.png">
-                <img src="https://www.w3schools.com/w3images/avatar5.png">
+            <div style="margin: 5rem 0 10rem 0;">
+                <h2  style="margin-bottom: 1rem;">Về team chúng tôi</h2>
+                <div class="image-center">
+                    <img src="https://www.w3schools.com/howto/img_avatar.png">
+                    <img src="https://www.w3schools.com/howto/img_avatar2.png">
+                    <img src="https://www.w3schools.com/w3images/avatar2.png">
+                    <img src="https://www.w3schools.com/w3images/avatar6.png">
+                    <img src="https://www.w3schools.com/w3images/avatar5.png">
+                </div>
+                <div class="d-flex justify-content-center"  style="margin-top: 2rem;">
+                            <a href="/Home/Index" style="color:red;">Trở về</a>
+                        </div>
             </div>
-            <div class="d-flex justify-content-center">
-                        <a href="/Home/index">Trở về</a>
-                    </div>
-                </div>   
+            
         </div>
 
         <!-- FOOTER -->
