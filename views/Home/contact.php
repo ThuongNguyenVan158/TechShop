@@ -89,7 +89,7 @@
           </div>  
         </div>
         <div class="d-flex justify-content-center">
-                        <a href="/Home/Index">Trở về</a>
+                        <a href="/Home/Index" style="color:red;">Trở về</a>
                     </div>
       </div>
     </div>
