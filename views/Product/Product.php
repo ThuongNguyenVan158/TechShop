@@ -224,10 +224,27 @@
                                                         echo '<i class="fa fa-star"></i>';
                                                     }
                                                     echo '</div>
-                                                        </div>
+                                                        </div>';
+                                                    if($this->isLoggedIn()){
+                                                        $User = $_SESSION["account"];
+                                                        $obj = json_decode($User,true);
+                                                        if($obj["Admin"] == 1){
+                                                            echo '
+                                                                <div>
+                                                                <form action="../../Admin/DeleteComment" method="post">
+                                                                    <input type="hidden" name="Page" value="'.$data["product"]["Type"].'" />
+                                                                    <input type="hidden" name="ProductId" value="'.$data["product"]["ProductId"].'" />
+                                                                    <input type="hidden" name="EvalId" value="'.$data["eval"][$i]["EvalId"].'" />
+                                                                    <button type="submit" class="primary-btn">Xoá giá</button>
+                                                                </form>
+                                                                </div>';
+                                                        }
+                                                    }
+                                                    echo '
                                                         <div class="review-body">
                                                             <p>'.$data["eval"][$i]['Comment'].'</p>
                                                         </div>
+                                                        
                                                     </li>';
                                                 }
                                             ?>

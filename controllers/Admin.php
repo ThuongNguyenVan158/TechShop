@@ -7,6 +7,7 @@ class Admin extends Controller{
             $this->accountModel = $this->model("AccountModel");
             $this->productModel = $this->model("ProductModel");
             $this->revenueModel = $this->model("RevenueModel");
+            $this->evaluationModel = $this->model("EvaluationModel");
         }
         function Account(){
             if(isset($_POST["UserName"])){
@@ -158,6 +159,26 @@ class Admin extends Controller{
             // $this->accountModel-> UpdateAccount($id, $gender, $fullName, $email, $admin, $phone);
             $this->productModel->UpdateProduct($id, $name, $type, $brandName, $price, $special, $sellOff, $imgUrl);
             header("Location: AdminProduct");
+        }
+        function DeleteComment(){
+            if(isset($_POST["ProductId"])){
+                $productId = $this->get_POST('ProductId');
+                $evalId = $this->get_POST('EvalId');
+                $page =$this->get_POST('Page');
+                if($page == "laptop"){
+                    $page = "Laptop";
+                }
+                elseif($page == "smartphone"){
+                    $page = "Smart";
+                }
+                elseif($page == "accessory"){
+                    $page = "Accessory";
+                }
+                echo $productId, " ", $evalId," ", $page;
+                $this->evaluationModel->deleteEvalution($evalId);
+            }
+            header("Location: /TechShop/Product/$page/$productId");
+
         }
     }
 ?>

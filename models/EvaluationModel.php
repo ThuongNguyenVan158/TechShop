@@ -6,5 +6,11 @@ class EvaluationModel extends DB{
         $result = $this->excute($query);
         return $result == "true";
     }
+    function deleteEvalution($id){
+        $query = "DELETE FROM evaluation 
+        WHERE EvalId = '$id'";
+        $result = $this->excute($query);
+        return $result == "true";
+    }
 }
 ?>
