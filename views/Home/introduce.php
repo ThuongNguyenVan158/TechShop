@@ -5,7 +5,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="/assets/css/introduce.css">
+        <link rel="stylesheet" type="text/css" href="/TechShop//assets/css/introduce.css">
+        
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link type="text/css" rel="stylesheet" href="/assets/css/slick.css" />
@@ -18,20 +19,21 @@
 
     <body>
         <header>
-        <div id="top-header">
-            <div class="container">
-                <ul class="header-links pull-left">
-                <li><a href="#"><i class="fa fa-phone"></i>0394003431</a></li>
-                <li><a href="#"><i class="far fa-envelope"></i>TechShop@hcmut.edu.vn</a></li>
-                <li><a href="#"><i class="fa fa-map-marker"></i>Ho Chi Minh</a></li>
-                <li><a href="/Home/Introduce"><i class="fa fa-users"></i>Giới thiệu</a></li>
-                <li><a href="/Home/Contact"><i class="fa fa-fax"></i>Liên hệ</a></li>
-                </ul>
+            <div id="top-header">
+                <div class="container">
+                    <ul class="header-links pull-left">
+                        <li><a href="#"><i class="fa fa-phone"></i>0394003431</a></li>
+                        <li><a href="#"><i class="far fa-envelope"></i>TechShop@hcmut.edu.vn</a></li>
+                        <li><a href="#"><i class="fa fa-map-marker"></i>Ho Chi Minh</a></li>
+                        <li><a href="/Home/Introduce"><i class="fa fa-users"></i>Giới thiệu</a></li>
+                        <li><a href="/Home/Contact"><i class="fa fa-fax"></i>Liên hệ</a></li>
+                    </ul>
+                </div>
             </div>
-        </div>
         </header>
+
         <div class="container text-center main-introduce">
-            <h1>- Chúng tôi là <span style="color:#D10024">TechShop</span> -</h2>
+            <h1>- Chúng tôi là <span style="color:blue">TechShop</span> -</h2>
             <h3>Cam kết phân phối các sản phẩm laptop, điện thoại, phụ kiện chính hãng</h3>
 
             <div class="container" style="padding-top: 10px">
@@ -49,7 +51,6 @@
                     nghệ như laptop, điện thoại và các phụ kiện như bàn phím, chuột, tai nghe...) đến người
                     tiêu dùng với giá cả chính thức được cập nhật liên tục.
                 </p>
-            <div class="container">
                 <p>
                     Ở thời điểm mạng Internet và các thiết bị di động như laptop, tablet, smartphone
                     đang ngày càng phát triển như hiện nay, khi có nhu cầu mua sắm, khách hàng thường
@@ -58,16 +59,12 @@
                     động rất lớn đến quyết định mua hàng, sử dụng dịch vụ hay chỉ đơn giản là vấn đề hợp
                     tác làm ăn kinh doanh.
                 </p>
-            </div>
-            <div class="container">
                 <p>
                     Một cửa tiệm có thể thu hút được người địa phương nhưng lại bị hạn chế đối với
                     những khách hàng ở khu vực khác. Tuy nhiên, khi xây dựng một trang web riêng, phạm
                     vi này cũng mở rộng. Doanh nghiệp sẽ có thêm cơ hội nhận được các đơn đặt từ khắp
                     mọi nơi trên đất nước.
-                </p>   
-            </div>
-            <div class="container">             
+                </p>                
                 <p>
                     Khi sở hữu một website được thiết kế chuyên nghiệp, nó sẽ mang đến cho hoạt động
                     kinh doanh những lợi ích và giá trị to lớn. Thông qua đó, các công ty có thể cung cấp
@@ -76,8 +73,6 @@
                     khách sạn...
                     </p>
                 <p>
-            </div>
-            <div class="container">
                     Đây được xem là công cụ đắc lực cho hoạt động marketing online, góp phần quảng
                     bá rộng rãi hình ảnh thương hiệu, tạo dựng sự uy tín, nâng cao khả năng cạnh tranh trên
                     thị trường.
@@ -93,10 +88,12 @@
                 <img src="https://www.w3schools.com/w3images/avatar5.png">
             </div>
             <div class="d-flex justify-content-center">
-                        <a href="/Home/Index">Trở về</a>
+                        <a href="/Home/index">Trở về</a>
                     </div>
             
         </div>
+
+        <!-- FOOTER -->
         <footer id="footer">
             <!-- top footer -->
             <div class="section">
@@ -110,10 +107,11 @@
                                 <ul class="footer-links">
                                     <li><i class="fa fa-map-marker"></i>Hồ Chí Minh</li>
                                     <li><i class="fa fa-phone"></i>0394003434</li>
-                                    <li><i class="far fa-envelope"></i>techshop@hcmut.edu.vn</li>
+                                    <li><i class="far fa-envelope"></i>TechShop@hcmut.edu.vn</li>
                                 </ul>
                             </div>
                         </div>
+
                         <div class="col-md-3 col-xs-6">
                             <div class="footer">
                                 <h3 class="footer-title">Các dòng sản phẩm</h3>
@@ -124,6 +122,7 @@
                                 </ul>
                             </div>
                         </div>
+
                         <div class="clearfix visible-xs"></div>
                         <div class="col-md-4 col-xs-6">
                             <div class="footer">
@@ -144,5 +143,7 @@
             </div>
             <!-- /top footer -->
         </footer>
+        <!-- /FOOTER -->
+      
     </body>
 </html>
