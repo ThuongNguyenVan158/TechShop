@@ -235,7 +235,7 @@
                                                                     <input type="hidden" name="Page" value="'.$data["product"]["Type"].'" />
                                                                     <input type="hidden" name="ProductId" value="'.$data["product"]["ProductId"].'" />
                                                                     <input type="hidden" name="EvalId" value="'.$data["eval"][$i]["EvalId"].'" />
-                                                                    <button type="submit" class="primary-btn">Xoá giá</button>
+                                                                    <button type="submit" class="primary-btn">Xoá đánh giá</button>
                                                                 </form>
                                                                 </div>';
                                                         }
