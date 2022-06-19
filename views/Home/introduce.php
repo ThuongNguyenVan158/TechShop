@@ -33,8 +33,8 @@
         </header>
 
         <div class="container text-center main-introduce">
-            <h1>- Chúng tôi là <span style="color:blue">TechShop</span> -</h2>
-            <h3>Cam kết phân phối các sản phẩm laptop, điện thoại, phụ kiện chính hãng</h3>
+            <h1  style="margin: 10rem 0 3rem 0;"> Chúng tôi là <span style="color:red;">TechShop</span> </h2>
+            <h3  style="margin: 3rem 0 3rem 0;">Cam kết phân phối các sản phẩm laptop, điện thoại, phụ kiện chính hãng</h3>
 
             <div class="container" style="padding-top: 10px">
                 <p>
@@ -78,18 +78,19 @@
                     thị trường.
                 </p>
             </div>
-
-            <h2>Về team chúng tôi</h2>
-            <div class="image-center">
-                <img src="https://www.w3schools.com/howto/img_avatar.png">
-                <img src="https://www.w3schools.com/howto/img_avatar2.png">
-                <img src="https://www.w3schools.com/w3images/avatar2.png">
-                <img src="https://www.w3schools.com/w3images/avatar6.png">
-                <img src="https://www.w3schools.com/w3images/avatar5.png">
+            <div style="margin: 5rem 0 10rem 0;">
+                <h2  style="margin-bottom: 1rem;">Về team chúng tôi</h2>
+                <div class="image-center">
+                    <img src="https://www.w3schools.com/howto/img_avatar.png">
+                    <img src="https://www.w3schools.com/howto/img_avatar2.png">
+                    <img src="https://www.w3schools.com/w3images/avatar2.png">
+                    <img src="https://www.w3schools.com/w3images/avatar6.png">
+                    <img src="https://www.w3schools.com/w3images/avatar5.png">
+                </div>
+                <div class="d-flex justify-content-center"  style="margin-top: 2rem;">
+                            <a href="../Home/Index" style="color:red;">Trở về</a>
+                        </div>
             </div>
-            <div class="d-flex justify-content-center">
-                        <a href="../Home/Index">Trở về</a>
-                    </div>
             
         </div>
 
