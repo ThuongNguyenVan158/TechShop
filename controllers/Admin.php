@@ -176,7 +176,7 @@ class Admin extends Controller{
                 elseif($page == "accessory"){
                     $page = "Accessory";
                 }
-                echo $productId, " ", $evalId," ", $page;
+                // echo $productId, " ", $evalId," ", $page;
                 $this->evaluationModel->deleteEvalution($evalId);
             }
             header("Location: /Product/$page/$productId");
